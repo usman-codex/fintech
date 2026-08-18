@@ -10,8 +10,8 @@ interface ServiceIconProps {
 
 export const ServiceIcon: React.FC<ServiceIconProps> = ({
   name,
-  className = 'w-12 h-12',
-  size = 48,
+  className = '',
+  size = 64,
   color = '#1A314C',
   accentColor = '#1DA5B8'
 }) => {

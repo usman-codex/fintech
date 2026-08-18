@@ -122,11 +122,12 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
                   {/* FRONT FACE OF CARD: Clean White, Transparent Icon (No Background Box), Stylish Typography */}
                   <div className="absolute inset-0 w-full h-full bg-white rounded-3xl border border-[#C9E5ED] hover:border-[#1DA5B8] p-7 sm:p-8 flex flex-col items-center justify-center text-center [backface-visibility:hidden] transition-colors duration-300">
                     
-                    {/* Clean Icon Container without any background box */}
+                    {/* Clean Larger Icon Container without any background box */}
                     <div className="flex items-center justify-center mb-6 text-[#1A314C] transition-transform duration-300 group-hover:scale-110">
                       <ServiceIcon 
                         name={service.iconName} 
-                        size={56} 
+                        size={84} 
+                        className="w-20 h-20 sm:w-22 sm:h-22"
                         color="#1A314C" 
                         accentColor="#1DA5B8"
                       />
