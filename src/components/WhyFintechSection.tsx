@@ -34,7 +34,7 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       
-      // Smooth easeOutExpo curve
+      // Smooth easeOutExpo curve for realistic counting
       const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       const current = easeProgress * value;
 
@@ -62,270 +62,393 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
 };
 
 export const WhyFintechSection: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  const [hoveredPetal, setHoveredPetal] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
 
   return (
     <section 
       id="why-fintech-section" 
-      ref={sectionRef}
-      className="relative w-full py-20 sm:py-28 bg-[#FAFDFE] overflow-hidden border-b border-[#C9E5ED]/50"
+      ref={containerRef}
+      className="relative w-full py-16 sm:py-24 bg-[#FAFDFE] overflow-hidden border-b border-[#C9E5ED]/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: -25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16 sm:mb-24"
-        >
+        <div className="text-center mb-8 sm:mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A314C] tracking-tight font-heading">
             Why FinTech
           </h2>
-        </motion.div>
+        </div>
 
-        {/* 🌟 DESKTOP & TABLET: Pixel-Perfect Radial Fan Showcase with Exact Geometry & Connectors */}
-        <div className="relative max-w-5xl mx-auto hidden md:block">
-          
-          {/* Main Visual Container */}
-          <div className="relative w-full h-[520px] lg:h-[560px]">
+        {/* 🌟 100% EXACT VECTOR FAN ARCHITECTURE (DESKTOP & TABLET) */}
+        <div className="relative w-full max-w-5xl mx-auto hidden md:block">
+          <svg 
+            viewBox="0 0 1000 620" 
+            className="w-full h-auto drop-shadow-sm select-none overflow-visible"
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              {/* Soft Drop Shadow for Petals & Center Circle */}
+              <filter id="fan-shadow" x="-15%" y="-15%" width="130%" height="140%" filterUnits="userSpaceOnUse">
+                <feDropShadow dx="0" dy="16" stdDeviation="16" floodColor="#1A314C" floodOpacity="0.10" />
+                <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#1A314C" floodOpacity="0.06" />
+              </filter>
 
-            {/* 1. Center Circle: "Since 2020" with Colorful Arc & Dots */}
-            <motion.div
-              initial={{ scale: 0.7, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[4%] left-1/2 -translate-x-1/2 z-30 flex flex-col items-center"
+              <filter id="petal-shadow" x="-20%" y="-20%" width="140%" height="150%" filterUnits="userSpaceOnUse">
+                <feDropShadow dx="0" dy="12" stdDeviation="12" floodColor="#1A314C" floodOpacity="0.11" />
+              </filter>
+
+              <filter id="center-shadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+                <feDropShadow dx="0" dy="10" stdDeviation="14" floodColor="#1A314C" floodOpacity="0.12" />
+              </filter>
+
+              {/* Rainbow Gradient for Arc Under Center Circle */}
+              <linearGradient id="rainbow-arc" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#F58220" />
+                <stop offset="25%" stopColor="#00C2CB" />
+                <stop offset="50%" stopColor="#0284C7" />
+                <stop offset="75%" stopColor="#EC4899" />
+                <stop offset="100%" stopColor="#8B5CF6" />
+              </linearGradient>
+
+              {/* Subtle White-to-Soft-Gray Petal Gradient */}
+              <linearGradient id="petal-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#FFFFFF" />
+                <stop offset="100%" stopColor="#F8FAFC" />
+              </linearGradient>
+            </defs>
+
+            {/* ============================================================ */}
+            {/* 1. FAN PETALS (5 SEGMENTS IN A FAN ARC)                       */}
+            {/* Center = (500, 200), Inner Radius = 90, Outer Radius = 245  */}
+            {/* ============================================================ */}
+
+            {/* PETAL 1: Leftmost (Pencil Icon) -> Angles 168° to 138° */}
+            <g 
+              onMouseEnter={() => setHoveredPetal(1)} 
+              onMouseLeave={() => setHoveredPetal(null)}
+              className="cursor-pointer transition-transform duration-300 transform origin-[500px_200px]"
+              style={{ transform: hoveredPetal === 1 ? 'scale(1.03)' : 'scale(1)' }}
             >
-              <div className="w-36 h-36 lg:w-40 lg:h-40 rounded-full bg-white shadow-[0_12px_40px_rgba(26,49,76,0.12)] border border-[#C9E5ED]/60 flex flex-col items-center justify-center p-3 text-center transition-transform duration-300 hover:scale-105">
-                <span className="text-sm font-bold text-[#4A5D6E] tracking-tight">Since</span>
-                <span className="text-2xl lg:text-3xl font-black text-[#F58220] tracking-tight font-heading mt-0.5">
-                  <AnimatedNumber value={2020} duration={1500} />
-                </span>
-              </div>
+              {/* Petal Wedge Path */}
+              <path
+                d="M 412 181 
+                   L 261 149 
+                   A 245 245 0 0 1 318 364 
+                   L 433 260 
+                   A 90 90 0 0 0 412 181 Z"
+                fill="url(#petal-grad)"
+                stroke="#E2E8F0"
+                strokeWidth="1.5"
+                filter="url(#petal-shadow)"
+                rx="14"
+              />
+              
+              {/* Icon 1: Slanted Pencil SVG */}
+              <g transform="translate(325, 235) rotate(-35)">
+                <path 
+                  d="M 0 -18 L 6 -12 L -8 16 L -14 18 L -12 12 Z" 
+                  fill="#1A314C" 
+                />
+                <path 
+                  d="M 3 -21 L 9 -15 L 6 -12 L 0 -18 Z" 
+                  fill="#1A314C" 
+                />
+              </g>
+            </g>
 
-              {/* Rainbow Bottom Arc with 5 Colored Nodes */}
-              <div className="relative -mt-10 w-48 h-20 pointer-events-none">
-                <svg viewBox="0 0 192 80" fill="none" className="w-full h-full">
-                  <path
-                    d="M 16 10 C 24 55, 168 55, 176 10"
-                    stroke="url(#rainbow-gradient)"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-                  <defs>
-                    <linearGradient id="rainbow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#F58220" />
-                      <stop offset="25%" stopColor="#00C2CB" />
-                      <stop offset="50%" stopColor="#0284C7" />
-                      <stop offset="75%" stopColor="#EC4899" />
-                      <stop offset="100%" stopColor="#8B5CF6" />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Node 1: Orange */}
-                  <circle cx="16" cy="10" r="3.5" fill="#F58220" />
-                  {/* Node 2: Cyan */}
-                  <circle cx="38" cy="38" r="3.5" fill="#00C2CB" />
-                  {/* Node 3: Sky Blue */}
-                  <circle cx="96" cy="54" r="4.5" fill="#0284C7" stroke="white" strokeWidth="1.5" />
-                  {/* Node 4: Pink */}
-                  <circle cx="154" cy="38" r="3.5" fill="#EC4899" />
-                  {/* Node 5: Purple */}
-                  <circle cx="176" cy="10" r="3.5" fill="#8B5CF6" />
-                </svg>
-              </div>
-            </motion.div>
+            {/* PETAL 2: Mid-Left (Magnifying Glass Icon) -> Angles 134° to 106° */}
+            <g 
+              onMouseEnter={() => setHoveredPetal(2)} 
+              onMouseLeave={() => setHoveredPetal(null)}
+              className="cursor-pointer transition-transform duration-300 transform origin-[500px_200px]"
+              style={{ transform: hoveredPetal === 2 ? 'scale(1.03)' : 'scale(1)' }}
+            >
+              <path
+                d="M 437 265 
+                   L 330 376 
+                   A 245 245 0 0 1 432 435 
+                   L 475 287 
+                   A 90 90 0 0 0 437 265 Z"
+                fill="url(#petal-grad)"
+                stroke="#E2E8F0"
+                strokeWidth="1.5"
+                filter="url(#petal-shadow)"
+              />
 
-            {/* 2. FIVE RADIAL FAN PETAL CARDS (ARRANGED IN A SEMI-CIRCLE ARC) */}
+              {/* Icon 2: Magnifying Glass SVG */}
+              <g transform="translate(390, 360) rotate(-20)">
+                <circle cx="0" cy="0" r="13" stroke="#1A314C" strokeWidth="4.5" fill="none" />
+                <line x1="9" y1="9" x2="20" y2="20" stroke="#1A314C" strokeWidth="5.5" strokeLinecap="round" />
+              </g>
+            </g>
+
+            {/* PETAL 3: Center Bottom (Person / Tie Avatar Icon) -> Angles 102° to 78° */}
+            <g 
+              onMouseEnter={() => setHoveredPetal(3)} 
+              onMouseLeave={() => setHoveredPetal(null)}
+              className="cursor-pointer transition-transform duration-300 transform origin-[500px_200px]"
+              style={{ transform: hoveredPetal === 3 ? 'scale(1.03)' : 'scale(1)' }}
+            >
+              <path
+                d="M 481 289 
+                   L 449 439 
+                   A 245 245 0 0 1 551 439 
+                   L 519 289 
+                   A 90 90 0 0 0 481 289 Z"
+                fill="url(#petal-grad)"
+                stroke="#E2E8F0"
+                strokeWidth="1.5"
+                filter="url(#petal-shadow)"
+              />
+
+              {/* Icon 3: Silhouette Avatar with Tie */}
+              <g transform="translate(500, 385)">
+                <circle cx="0" cy="-14" r="8" fill="#1A314C" />
+                <path d="M -15 12 C -15 3 -8 0 0 0 C 8 0 15 3 15 12 Z" fill="#1A314C" />
+                {/* White Shirt Collar & Tie */}
+                <polygon points="-4,2 4,2 0,6" fill="white" />
+                <polygon points="0,5 -2,12 0,14 2,12" fill="#1A314C" />
+              </g>
+            </g>
+
+            {/* PETAL 4: Mid-Right (Presentation Chart Icon) -> Angles 74° to 46° */}
+            <g 
+              onMouseEnter={() => setHoveredPetal(4)} 
+              onMouseLeave={() => setHoveredPetal(null)}
+              className="cursor-pointer transition-transform duration-300 transform origin-[500px_200px]"
+              style={{ transform: hoveredPetal === 4 ? 'scale(1.03)' : 'scale(1)' }}
+            >
+              <path
+                d="M 525 287 
+                   L 568 435 
+                   A 245 245 0 0 1 670 376 
+                   L 563 265 
+                   A 90 90 0 0 0 525 287 Z"
+                fill="url(#petal-grad)"
+                stroke="#E2E8F0"
+                strokeWidth="1.5"
+                filter="url(#petal-shadow)"
+              />
+
+              {/* Icon 4: Presentation Board with Upward Trend Graph */}
+              <g transform="translate(610, 360) rotate(15)">
+                <rect x="-16" y="-14" width="32" height="22" rx="3" fill="#1A314C" />
+                {/* Stand */}
+                <line x1="0" y1="8" x2="0" y2="15" stroke="#1A314C" strokeWidth="3" />
+                <line x1="-8" y1="15" x2="8" y2="15" stroke="#1A314C" strokeWidth="3" strokeLinecap="round" />
+                {/* Graph Trend Line */}
+                <path d="M -10 2 L -4 -4 L 2 -1 L 10 -9" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <polyline points="5,-9 10,-9 10,-4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </g>
+            </g>
+
+            {/* PETAL 5: Rightmost (Checklist with Checks Icon) -> Angles 42° to 12° */}
+            <g 
+              onMouseEnter={() => setHoveredPetal(5)} 
+              onMouseLeave={() => setHoveredPetal(null)}
+              className="cursor-pointer transition-transform duration-300 transform origin-[500px_200px]"
+              style={{ transform: hoveredPetal === 5 ? 'scale(1.03)' : 'scale(1)' }}
+            >
+              <path
+                d="M 567 260 
+                   L 682 364 
+                   A 245 245 0 0 1 739 149 
+                   L 588 181 
+                   A 90 90 0 0 0 567 260 Z"
+                fill="url(#petal-grad)"
+                stroke="#E2E8F0"
+                strokeWidth="1.5"
+                filter="url(#petal-shadow)"
+              />
+
+              {/* Icon 5: Task Checklist with Bullets and Checks */}
+              <g transform="translate(675, 235) rotate(35)">
+                {/* Row 1 */}
+                <circle cx="-10" cy="-10" r="3.2" fill="#1A314C" />
+                <rect x="-3" y="-12" width="20" height="4" rx="2" fill="#1A314C" />
+                {/* Row 2 (Checked) */}
+                <circle cx="-10" cy="0" r="3.6" fill="#1A314C" />
+                <path d="M -12 -0.5 L -10.5 1 L -7.5 -2" stroke="white" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+                <rect x="-3" y="-2" width="20" height="4" rx="2" fill="#1A314C" />
+                {/* Row 3 */}
+                <circle cx="-10" cy="10" r="3.2" fill="#1A314C" />
+                <rect x="-3" y="8" width="20" height="4" rx="2" fill="#1A314C" />
+              </g>
+            </g>
+
+            {/* ============================================================ */}
+            {/* 2. CENTER CIRCLE ("Since 2020") + RAINBOW ARC + 5 DOTS       */}
+            {/* ============================================================ */}
             
-            {/* Petal 1: Top-Left (Pencil Icon) */}
-            <motion.div
-              initial={{ opacity: 0, x: -50, rotate: -25 }}
-              whileInView={{ opacity: 1, x: 0, rotate: -18 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[8%] left-[23%] lg:left-[24%] z-20"
-            >
-              <div className="w-28 h-36 lg:w-32 lg:h-40 bg-white rounded-3xl shadow-[0_16px_36px_rgba(26,49,76,0.11)] border border-[#C9E5ED]/70 flex items-center justify-center p-4 transform hover:scale-110 transition-transform duration-300 group cursor-pointer">
-                {/* Pencil SVG */}
-                <svg className="w-9 h-9 lg:w-10 lg:h-10 text-[#1A314C] group-hover:text-[#F58220] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" fill="#1A314C" className="group-hover:fill-[#F58220] transition-colors" />
-                </svg>
-              </div>
-            </motion.div>
+            {/* Center Circular Card */}
+            <circle 
+              cx="500" 
+              cy="200" 
+              r="80" 
+              fill="#FFFFFF" 
+              stroke="#E2E8F0" 
+              strokeWidth="1.5" 
+              filter="url(#center-shadow)" 
+            />
 
-            {/* Petal 2: Mid-Left (Magnifying Glass Icon) */}
-            <motion.div
-              initial={{ opacity: 0, x: -30, y: 40, rotate: -15 }}
-              whileInView={{ opacity: 1, x: 0, y: 0, rotate: -9 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.75, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[28%] left-[30%] lg:left-[31%] z-20"
+            {/* Center Typography */}
+            <text 
+              x="500" 
+              y="180" 
+              textAnchor="middle" 
+              fill="#4A5D6E" 
+              fontSize="16" 
+              fontWeight="600"
+              fontFamily="sans-serif"
             >
-              <div className="w-28 h-36 lg:w-32 lg:h-40 bg-white rounded-3xl shadow-[0_16px_36px_rgba(26,49,76,0.11)] border border-[#C9E5ED]/70 flex items-center justify-center p-4 transform hover:scale-110 transition-transform duration-300 group cursor-pointer">
-                {/* Search Magnifying Glass SVG */}
-                <svg className="w-9 h-9 lg:w-10 lg:h-10 text-[#1A314C] group-hover:text-[#00C2CB] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="7" />
-                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
-              </div>
-            </motion.div>
-
-            {/* Petal 3: Bottom-Center (Professional Team Member Icon) */}
-            <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.75, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[38%] left-1/2 -translate-x-1/2 z-20"
+              Since
+            </text>
+            <text 
+              x="500" 
+              y="218" 
+              textAnchor="middle" 
+              fill="#F58220" 
+              fontSize="30" 
+              fontWeight="900"
+              fontFamily="sans-serif"
+              letterSpacing="-0.5px"
             >
-              <div className="w-28 h-36 lg:w-32 lg:h-40 bg-white rounded-3xl shadow-[0_16px_36px_rgba(26,49,76,0.13)] border border-[#C9E5ED]/70 flex items-center justify-center p-4 transform hover:scale-110 transition-transform duration-300 group cursor-pointer">
-                {/* Person in Suit / Tie Silhouette SVG */}
-                <svg className="w-10 h-10 lg:w-11 lg:h-11 text-[#1A314C] group-hover:text-[#0284C7] transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                  <circle cx="12" cy="6.5" r="4.5" />
-                  <path d="M12 12.5c-4.5 0-8 3-8 7.5h16c0-4.5-3.5-7.5-8-7.5zm-1 3.5h2l-.5 4h-1l-.5-4z" />
-                </svg>
-              </div>
-            </motion.div>
+              2020
+            </text>
 
-            {/* Petal 4: Mid-Right (Growth Presentation Chart Icon) */}
-            <motion.div
-              initial={{ opacity: 0, x: 30, y: 40, rotate: 15 }}
-              whileInView={{ opacity: 1, x: 0, y: 0, rotate: 9 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.75, delay: 0.32, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[28%] right-[30%] lg:right-[31%] z-20"
-            >
-              <div className="w-28 h-36 lg:w-32 lg:h-40 bg-white rounded-3xl shadow-[0_16px_36px_rgba(26,49,76,0.11)] border border-[#C9E5ED]/70 flex items-center justify-center p-4 transform hover:scale-110 transition-transform duration-300 group cursor-pointer">
-                {/* Presentation Board with Upward Trend Graph */}
-                <svg className="w-9 h-9 lg:w-10 lg:h-10 text-[#1A314C] group-hover:text-[#EC4899] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="3" width="20" height="13" rx="2" fill="#1A314C" className="group-hover:fill-[#EC4899] transition-colors" />
-                  <line x1="8" y1="21" x2="16" y2="21" />
-                  <line x1="12" y1="16" x2="12" y2="21" />
-                  {/* White Trend Arrow */}
-                  <path d="m6 12 3-3 3 2 5-5" stroke="white" strokeWidth="1.8" />
-                  <polyline points="14 6 17 6 17 9" stroke="white" strokeWidth="1.8" />
-                </svg>
-              </div>
-            </motion.div>
+            {/* Rainbow Arc below Center Circle */}
+            <path
+              d="M 428 200 A 74 74 0 0 0 572 200"
+              stroke="url(#rainbow-arc)"
+              strokeWidth="3.2"
+              fill="none"
+              strokeLinecap="round"
+            />
 
-            {/* Petal 5: Top-Right (Task Checklist with Checkmarks Icon) */}
-            <motion.div
-              initial={{ opacity: 0, x: 50, rotate: 25 }}
-              whileInView={{ opacity: 1, x: 0, rotate: 18 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.75, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[8%] right-[23%] lg:right-[24%] z-20"
-            >
-              <div className="w-28 h-36 lg:w-32 lg:h-40 bg-white rounded-3xl shadow-[0_16px_36px_rgba(26,49,76,0.11)] border border-[#C9E5ED]/70 flex items-center justify-center p-4 transform hover:scale-110 transition-transform duration-300 group cursor-pointer">
-                {/* Checklist with Bullets & Checkmarks SVG */}
-                <svg className="w-9 h-9 lg:w-10 lg:h-10 text-[#1A314C] group-hover:text-[#8B5CF6] transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                  {/* Item 1 */}
-                  <circle cx="5" cy="6" r="2" />
-                  <rect x="9" y="4.8" width="11" height="2.4" rx="1.2" />
-                  {/* Item 2 with check */}
-                  <circle cx="5" cy="12" r="2.2" />
-                  <path d="M4 12l.8.8 1.4-1.6" stroke="white" strokeWidth="1" fill="none" strokeLinecap="round" />
-                  <rect x="9" y="10.8" width="11" height="2.4" rx="1.2" />
-                  {/* Item 3 */}
-                  <circle cx="5" cy="18" r="2" />
-                  <rect x="9" y="16.8" width="11" height="2.4" rx="1.2" />
-                </svg>
-              </div>
-            </motion.div>
+            {/* 5 Color Nodes on the Rainbow Arc */}
+            {/* Node 1: Left Orange */}
+            <circle cx="428" cy="200" r="4" fill="#F58220" />
+            {/* Node 2: Cyan */}
+            <circle cx="448" cy="245" r="4.2" fill="#00C2CB" />
+            {/* Node 3: Center Sky Blue */}
+            <circle cx="500" cy="274" r="5" fill="#0284C7" stroke="white" strokeWidth="1.5" />
+            {/* Node 4: Pink */}
+            <circle cx="552" cy="245" r="4.2" fill="#EC4899" />
+            {/* Node 5: Right Purple */}
+            <circle cx="572" cy="200" r="4" fill="#8B5CF6" />
 
-            {/* 3. CONNECTING BRACKET LINES AND 5 RUNNING NUMBER STATS */}
+            {/* ============================================================ */}
+            {/* 3. EXACT CONNECTING LINES                                    */}
+            {/* ============================================================ */}
 
-            {/* Stat 1: 412+ Projects Completed (Far Left with Bracket Connector) */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[28%] left-[2%] lg:left-[5%] flex items-center gap-3 z-10"
-            >
+            {/* Line 1: Left Angular Bracket for 412+ Projects Completed */}
+            <path
+              d="M 240 280 L 215 280 L 215 375 L 230 375"
+              stroke="#1A314C"
+              strokeWidth="1.8"
+              fill="none"
+              strokeLinecap="square"
+            />
+
+            {/* Line 2: Bottom-Left Vertical Connector from Petal 2 to 682+ Positive Reviews */}
+            <line 
+              x1="385" 
+              y1="410" 
+              x2="385" 
+              y2="495" 
+              stroke="#1A314C" 
+              strokeWidth="1.8" 
+              strokeLinecap="round"
+            />
+
+            {/* Line 3: Bottom-Center Vertical Connector from Petal 3 to 95+ Team Members */}
+            <line 
+              x1="500" 
+              y1="450" 
+              x2="500" 
+              y2="495" 
+              stroke="#1A314C" 
+              strokeWidth="1.8" 
+              strokeLinecap="round"
+            />
+
+            {/* Line 4: Bottom-Right Vertical Connector from Petal 4 to 3.5M$ Funding Raised */}
+            <line 
+              x1="615" 
+              y1="410" 
+              x2="615" 
+              y2="495" 
+              stroke="#1A314C" 
+              strokeWidth="1.8" 
+              strokeLinecap="round"
+            />
+
+            {/* Line 5: Right Angular Bracket for 99% Customer Satisfaction */}
+            <path
+              d="M 760 280 L 785 280 L 785 375 L 770 375"
+              stroke="#1A314C"
+              strokeWidth="1.8"
+              fill="none"
+              strokeLinecap="square"
+            />
+
+            {/* ============================================================ */}
+            {/* 4. RUNNING NUMBER LABELS AND STATS IN EXACT POSITIONS       */}
+            {/* ============================================================ */}
+
+            {/* STAT 1: Left - 412+ Projects Completed */}
+            <foreignObject x="60" y="325" width="150" height="150">
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-heading">
                   <AnimatedNumber value={412} suffix="+" />
                 </span>
-                <span className="text-sm font-bold text-[#1A314C] leading-snug mt-1 max-w-[110px]">
+                <span className="text-sm font-bold text-[#1A314C] leading-snug mt-1 max-w-[100px]">
                   Projects Completed
                 </span>
               </div>
+            </foreignObject>
 
-              {/* Bracket Connector Line to Petal 1 */}
-              <div className="w-8 h-18 border-t-2 border-r-2 border-b-2 border-[#1A314C]/70 rounded-r-lg" />
-            </motion.div>
+            {/* STAT 2: Bottom Left - 682+ Positive Reviews */}
+            <foreignObject x="310" y="505" width="150" height="110">
+              <div className="flex flex-col items-center text-center">
+                <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-heading">
+                  <AnimatedNumber value={682} suffix="+" />
+                </span>
+                <span className="text-sm font-bold text-[#1A314C] leading-snug mt-1 max-w-[100px]">
+                  Positive Reviews
+                </span>
+              </div>
+            </foreignObject>
 
-            {/* Stat 2: 682+ Positive Reviews (Bottom Left with Angled Connector) */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-[2%] left-[26%] lg:left-[28%] flex flex-col items-center text-center z-10"
-            >
-              {/* Connector Line pointing to Petal 2 */}
-              <div className="w-[2px] h-10 bg-[#1A314C]/70 mb-2 transform -rotate-12" />
-              <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-heading">
-                <AnimatedNumber value={682} suffix="+" />
-              </span>
-              <span className="text-sm font-bold text-[#1A314C] leading-snug mt-1 max-w-[100px]">
-                Positive Reviews
-              </span>
-            </motion.div>
+            {/* STAT 3: Bottom Center - 95+ Team Members */}
+            <foreignObject x="425" y="505" width="150" height="110">
+              <div className="flex flex-col items-center text-center">
+                <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-heading">
+                  <AnimatedNumber value={95} suffix="+" />
+                </span>
+                <span className="text-sm font-bold text-[#1A314C] leading-snug mt-1 max-w-[100px]">
+                  Team Members
+                </span>
+              </div>
+            </foreignObject>
 
-            {/* Stat 3: 95+ Team Members (Bottom Center with Vertical Connector) */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-[2%] left-1/2 -translate-x-1/2 flex flex-col items-center text-center z-10"
-            >
-              {/* Vertical Connector Line pointing to Petal 3 */}
-              <div className="w-[2px] h-10 bg-[#1A314C]/70 mb-2" />
-              <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-heading">
-                <AnimatedNumber value={95} suffix="+" />
-              </span>
-              <span className="text-sm font-bold text-[#1A314C] leading-snug mt-1 max-w-[100px]">
-                Team Members
-              </span>
-            </motion.div>
+            {/* STAT 4: Bottom Right - 3.5M$ Funding Raised */}
+            <foreignObject x="540" y="505" width="150" height="110">
+              <div className="flex flex-col items-center text-center">
+                <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-heading">
+                  <AnimatedNumber value={3.5} decimals={1} suffix="M$" />
+                </span>
+                <span className="text-sm font-bold text-[#1A314C] leading-snug mt-1 max-w-[100px]">
+                  Funding Raised
+                </span>
+              </div>
+            </foreignObject>
 
-            {/* Stat 4: 3.5M$ Funding Raised (Bottom Right with Angled Connector) */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-[2%] right-[26%] lg:right-[28%] flex flex-col items-center text-center z-10"
-            >
-              {/* Connector Line pointing to Petal 4 */}
-              <div className="w-[2px] h-10 bg-[#1A314C]/70 mb-2 transform rotate-12" />
-              <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-heading">
-                <AnimatedNumber value={3.5} decimals={1} suffix="M$" />
-              </span>
-              <span className="text-sm font-bold text-[#1A314C] leading-snug mt-1 max-w-[100px]">
-                Funding Raised
-              </span>
-            </motion.div>
-
-            {/* Stat 5: 99% Customer Satisfaction (Far Right with Bracket Connector) */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[28%] right-[2%] lg:right-[5%] flex items-center gap-3 z-10"
-            >
-              {/* Bracket Connector Line to Petal 5 */}
-              <div className="w-8 h-18 border-t-2 border-l-2 border-b-2 border-[#1A314C]/70 rounded-l-lg" />
-              
+            {/* STAT 5: Right - 99% Customer Satisfaction */}
+            <foreignObject x="790" y="325" width="150" height="150">
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-heading">
                   <AnimatedNumber value={99} suffix="%" />
@@ -334,13 +457,13 @@ export const WhyFintechSection: React.FC = () => {
                   Customer Satisfaction
                 </span>
               </div>
-            </motion.div>
+            </foreignObject>
 
-          </div>
+          </svg>
         </div>
 
-        {/* 📱 MOBILE VIEW: Clean Responsive Stack with Same Running Numbers & Card Icons */}
-        <div className="md:hidden space-y-10">
+        {/* 📱 MOBILE RESPONSIVE ADAPTATION WITH EXACT SAME ICONS & RUNNING NUMBERS */}
+        <div className="md:hidden space-y-8">
           
           {/* Mobile Center Circle */}
           <div className="flex justify-center">
@@ -352,9 +475,10 @@ export const WhyFintechSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Cards Grid */}
+          {/* Mobile 5 Cards Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             
+            {/* Card 1 */}
             <div className="bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
               <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
@@ -365,6 +489,7 @@ export const WhyFintechSection: React.FC = () => {
               <span className="text-xs font-bold text-[#1A314C] mt-1">Projects Completed</span>
             </div>
 
+            {/* Card 2 */}
             <div className="bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
               <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="7" />
@@ -376,6 +501,7 @@ export const WhyFintechSection: React.FC = () => {
               <span className="text-xs font-bold text-[#1A314C] mt-1">Positive Reviews</span>
             </div>
 
+            {/* Card 3 */}
             <div className="bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
               <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="6.5" r="4.5" />
@@ -387,6 +513,7 @@ export const WhyFintechSection: React.FC = () => {
               <span className="text-xs font-bold text-[#1A314C] mt-1">Team Members</span>
             </div>
 
+            {/* Card 4 */}
             <div className="bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
               <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="2" y="3" width="20" height="13" rx="2" fill="#1A314C" />
@@ -398,6 +525,7 @@ export const WhyFintechSection: React.FC = () => {
               <span className="text-xs font-bold text-[#1A314C] mt-1">Funding Raised</span>
             </div>
 
+            {/* Card 5 */}
             <div className="col-span-2 sm:col-span-1 bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
               <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="5" cy="6" r="2" />
