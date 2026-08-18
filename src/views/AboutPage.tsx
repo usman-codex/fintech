@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { OurFoundersSection } from '../components/OurFoundersSection';
+import { AchievementsSection } from '../components/AchievementsSection';
 import { 
   Sparkles, 
   ShieldCheck, 
@@ -211,10 +212,10 @@ export const AboutPage: React.FC = () => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-2"
             >
-              <span className="text-base sm:text-lg font-bold text-[#E5A83B] font-poppins">
+              <span className="text-base sm:text-lg font-bold text-[#107C8E] font-poppins">
                 FinTech Edge Institute
               </span>
-              <span className="text-[#E5A83B] font-bold tracking-widest text-lg">——</span>
+              <span className="text-[#1DA5B8] font-bold tracking-widest text-lg">——</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -307,7 +308,12 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. "OUR FOUNDERS" SECTION                                                 */}
+      {/* 4. ACHIEVEMENTS SINCE 2020 (RADIAL ARCH & STATS)                          */}
+      {/* ========================================================================= */}
+      <AchievementsSection />
+
+      {/* ========================================================================= */}
+      {/* 5. "OUR FOUNDERS" SECTION                                                 */}
       {/* ========================================================================= */}
       <OurFoundersSection />
 
