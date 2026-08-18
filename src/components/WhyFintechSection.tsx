@@ -70,27 +70,27 @@ export const WhyFintechSection: React.FC = () => {
     <section 
       id="why-fintech-section" 
       ref={sectionRef}
-      className="relative w-full py-16 sm:py-24 bg-[#FAFDFE] overflow-hidden border-b border-[#C9E5ED]/50"
+      className="relative w-full pt-10 pb-14 sm:pt-14 sm:pb-20 bg-[#FAFDFE] overflow-hidden border-b border-[#C9E5ED]/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading matching Google Font Poppins */}
+        {/* Section Heading with compact, tight spacing */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-8 sm:mb-14 flex flex-col items-center"
+          initial={{ opacity: 0, y: -15 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -15 }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-4 sm:mb-6 flex flex-col items-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A314C] tracking-tight font-poppins">
             Fintech Edge <span className="text-[#107C8E] font-bold">Institute</span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#F58220] via-[#00C2CB] to-[#107C8E] rounded-full mt-3"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#F58220] via-[#00C2CB] to-[#107C8E] rounded-full mt-2.5"></div>
         </motion.div>
 
-        {/* 🌟 100% PIXEL-PERFECT RADIAL COMPOSITION WITH DIRECT TOUCHING CONNECTOR LINES (DESKTOP & TABLET) */}
+        {/* 🌟 DESKTOP & TABLET: COMPACT 0-GAP RADIAL SHOWCASE WITH PERFECT CONCENTRIC RAINBOW GAUGE */}
         <div className="relative w-full max-w-5xl mx-auto hidden md:block select-none">
           <svg 
-            viewBox="0 0 1000 660" 
+            viewBox="0 0 1000 550" 
             className="w-full h-auto drop-shadow-xs overflow-visible"
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@ export const WhyFintechSection: React.FC = () => {
                 <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor="#122A42" floodOpacity="0.05" />
               </filter>
 
-              {/* Rainbow Gradient for Arc Under Center Circle */}
+              {/* Rainbow Gradient for Concentric Gauge Arc */}
               <linearGradient id="rainbow-timeline-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#F58220" />
                 <stop offset="25%" stopColor="#00C2CB" />
@@ -135,51 +135,51 @@ export const WhyFintechSection: React.FC = () => {
             {/* Color: #1A314C | Stroke: 2.2px solid                                      */}
             {/* ========================================================================= */}
 
-            {/* LINE 1 (LEFT BRACKET): Touches the left edge of Card 1 at (285, 230) -> turns down to (200, 230) -> goes down to (200, 315) touching above 412+ */}
+            {/* LINE 1 (LEFT BRACKET): Touches the left edge of Card 1 at (285, 145) -> turns down to (200, 145) -> goes down to (200, 230) touching above 412+ */}
             <path
-              d="M 285 230 L 200 230 L 200 315"
+              d="M 285 145 L 200 145 L 200 230"
               stroke="#1A314C"
               strokeWidth="2.2"
               fill="none"
               strokeLinecap="square"
             />
 
-            {/* LINE 2 (BOTTOM-LEFT): Touches the bottom tip of Card 2 at (365, 375) -> goes down to (340, 485) touching above 682+ */}
+            {/* LINE 2 (BOTTOM-LEFT): Touches the bottom tip of Card 2 at (365, 290) -> goes down to (340, 395) touching above 682+ */}
             <line
               x1="365"
-              y1="375"
+              y1="290"
               x2="340"
-              y2="485"
+              y2="395"
               stroke="#1A314C"
               strokeWidth="2.2"
               strokeLinecap="round"
             />
 
-            {/* LINE 3 (BOTTOM-CENTER): Touches the bottom tip of Center Card 3 at (500, 435) -> goes straight down to (500, 520) touching above 95+ */}
+            {/* LINE 3 (BOTTOM-CENTER): Touches the bottom tip of Center Card 3 at (500, 345) -> goes straight down to (500, 430) touching above 95+ */}
             <line
               x1="500"
-              y1="435"
+              y1="345"
               x2="500"
-              y2="520"
+              y2="430"
               stroke="#1A314C"
               strokeWidth="2.2"
               strokeLinecap="round"
             />
 
-            {/* LINE 4 (BOTTOM-RIGHT): Touches the bottom tip of Card 4 at (635, 375) -> goes down to (660, 485) touching above 3.5M$ */}
+            {/* LINE 4 (BOTTOM-RIGHT): Touches the bottom tip of Card 4 at (635, 290) -> goes down to (660, 395) touching above 3.5M$ */}
             <line
               x1="635"
-              y1="375"
+              y1="290"
               x2="660"
-              y2="485"
+              y2="395"
               stroke="#1A314C"
               strokeWidth="2.2"
               strokeLinecap="round"
             />
 
-            {/* LINE 5 (RIGHT BRACKET): Touches the right edge of Card 5 at (715, 230) -> turns right to (800, 230) -> goes down to (800, 315) touching above 99% */}
+            {/* LINE 5 (RIGHT BRACKET): Touches the right edge of Card 5 at (715, 145) -> turns right to (800, 145) -> goes down to (800, 230) touching above 99% */}
             <path
-              d="M 715 230 L 800 230 L 800 315"
+              d="M 715 145 L 800 145 L 800 230"
               stroke="#1A314C"
               strokeWidth="2.2"
               fill="none"
@@ -187,52 +187,53 @@ export const WhyFintechSection: React.FC = () => {
             />
 
             {/* ========================================================================= */}
-            {/* 2. CIRCULAR BAR ARC & 5 MULTI-COLOR NODES (BEHIND CENTER CIRCLE)          */}
+            {/* 2. CONCENTRIC RAINBOW GAUGE ARC (TIGHTLY HUGGING THE "SINCE 2020" CIRCLE)  */}
+            {/* Center = (500, 95), Arc Radius = 76px (Hugging 68px Circle Perfectly)    */}
             {/* ========================================================================= */}
             <g>
-              {/* Rainbow Arc Wire */}
+              {/* Perfectly Concentric Curved Arc */}
               <path
-                d="M 425 180 C 418 282, 582 282, 575 180"
+                d="M 425 105 A 76 76 0 0 0 575 105"
                 stroke="url(#rainbow-timeline-grad)"
                 strokeWidth="3.2"
                 fill="none"
                 strokeLinecap="round"
               />
 
-              {/* Node 1: Orange */}
-              <circle cx="425" cy="180" r="4.5" fill="#F58220" />
-              <circle cx="425" cy="180" r="2" fill="white" />
+              {/* 5 Concentric Nodes positioned along the Arc */}
+              {/* Node 1: Orange (Left) */}
+              <circle cx="425" cy="105" r="4.5" fill="#F58220" />
+              <circle cx="425" cy="105" r="2" fill="white" />
 
               {/* Node 2: Cyan */}
-              <circle cx="438" cy="232" r="4.5" fill="#00C2CB" />
-              <circle cx="438" cy="232" r="2" fill="white" />
+              <circle cx="450" cy="151" r="4.5" fill="#00C2CB" />
+              <circle cx="450" cy="151" r="2" fill="white" />
 
-              {/* Node 3: Center Sky Blue */}
-              <circle cx="500" cy="262" r="5.5" fill="#0284C7" stroke="white" strokeWidth="1.5" />
-              <circle cx="500" cy="262" r="2.5" fill="white" />
+              {/* Node 3: Sky Blue (Bottom-Center) */}
+              <circle cx="500" cy="171" r="5.5" fill="#0284C7" stroke="white" strokeWidth="1.5" />
+              <circle cx="500" cy="171" r="2.5" fill="white" />
 
               {/* Node 4: Pink */}
-              <circle cx="562" cy="232" r="4.5" fill="#EC4899" />
-              <circle cx="562" cy="232" r="2" fill="white" />
+              <circle cx="550" cy="151" r="4.5" fill="#EC4899" />
+              <circle cx="550" cy="151" r="2" fill="white" />
 
-              {/* Node 5: Purple */}
-              <circle cx="575" cy="180" r="4.5" fill="#8B5CF6" />
-              <circle cx="575" cy="180" r="2" fill="white" />
+              {/* Node 5: Purple (Right) */}
+              <circle cx="575" cy="105" r="4.5" fill="#8B5CF6" />
+              <circle cx="575" cy="105" r="2" fill="white" />
             </g>
 
             {/* ========================================================================= */}
             {/* 3. FIVE EXACT RADIALLY-POSITIONED 3D FLOATING CARDS                       */}
             {/* ========================================================================= */}
 
-            {/* CARD 1 (`deg180`): Top-Left (Slanted Pencil Icon) - Center (335, 230) - Rotated -24 deg */}
+            {/* CARD 1 (`deg180`): Top-Left (Slanted Pencil Icon) - Center (335, 145) - Rotated -24 deg */}
             <g 
               onMouseEnter={() => setHoveredCard(1)} 
               onMouseLeave={() => setHoveredCard(null)}
               className="cursor-pointer transition-all duration-300"
-              transform={`translate(335, 230) rotate(-24) ${hoveredCard === 1 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
+              transform={`translate(335, 145) rotate(-24) ${hoveredCard === 1 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
               style={{ transformOrigin: '0px 0px' }}
             >
-              {/* Rounded 3D Fan Petal Geometry */}
               <path
                 d="M -48 -68
                    C -20 -75, 20 -75, 48 -68
@@ -262,12 +263,12 @@ export const WhyFintechSection: React.FC = () => {
               </g>
             </g>
 
-            {/* CARD 2 (`deg135`): Middle-Left (Magnifying Glass Search Icon) - Center (395, 330) - Rotated -12 deg */}
+            {/* CARD 2 (`deg135`): Middle-Left (Magnifying Glass Search Icon) - Center (395, 245) - Rotated -12 deg */}
             <g 
               onMouseEnter={() => setHoveredCard(2)} 
               onMouseLeave={() => setHoveredCard(null)}
               className="cursor-pointer transition-all duration-300"
-              transform={`translate(395, 330) rotate(-12) ${hoveredCard === 2 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
+              transform={`translate(395, 245) rotate(-12) ${hoveredCard === 2 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
               style={{ transformOrigin: '0px 0px' }}
             >
               <path
@@ -293,12 +294,12 @@ export const WhyFintechSection: React.FC = () => {
               </g>
             </g>
 
-            {/* CARD 4 (`deg45`): Middle-Right (Presentation Board Graph Icon) - Center (605, 330) - Rotated +12 deg */}
+            {/* CARD 4 (`deg45`): Middle-Right (Presentation Board Graph Icon) - Center (605, 245) - Rotated +12 deg */}
             <g 
               onMouseEnter={() => setHoveredCard(4)} 
               onMouseLeave={() => setHoveredCard(null)}
               className="cursor-pointer transition-all duration-300"
-              transform={`translate(605, 330) rotate(12) ${hoveredCard === 4 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
+              transform={`translate(605, 245) rotate(12) ${hoveredCard === 4 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
               style={{ transformOrigin: '0px 0px' }}
             >
               <path
@@ -327,12 +328,12 @@ export const WhyFintechSection: React.FC = () => {
               </g>
             </g>
 
-            {/* CARD 5 (`deg0`): Top-Right (Checklist with Checks Icon) - Center (665, 230) - Rotated +24 deg */}
+            {/* CARD 5 (`deg0`): Top-Right (Checklist with Checks Icon) - Center (665, 145) - Rotated +24 deg */}
             <g 
               onMouseEnter={() => setHoveredCard(5)} 
               onMouseLeave={() => setHoveredCard(null)}
               className="cursor-pointer transition-all duration-300"
-              transform={`translate(665, 230) rotate(24) ${hoveredCard === 5 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
+              transform={`translate(665, 145) rotate(24) ${hoveredCard === 5 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
               style={{ transformOrigin: '0px 0px' }}
             >
               <path
@@ -363,12 +364,12 @@ export const WhyFintechSection: React.FC = () => {
               </g>
             </g>
 
-            {/* CARD 3 (`deg90`): Center-Bottom (Team Member with Suit & Tie) - Center (500, 365) - Placed in Front Layer */}
+            {/* CARD 3 (`deg90`): Center-Bottom (Team Member with Suit & Tie) - Center (500, 275) - Placed in Front Layer */}
             <g 
               onMouseEnter={() => setHoveredCard(3)} 
               onMouseLeave={() => setHoveredCard(null)}
               className="cursor-pointer transition-all duration-300"
-              transform={`translate(500, 365) ${hoveredCard === 3 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
+              transform={`translate(500, 275) ${hoveredCard === 3 ? 'scale(1.05) translate(0, -6)' : 'scale(1)'}`}
               style={{ transformOrigin: '0px 0px' }}
             >
               <path
@@ -399,11 +400,11 @@ export const WhyFintechSection: React.FC = () => {
             {/* ========================================================================= */}
             {/* 4. CENTRAL CIRCULAR BADGE ("Since 2020")                                  */}
             {/* ========================================================================= */}
-            <g transform="translate(500, 175)">
+            <g transform="translate(500, 95)">
               <circle 
                 cx="0" 
                 cy="0" 
-                r="74" 
+                r="68" 
                 fill="#FFFFFF" 
                 stroke="#E2E8F0" 
                 strokeWidth="1.5" 
@@ -412,10 +413,10 @@ export const WhyFintechSection: React.FC = () => {
               
               <text 
                 x="0" 
-                y="-18" 
+                y="-15" 
                 textAnchor="middle" 
                 fill="#4A5D6E" 
-                fontSize="15" 
+                fontSize="14" 
                 fontWeight="700"
                 fontFamily="Poppins, sans-serif"
               >
@@ -426,7 +427,7 @@ export const WhyFintechSection: React.FC = () => {
                 y="18" 
                 textAnchor="middle" 
                 fill="#F58220" 
-                fontSize="30" 
+                fontSize="28" 
                 fontWeight="900"
                 fontFamily="Poppins, sans-serif"
                 letterSpacing="-0.5px"
@@ -440,7 +441,7 @@ export const WhyFintechSection: React.FC = () => {
             {/* ========================================================================= */}
 
             {/* STAT 1: Left - 412+ Projects Completed */}
-            <foreignObject x="120" y="325" width="160" height="130">
+            <foreignObject x="120" y="240" width="160" height="130">
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-poppins">
                   <AnimatedNumber value={412} suffix="+" />
@@ -452,7 +453,7 @@ export const WhyFintechSection: React.FC = () => {
             </foreignObject>
 
             {/* STAT 2: Bottom-Left - 682+ Positive Reviews */}
-            <foreignObject x="260" y="495" width="160" height="130">
+            <foreignObject x="260" y="405" width="160" height="130">
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-poppins">
                   <AnimatedNumber value={682} suffix="+" />
@@ -464,7 +465,7 @@ export const WhyFintechSection: React.FC = () => {
             </foreignObject>
 
             {/* STAT 3: Bottom-Center - 95+ Team Members */}
-            <foreignObject x="420" y="530" width="160" height="130">
+            <foreignObject x="420" y="440" width="160" height="130">
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-poppins">
                   <AnimatedNumber value={95} suffix="+" />
@@ -476,7 +477,7 @@ export const WhyFintechSection: React.FC = () => {
             </foreignObject>
 
             {/* STAT 4: Bottom-Right - 3.5M$ Funding Raised */}
-            <foreignObject x="580" y="495" width="160" height="130">
+            <foreignObject x="580" y="405" width="160" height="130">
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-poppins">
                   <AnimatedNumber value={3.5} decimals={1} suffix="M$" />
@@ -488,7 +489,7 @@ export const WhyFintechSection: React.FC = () => {
             </foreignObject>
 
             {/* STAT 5: Right - 99% Customer Satisfaction */}
-            <foreignObject x="720" y="325" width="160" height="130">
+            <foreignObject x="720" y="240" width="160" height="130">
               <div className="flex flex-col items-center text-center">
                 <span className="text-3xl lg:text-4xl font-black text-[#F58220] tracking-tight font-poppins">
                   <AnimatedNumber value={99} suffix="%" />
@@ -502,12 +503,12 @@ export const WhyFintechSection: React.FC = () => {
           </svg>
         </div>
 
-        {/* 📱 MOBILE RESPONSIVE ADAPTATION (CLEAN & ADAPTIVE) */}
-        <div className="md:hidden space-y-8">
+        {/* 📱 MOBILE RESPONSIVE ADAPTATION */}
+        <div className="md:hidden space-y-6">
           
           {/* Mobile Center Circle */}
           <div className="flex justify-center">
-            <div className="w-32 h-32 rounded-full bg-white shadow-xl border border-[#C9E5ED] flex flex-col items-center justify-center p-3 text-center">
+            <div className="w-28 h-28 rounded-full bg-white shadow-xl border border-[#C9E5ED] flex flex-col items-center justify-center p-3 text-center">
               <span className="text-xs font-bold text-[#4A5D6E] font-poppins">Since</span>
               <span className="text-2xl font-black text-[#F58220] font-poppins">
                 <AnimatedNumber value={2020} duration={1500} />
@@ -516,11 +517,11 @@ export const WhyFintechSection: React.FC = () => {
           </div>
 
           {/* Mobile 5 Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
             
             {/* Card 1 */}
-            <div className="bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
-              <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
+            <div className="bg-white p-4 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
+              <svg className="w-7 h-7 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
               </svg>
               <span className="text-2xl font-black text-[#F58220] font-poppins">
@@ -530,8 +531,8 @@ export const WhyFintechSection: React.FC = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
-              <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+            <div className="bg-white p-4 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
+              <svg className="w-7 h-7 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="7" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
@@ -542,8 +543,8 @@ export const WhyFintechSection: React.FC = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
-              <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
+            <div className="bg-white p-4 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
+              <svg className="w-7 h-7 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="6.5" r="4.5" />
                 <path d="M12 12.5c-4.5 0-8 3-8 7.5h16c0-4.5-3.5-7.5-8-7.5zm-1 3.5h2l-.5 4h-1l-.5-4z" />
               </svg>
@@ -554,8 +555,8 @@ export const WhyFintechSection: React.FC = () => {
             </div>
 
             {/* Card 4 */}
-            <div className="bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
-              <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <div className="bg-white p-4 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
+              <svg className="w-7 h-7 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="2" y="3" width="20" height="13" rx="2" fill="#1A314C" />
                 <path d="m6 12 3-3 3 2 5-5" stroke="white" strokeWidth="1.8" />
               </svg>
@@ -566,8 +567,8 @@ export const WhyFintechSection: React.FC = () => {
             </div>
 
             {/* Card 5 */}
-            <div className="col-span-2 sm:col-span-1 bg-white p-5 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
-              <svg className="w-8 h-8 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
+            <div className="col-span-2 sm:col-span-1 bg-white p-4 rounded-2xl shadow-md border border-[#C9E5ED]/70 flex flex-col items-center text-center">
+              <svg className="w-7 h-7 text-[#1A314C] mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="5" cy="6" r="2" />
                 <rect x="9" y="4.8" width="11" height="2.4" rx="1.2" />
                 <circle cx="5" cy="12" r="2.2" />
