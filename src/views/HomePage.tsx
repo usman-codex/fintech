@@ -5,11 +5,8 @@ import { DesignersDevelopersSection } from '../components/DesignersDevelopersSec
 import { TopProjectsSection } from '../components/TopProjectsSection';
 import { WhyFintechSection } from '../components/WhyFintechSection';
 import { GrowBusinessSection } from '../components/GrowBusinessSection';
-import { KeyPillarsSection } from '../components/KeyPillarsSection';
-import { FeaturedCoursesSection } from '../components/FeaturedCoursesSection';
 import { BundleSection } from '../components/BundleSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
-import { BlogSection } from '../components/BlogSection';
 import { FaqSection } from '../components/FaqSection';
 import { CtaSection } from '../components/CtaSection';
 
@@ -80,16 +77,6 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 6. Grow Your Business (Establish Control 3 Zoom-In Feature Cards) */}
       <GrowBusinessSection />
 
-      {/* 7. Key Pillars / Why Choose Us */}
-      <KeyPillarsSection />
-
-      {/* 3. Top Featured Courses Catalog */}
-      <FeaturedCoursesSection
-        courses={courses}
-        onSelectCourse={onSelectCourse}
-        onViewAllCourses={onExploreCourses}
-      />
-
       {/* 4. All Access VIP Bundle & Coaching Banner */}
       <BundleSection
         bundleCourse={bundleCourse}
@@ -98,13 +85,6 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* 5. Student Testimonials / Reviews */}
       <TestimonialsSection testimonials={testimonials} />
-
-      {/* 6. Latest Web3 & FinTech Insights (Blog) */}
-      <BlogSection
-        blogs={blogs}
-        onSelectBlog={onSelectBlog}
-        onViewAllBlogs={onViewAllBlogs}
-      />
 
       {/* 7. FAQ Accordions */}
       <FaqSection faqs={faqs} />
