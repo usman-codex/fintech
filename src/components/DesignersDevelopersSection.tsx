@@ -42,7 +42,7 @@ export const DesignersDevelopersSection: React.FC<DesignersDevelopersSectionProp
               Zweidevs is a service-oriented company providing creative and innovative solutions for your business domain. We believe in exceeding your expectations by delivering thoughtfully innovated eye-catching products on your desk. We take a pride in engineering your requirements into robust software using our mobile, web, cloud and e-commerce capabilities.
             </motion.p>
 
-            {/* 3. Explore More Action with Hover Navigation to About Page, Arrow Motion & Underline Animation */}
+            {/* 3. Explore More Action with Brand Color, Arrow Motion & Left-to-Right Underline Animation on Hover */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -57,18 +57,17 @@ export const DesignersDevelopersSection: React.FC<DesignersDevelopersSectionProp
               <button
                 id="explore-more-about-btn"
                 onClick={onNavigateToAbout}
-                onMouseEnter={onNavigateToAbout}
-                className="group relative inline-flex items-center gap-2.5 text-base sm:text-lg font-bold text-[#E28743] hover:text-[#C86A28] transition-colors duration-300 pb-1 cursor-pointer font-heading"
+                className="group relative inline-flex items-center gap-2.5 text-base sm:text-lg font-bold text-[#107C8E] hover:text-[#1DA5B8] transition-colors duration-300 pb-1.5 cursor-pointer font-heading"
               >
-                <span>Explore More</span>
+                <span className="tracking-wide">Explore More</span>
 
-                {/* Animated Arrow Icon with Slide & Color Shift */}
-                <span className="inline-flex items-center justify-center transition-transform duration-300 transform group-hover:translate-x-2">
-                  <ArrowRight className="w-5 h-5 text-[#E28743] group-hover:text-[#C86A28] transition-colors duration-300" />
+                {/* Animated Arrow Icon with Slide */}
+                <span className="inline-flex items-center justify-center transition-transform duration-300 ease-out transform group-hover:translate-x-2">
+                  <ArrowRight className="w-5 h-5 text-[#107C8E] group-hover:text-[#1DA5B8] transition-colors duration-300" />
                 </span>
 
-                {/* Smooth Underline Expanding on Hover from Left to Right */}
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#E28743] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                {/* Left-to-Right Smooth Expanding Underline */}
+                <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#107C8E] group-hover:bg-[#1DA5B8] origin-left scale-x-0 group-hover:scale-x-100 transition-all duration-300 ease-out rounded-full" />
               </button>
             </motion.div>
 
