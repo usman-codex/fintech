@@ -20,10 +20,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-[#107C8E] text-xs font-bold border border-[#C9E5ED] shadow-sm">
-              <BookOpen className="w-3.5 h-3.5 text-[#107C8E]" />
-              <span>Latest Research & Guides</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
               Web3 & FinTech Insights
             </h2>

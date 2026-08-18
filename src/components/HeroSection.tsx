@@ -125,18 +125,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl mx-auto text-center space-y-6 bg-black/35 backdrop-blur-md p-6 sm:p-10 md:p-12 rounded-3xl border border-white/20 shadow-xl relative overflow-hidden"
         >
-
-          {/* Top Badge without SVG icon */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#C9E5ED] text-xs font-semibold tracking-wider uppercase backdrop-blur-sm"
-          >
-            <span>Next-Gen Financial Intelligence</span>
-          </motion.div>
-
           {/* Main Headline with Stylish Typography & Smooth Slide-up */}
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}

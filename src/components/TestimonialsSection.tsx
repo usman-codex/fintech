@@ -13,10 +13,6 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-[#107C8E] text-xs font-bold border border-[#C9E5ED] shadow-sm">
-            <Quote className="w-3.5 h-3.5 text-[#107C8E]" />
-            <span>Student Success Stories</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
             Hear From Our Grads
           </h2>

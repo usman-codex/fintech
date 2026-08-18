@@ -19,10 +19,6 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ faqs }) => {
         
         {/* Header */}
         <div className="text-center space-y-3 mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-[#107C8E] text-xs font-bold border border-[#C9E5ED] shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5 text-[#107C8E]" />
-            <span>Got Questions?</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
             Frequently Asked Questions
           </h2>

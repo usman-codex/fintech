@@ -95,10 +95,6 @@ export const CareerPage: React.FC<CareerPageProps> = ({
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#C9E5ED]/60 text-[#107C8E] text-xs font-bold border border-[#107C8E]/30">
-            <Briefcase className="w-4 h-4" />
-            <span>Join Our Mission</span>
-          </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1A314C]">
             Careers & Graduate Placements
           </h1>

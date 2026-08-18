@@ -71,10 +71,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
             {/* Banner Main Titles */}
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#107C8E]/40 backdrop-blur-md text-[#C9E5ED] text-xs font-extrabold border border-[#1DA5B8]/40 font-heading">
-                <Sparkles className="w-3.5 h-3.5 text-[#1DA5B8]" />
-                <span>Specialized Enterprise Solutions</span>
-              </div>
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-heading">
                 {currentService.bannerHeadline}
               </h1>
@@ -280,11 +276,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#107C8E]/40 backdrop-blur-md text-[#C9E5ED] text-xs font-extrabold border border-[#1DA5B8]/40 font-heading">
-              <Sparkles className="w-3.5 h-3.5 text-[#1DA5B8]" />
-              <span>Full-Stack Development & Advisory</span>
-            </div>
-
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight font-heading">
               Everything Your Business Needs Under One Roof
             </h1>

@@ -46,10 +46,6 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C9E5ED]/60 text-[#107C8E] text-xs font-bold border border-[#107C8E]/30">
-            <Layers className="w-3.5 h-3.5" />
-            <span>Official Curriculum</span>
-          </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
             All Fintech Edge Courses
           </h1>

@@ -40,12 +40,6 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C9E5ED]/50 text-[#107C8E] text-xs font-bold border border-[#107C8E]/30">
-                <Sparkles className="w-3.5 h-3.5 text-[#107C8E]" />
-                <span>All Access Bundle & Coaching</span>
-              </div>
-
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1A314C] leading-tight">
                 Get <span className="text-[#107C8E]">Unlimited Access</span> to Every Course + 1-on-1 Mentorship
               </h2>
