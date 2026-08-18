@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeroSection } from '../components/HeroSection';
 import { BusinessNeedsSection } from '../components/BusinessNeedsSection';
+import { DesignersDevelopersSection } from '../components/DesignersDevelopersSection';
 import { KeyPillarsSection } from '../components/KeyPillarsSection';
 import { FeaturedCoursesSection } from '../components/FeaturedCoursesSection';
 import { BundleSection } from '../components/BundleSection';
@@ -23,6 +24,7 @@ interface HomePageProps {
   onOpenPromptModal: () => void;
   onNavigateToServices: () => void;
   onSelectService: (service: ServiceItem) => void;
+  onNavigateToAbout: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -37,6 +39,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   onOpenPromptModal,
   onNavigateToServices,
   onSelectService,
+  onNavigateToAbout,
 }) => {
   const featuredCourse = courses.find((c) => c.id === 'airdrop-mastery-course') || courses[0];
   const bundleCourse = courses.find((c) => c.id === 'all-access-bundle-coaching') || courses[courses.length - 1];
@@ -56,7 +59,12 @@ export const HomePage: React.FC<HomePageProps> = ({
         onSelectService={onSelectService}
       />
 
-      {/* 3. Key Pillars / Why Choose Us */}
+      {/* 3. Work With Top Notch Designers And Developers (New Interactive Section) */}
+      <DesignersDevelopersSection
+        onNavigateToAbout={onNavigateToAbout}
+      />
+
+      {/* 4. Key Pillars / Why Choose Us */}
       <KeyPillarsSection />
 
       {/* 3. Top Featured Courses Catalog */}

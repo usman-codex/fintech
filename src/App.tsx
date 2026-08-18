@@ -152,6 +152,7 @@ export default function App() {
             onOpenPromptModal={() => setPromptModalOpen(true)}
             onNavigateToServices={() => navigateTo('services', null)}
             onSelectService={(service) => navigateTo('services', service.slug || service.id)}
+            onNavigateToAbout={() => navigateTo('about', null)}
           />
         )}
 
