@@ -5,6 +5,7 @@ import { DesignersDevelopersSection } from '../components/DesignersDevelopersSec
 import { TopProjectsSection } from '../components/TopProjectsSection';
 import { WhyFintechSection } from '../components/WhyFintechSection';
 import { GrowBusinessSection } from '../components/GrowBusinessSection';
+import { OurFoundersSection } from '../components/OurFoundersSection';
 import { BundleSection } from '../components/BundleSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { FaqSection } from '../components/FaqSection';
@@ -76,6 +77,9 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* 6. Grow Your Business (Establish Control 3 Zoom-In Feature Cards) */}
       <GrowBusinessSection />
+
+      {/* 7. Our Founders (Our Expertise Will Help You) */}
+      <OurFoundersSection />
 
       {/* 4. All Access VIP Bundle & Coaching Banner */}
       <BundleSection
