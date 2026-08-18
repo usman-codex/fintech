@@ -280,7 +280,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               Everything Your Business Needs Under One Roof
             </h1>
             <p className="text-[#C9E5ED] text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
-              Zweidevs / Fintech Edge is a professional agency that strives to enhance your marketing journey through creative ideas, innovation, and unwavering determination. We leverage cutting-edge technology and robust business strategies to cater to the specific needs of your company in this digital era.
+              <strong className="font-bold text-white">FinTech Edge Institute</strong> provides cutting-edge technology training, development, and innovative solutions for your digital journey. We leverage blockchain architectures, algorithmic trading, Web3 systems, and modern full-stack development to empower your financial technology capabilities.
             </p>
           </div>
 

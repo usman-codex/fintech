@@ -39,7 +39,7 @@ export const DesignersDevelopersSection: React.FC<DesignersDevelopersSectionProp
               }}
               className="text-[#4A5D6E] text-base sm:text-lg leading-relaxed font-sans"
             >
-              Zweidevs is a service-oriented company providing creative and innovative solutions for your business domain. We believe in exceeding your expectations by delivering thoughtfully innovated eye-catching products on your desk. We take a pride in engineering your requirements into robust software using our mobile, web, cloud and e-commerce capabilities.
+              <strong className="font-bold text-[#107C8E] bg-[#107C8E]/10 px-1.5 py-0.5 rounded-md">FinTech Edge Institute</strong> is a premier technology institute providing creative and innovative education and software solutions for modern financial domains. We believe in exceeding expectations by delivering thoughtfully engineered, cutting-edge products and training. We take immense pride in engineering your requirements into robust software using our mobile, web, cloud, blockchain, and financial technology capabilities.
             </motion.p>
 
             {/* 3. Explore More Action with Brand Color, Arrow Motion & Left-to-Right Underline Animation on Hover */}

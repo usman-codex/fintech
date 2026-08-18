@@ -90,7 +90,7 @@ export const OurFoundersSection: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins"
           >
-            Collectively, we bring deep expertise across quantitative financial markets, blockchain protocols, and modern software engineering. We engage in hands-on mentorship, continuous research, and rigorous curriculum development to establish FinTech Edge Institute as the premier launchpad for future financial technologists.
+            Collectively, we bring deep expertise across quantitative financial markets, blockchain protocols, and modern software engineering. We engage in hands-on mentorship, continuous research, and rigorous curriculum development to establish <strong className="font-bold text-[#107C8E] bg-[#107C8E]/10 px-1.5 py-0.5 rounded-md">FinTech Edge Institute</strong> as the premier launchpad for future financial technologists.
           </motion.p>
         </div>
 

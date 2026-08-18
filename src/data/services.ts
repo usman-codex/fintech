@@ -113,7 +113,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDescription: 'We are a creative web development team, who aim to leverage the latest technological advances with thoughtful design and serious engineering to build tailored solutions for our clients.',
     fullDescription: 'We are a creative web development team, who aim to leverage the latest technological advances with thoughtful design and serious engineering to build tailored solutions for our clients.',
     bannerHeadline: 'Elevate Your Online Presence: Expert Web App Development Services',
-    bannerDescription: 'Transform your ideas into reality with our exceptional web app development services. Our seasoned team crafts tailored solutions that seamlessly blend innovation and functionality. From concept to deployment, we prioritize cutting-edge technologies and rigorous quality assurance to ensure your web app stands out. Trust Zweidevs to deliver a robust and user-centric online experience, enhancing your brand\'s digital footprint.',
+    bannerDescription: 'Transform your ideas into reality with our exceptional web app development services. Our seasoned team crafts tailored solutions that seamlessly blend innovation and functionality. From concept to deployment, we prioritize cutting-edge technologies and rigorous quality assurance to ensure your web app stands out. Trust FinTech Edge Institute to deliver a robust and user-centric online experience, enhancing your brand\'s digital footprint.',
     accentColor: '#107C8E',
     iconName: 'web',
     tools: [
