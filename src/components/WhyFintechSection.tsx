@@ -34,7 +34,6 @@ const AnimatedNumber: React.FC<AnimatedNumberProps> = ({
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       
-      // Smooth easeOutExpo curve
       const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       const current = easeProgress * value;
 
@@ -221,15 +220,17 @@ export const WhyFintechSection: React.FC = () => {
                 filter="url(#petal-shadow)"
               />
 
-              {/* Icon 1: Charcoal Slanted Pencil */}
+              {/* Icon 1: Slanted Pencil (Hover Color: Vibrant Orange #FF9700) */}
               <g transform="rotate(70) translate(-3, 0) rotate(-20) scale(1.15)">
                 <path 
                   d="M 12 -14 L 18 -8 L -4 14 L -12 16 L -10 8 Z" 
-                  fill="#1E293B" 
+                  fill={hoveredCard === 1 ? "#FF9700" : "#1E293B"} 
+                  className="transition-colors duration-300"
                 />
                 <path 
                   d="M 15 -17 L 21 -11 L 18 -8 L 12 -14 Z" 
-                  fill="#1E293B" 
+                  fill={hoveredCard === 1 ? "#FF9700" : "#1E293B"} 
+                  className="transition-colors duration-300"
                 />
               </g>
             </g>
@@ -257,10 +258,27 @@ export const WhyFintechSection: React.FC = () => {
                 filter="url(#petal-shadow)"
               />
 
-              {/* Icon 2: Charcoal Magnifying Glass */}
+              {/* Icon 2: Magnifying Glass (Hover Color: Vibrant Cyan #00C2CB) */}
               <g transform="rotate(35) translate(-4, 2) rotate(-25) scale(1.15)">
-                <circle cx="0" cy="0" r="13" stroke="#1E293B" strokeWidth="4.5" fill="none" />
-                <line x1="9" y1="9" x2="21" y2="21" stroke="#1E293B" strokeWidth="5.5" strokeLinecap="round" />
+                <circle 
+                  cx="0" 
+                  cy="0" 
+                  r="13" 
+                  stroke={hoveredCard === 2 ? "#00C2CB" : "#1E293B"} 
+                  strokeWidth="4.5" 
+                  fill="none" 
+                  className="transition-colors duration-300"
+                />
+                <line 
+                  x1="9" 
+                  y1="9" 
+                  x2="21" 
+                  y2="21" 
+                  stroke={hoveredCard === 2 ? "#00C2CB" : "#1E293B"} 
+                  strokeWidth="5.5" 
+                  strokeLinecap="round" 
+                  className="transition-colors duration-300"
+                />
               </g>
             </g>
 
@@ -287,11 +305,36 @@ export const WhyFintechSection: React.FC = () => {
                 filter="url(#petal-shadow)"
               />
 
-              {/* Icon 4: Presentation Board with Upward Trend */}
+              {/* Icon 4: Presentation Board with Growth Line (Hover Color: Vibrant Rose/Pink #EC4899) */}
               <g transform="rotate(-35) translate(-2, 2) scale(1.15)">
-                <rect x="-16" y="-13" width="32" height="21" rx="3" fill="#1E293B" />
-                <line x1="0" y1="8" x2="0" y2="15" stroke="#1E293B" strokeWidth="3" />
-                <line x1="-8" y1="15" x2="8" y2="15" stroke="#1E293B" strokeWidth="3" strokeLinecap="round" />
+                <rect 
+                  x="-16" 
+                  y="-13" 
+                  width="32" 
+                  height="21" 
+                  rx="3" 
+                  fill={hoveredCard === 4 ? "#EC4899" : "#1E293B"} 
+                  className="transition-colors duration-300"
+                />
+                <line 
+                  x1="0" 
+                  y1="8" 
+                  x2="0" 
+                  y2="15" 
+                  stroke={hoveredCard === 4 ? "#EC4899" : "#1E293B"} 
+                  strokeWidth="3" 
+                  className="transition-colors duration-300"
+                />
+                <line 
+                  x1="-8" 
+                  y1="15" 
+                  x2="8" 
+                  y2="15" 
+                  stroke={hoveredCard === 4 ? "#EC4899" : "#1E293B"} 
+                  strokeWidth="3" 
+                  strokeLinecap="round" 
+                  className="transition-colors duration-300"
+                />
                 <path d="M -10 1 L -4 -5 L 2 -2 L 10 -9" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                 <polyline points="5,-9 10,-9 10,-4" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               </g>
@@ -320,15 +363,15 @@ export const WhyFintechSection: React.FC = () => {
                 filter="url(#petal-shadow)"
               />
 
-              {/* Icon 5: Task List with Checks */}
+              {/* Icon 5: Task List with Checks (Hover Color: Vibrant Purple #8B5CF6) */}
               <g transform="rotate(-70) translate(-2, 0) scale(1.15)">
-                <circle cx="-10" cy="-10" r="3.2" fill="#1E293B" />
-                <rect x="-3" y="-12" width="20" height="4.5" rx="2.25" fill="#1E293B" />
-                <circle cx="-10" cy="0" r="3.6" fill="#1E293B" />
+                <circle cx="-10" cy="-10" r="3.2" fill={hoveredCard === 5 ? "#8B5CF6" : "#1E293B"} className="transition-colors duration-300" />
+                <rect x="-3" y="-12" width="20" height="4.5" rx="2.25" fill={hoveredCard === 5 ? "#8B5CF6" : "#1E293B"} className="transition-colors duration-300" />
+                <circle cx="-10" cy="0" r="3.6" fill={hoveredCard === 5 ? "#8B5CF6" : "#1E293B"} className="transition-colors duration-300" />
                 <path d="M -12 -0.5 L -10.5 1 L -7.5 -2" stroke="white" strokeWidth="1.4" fill="none" strokeLinecap="round" />
-                <rect x="-3" y="-2" width="20" height="4.5" rx="2.25" fill="#1E293B" />
-                <circle cx="-10" cy="10" r="3.2" fill="#1E293B" />
-                <rect x="-3" y="8" width="20" height="4.5" rx="2.25" fill="#1E293B" />
+                <rect x="-3" y="-2" width="20" height="4.5" rx="2.25" fill={hoveredCard === 5 ? "#8B5CF6" : "#1E293B"} className="transition-colors duration-300" />
+                <circle cx="-10" cy="10" r="3.2" fill={hoveredCard === 5 ? "#8B5CF6" : "#1E293B"} className="transition-colors duration-300" />
+                <rect x="-3" y="8" width="20" height="4.5" rx="2.25" fill={hoveredCard === 5 ? "#8B5CF6" : "#1E293B"} className="transition-colors duration-300" />
               </g>
             </g>
 
@@ -355,12 +398,12 @@ export const WhyFintechSection: React.FC = () => {
                 filter="url(#hero-petal-shadow)"
               />
 
-              {/* Icon 3: Professional Person with Tie Silhouette */}
+              {/* Icon 3: Professional Person with Tie Silhouette (Hover Color: Sky Blue #0284C7) */}
               <g transform="translate(0, 4) scale(1.35)">
-                <circle cx="0" cy="-14" r="8" fill="#1E293B" />
-                <path d="M -15 12 C -15 3 -8 0 0 0 C 8 0 15 3 15 12 Z" fill="#1E293B" />
+                <circle cx="0" cy="-14" r="8" fill={hoveredCard === 3 ? "#0284C7" : "#1E293B"} className="transition-colors duration-300" />
+                <path d="M -15 12 C -15 3 -8 0 0 0 C 8 0 15 3 15 12 Z" fill={hoveredCard === 3 ? "#0284C7" : "#1E293B"} className="transition-colors duration-300" />
                 <polygon points="-4,2 4,2 0,6" fill="white" />
-                <polygon points="0,5 -2,12 0,14 2,12" fill="#1E293B" />
+                <polygon points="0,5 -2,12 0,14 2,12" fill={hoveredCard === 3 ? "#0284C7" : "#1E293B"} className="transition-colors duration-300" />
               </g>
             </g>
 
@@ -504,7 +547,7 @@ export const WhyFintechSection: React.FC = () => {
           </svg>
         </div>
 
-        {/* 📱 MOBILE RESPONSIVE ADAPTATION (NO OVERFLOW) */}
+        {/* 📱 MOBILE RESPONSIVE ADAPTATION (CLEAN GRID WITH HOVER COLOR TRANSITIONS) */}
         <div className="md:hidden space-y-6">
           
           {/* Mobile Center Circle */}
@@ -517,12 +560,12 @@ export const WhyFintechSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile 5 Cards Grid */}
+          {/* Mobile 5 Cards Grid with Individual Hover Colors */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
             
             {/* Card 1 */}
-            <div className="bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center">
-              <svg className="w-7 h-7 text-[#1E293B] mb-2" viewBox="0 0 24 24" fill="currentColor">
+            <div className="group bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center cursor-pointer transition-transform hover:scale-105">
+              <svg className="w-7 h-7 text-[#1E293B] group-hover:text-[#FF9700] transition-colors duration-300 mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
               </svg>
               <span className="text-2xl font-black text-[#FF9700] font-poppins">
@@ -532,8 +575,8 @@ export const WhyFintechSection: React.FC = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center">
-              <svg className="w-7 h-7 text-[#1E293B] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+            <div className="group bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center cursor-pointer transition-transform hover:scale-105">
+              <svg className="w-7 h-7 text-[#1E293B] group-hover:text-[#00C2CB] transition-colors duration-300 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="7" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
@@ -544,8 +587,8 @@ export const WhyFintechSection: React.FC = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center">
-              <svg className="w-7 h-7 text-[#1E293B] mb-2" viewBox="0 0 24 24" fill="currentColor">
+            <div className="group bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center cursor-pointer transition-transform hover:scale-105">
+              <svg className="w-7 h-7 text-[#1E293B] group-hover:text-[#0284C7] transition-colors duration-300 mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="12" cy="6.5" r="4.5" />
                 <path d="M12 12.5c-4.5 0-8 3-8 7.5h16c0-4.5-3.5-7.5-8-7.5zm-1 3.5h2l-.5 4h-1l-.5-4z" />
               </svg>
@@ -556,9 +599,9 @@ export const WhyFintechSection: React.FC = () => {
             </div>
 
             {/* Card 4 */}
-            <div className="bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center">
-              <svg className="w-7 h-7 text-[#1E293B] mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="2" y="3" width="20" height="13" rx="2" fill="#1E293B" />
+            <div className="group bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center cursor-pointer transition-transform hover:scale-105">
+              <svg className="w-7 h-7 text-[#1E293B] group-hover:text-[#EC4899] transition-colors duration-300 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="2" y="3" width="20" height="13" rx="2" fill="currentColor" />
                 <path d="m6 12 3-3 3 2 5-5" stroke="white" strokeWidth="1.8" />
               </svg>
               <span className="text-2xl font-black text-[#FF9700] font-poppins">
@@ -568,8 +611,8 @@ export const WhyFintechSection: React.FC = () => {
             </div>
 
             {/* Card 5 */}
-            <div className="col-span-2 sm:col-span-1 bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center">
-              <svg className="w-7 h-7 text-[#1E293B] mb-2" viewBox="0 0 24 24" fill="currentColor">
+            <div className="col-span-2 sm:col-span-1 group bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center cursor-pointer transition-transform hover:scale-105">
+              <svg className="w-7 h-7 text-[#1E293B] group-hover:text-[#8B5CF6] transition-colors duration-300 mb-2" viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="5" cy="6" r="2" />
                 <rect x="9" y="4.8" width="11" height="2.4" rx="1.2" />
                 <circle cx="5" cy="12" r="2.2" />
