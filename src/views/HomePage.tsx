@@ -4,6 +4,7 @@ import { BusinessNeedsSection } from '../components/BusinessNeedsSection';
 import { DesignersDevelopersSection } from '../components/DesignersDevelopersSection';
 import { TopProjectsSection } from '../components/TopProjectsSection';
 import { WhyFintechSection } from '../components/WhyFintechSection';
+import { GrowBusinessSection } from '../components/GrowBusinessSection';
 import { KeyPillarsSection } from '../components/KeyPillarsSection';
 import { FeaturedCoursesSection } from '../components/FeaturedCoursesSection';
 import { BundleSection } from '../components/BundleSection';
@@ -76,7 +77,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 5. Why FinTech (Radial Showcase with Live Running Counters) */}
       <WhyFintechSection />
 
-      {/* 6. Key Pillars / Why Choose Us */}
+      {/* 6. Grow Your Business (Establish Control 3 Zoom-In Feature Cards) */}
+      <GrowBusinessSection />
+
+      {/* 7. Key Pillars / Why Choose Us */}
       <KeyPillarsSection />
 
       {/* 3. Top Featured Courses Catalog */}
