@@ -2,6 +2,9 @@ import { ProjectItem } from '../types';
 import cyberLegendsImg from '../assets/images/cyber_legends.jpg';
 import neverleftImg from '../assets/images/neverleft.jpg';
 import blockcircleImg from '../assets/images/blockcircle.jpg';
+import apexfiImg from '../assets/images/apexfi.jpg';
+import paysprintImg from '../assets/images/paysprint.jpg';
+import auroraImg from '../assets/images/aurora.jpg';
 
 export const projects: ProjectItem[] = [
   {
@@ -58,14 +61,14 @@ export const projects: ProjectItem[] = [
   {
     id: 'apexfi-liquidity',
     slug: 'apexfi-liquidity',
-    title: 'ApexFi Liquidity Aggregator',
+    title: 'ApexFi Liquidity',
     category: 'DeFi & Smart Contracts',
     description: 'High-speed institutional decentralized liquidity aggregator with multi-chain yield optimization and automated treasury hedging.',
-    image: blockcircleImg,
+    image: apexfiImg,
     tags: ['Solidity', 'Smart Contracts', 'DeFi', 'Web3', 'Liquidity Pools'],
     liveUrl: 'https://apexfi.finance',
     client: 'Apex Capital DAO',
-    featured: false,
+    featured: true,
     stats: [
       { label: 'Total Volume Locked', value: '$1.2B+' },
       { label: 'Gas Optimization', value: '38%' },
@@ -74,14 +77,14 @@ export const projects: ProjectItem[] = [
   {
     id: 'paysprint-global',
     slug: 'paysprint-global',
-    title: 'PaySprint Global Gateway',
+    title: 'PaySprint Gateway',
     category: 'FinTech & Payments',
     description: 'Cross-border multi-currency payment rails and real-time compliance gateway for enterprise merchant settlement and instant FX conversion.',
-    image: cyberLegendsImg,
+    image: paysprintImg,
     tags: ['Payments API', 'ISO 20022', 'Fintech', 'Stripe', 'Banking API'],
     liveUrl: 'https://paysprint.io',
     client: 'PaySprint Financial',
-    featured: false,
+    featured: true,
     stats: [
       { label: 'Daily Transactions', value: '$12M+' },
       { label: 'Settlement Latency', value: '< 2.5s' },
@@ -90,14 +93,14 @@ export const projects: ProjectItem[] = [
   {
     id: 'aurora-health-ai',
     slug: 'aurora-health-ai',
-    title: 'Aurora Health Telemetry',
+    title: 'Aurora Health AI',
     category: 'HealthTech & AI',
     description: 'HIPAA-compliant predictive wellness analytics platform utilizing real-time biometric telemetry and smart diagnosis assistants.',
-    image: neverleftImg,
+    image: auroraImg,
     tags: ['Healthcare', 'Predictive AI', 'Mobile UI', 'Cloud Telemetry'],
     liveUrl: 'https://aurorahealth.ai',
     client: 'Aurora MedTech Inc.',
-    featured: false,
+    featured: true,
     stats: [
       { label: 'Patients Monitored', value: '250K+' },
       { label: 'Early Detection Rate', value: '94.2%' },
