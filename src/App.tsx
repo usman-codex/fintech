@@ -9,6 +9,7 @@ import { ServicesPage } from './views/ServicesPage';
 import { CareerPage } from './views/CareerPage';
 import { BlogPage } from './views/BlogPage';
 import { ContactPage } from './views/ContactPage';
+import { ProjectsPage } from './views/ProjectsPage';
 
 import { CourseModal } from './components/CourseModal';
 import { ClaudePromptModal } from './components/ClaudePromptModal';
@@ -39,7 +40,7 @@ function parseCurrentRoute(): { tab: string; serviceSlug: string | null } {
     };
   }
 
-  const validTabs = ['home', 'about', 'services', 'courses', 'career', 'blog', 'contact'];
+  const validTabs = ['home', 'about', 'services', 'projects', 'courses', 'career', 'blog', 'contact'];
   const tab = validTabs.includes(mainSegment) ? mainSegment : 'home';
 
   return { tab, serviceSlug: null };
@@ -153,6 +154,13 @@ export default function App() {
             onNavigateToServices={() => navigateTo('services', null)}
             onSelectService={(service) => navigateTo('services', service.slug || service.id)}
             onNavigateToAbout={() => navigateTo('about', null)}
+            onNavigateToProjects={() => navigateTo('projects', null)}
+          />
+        )}
+
+        {activeTab === 'projects' && (
+          <ProjectsPage
+            onNavigateToContact={() => navigateTo('contact', null)}
           />
         )}
 

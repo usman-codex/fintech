@@ -83,6 +83,21 @@ export interface ToolTechnology {
   color?: string;
 }
 
+export interface ProjectItem {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  tags: string[];
+  liveUrl?: string;
+  caseStudyUrl?: string;
+  client?: string;
+  stats?: { label: string; value: string }[];
+  featured?: boolean;
+}
+
 export interface ServiceItem {
   id: string;
   slug: string;

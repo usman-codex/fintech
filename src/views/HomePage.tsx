@@ -2,6 +2,7 @@ import React from 'react';
 import { HeroSection } from '../components/HeroSection';
 import { BusinessNeedsSection } from '../components/BusinessNeedsSection';
 import { DesignersDevelopersSection } from '../components/DesignersDevelopersSection';
+import { TopProjectsSection } from '../components/TopProjectsSection';
 import { KeyPillarsSection } from '../components/KeyPillarsSection';
 import { FeaturedCoursesSection } from '../components/FeaturedCoursesSection';
 import { BundleSection } from '../components/BundleSection';
@@ -25,6 +26,7 @@ interface HomePageProps {
   onNavigateToServices: () => void;
   onSelectService: (service: ServiceItem) => void;
   onNavigateToAbout: () => void;
+  onNavigateToProjects: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -40,6 +42,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   onNavigateToServices,
   onSelectService,
   onNavigateToAbout,
+  onNavigateToProjects,
 }) => {
   const featuredCourse = courses.find((c) => c.id === 'airdrop-mastery-course') || courses[0];
   const bundleCourse = courses.find((c) => c.id === 'all-access-bundle-coaching') || courses[courses.length - 1];
@@ -64,7 +67,12 @@ export const HomePage: React.FC<HomePageProps> = ({
         onNavigateToAbout={onNavigateToAbout}
       />
 
-      {/* 4. Key Pillars / Why Choose Us */}
+      {/* 4. Our Top Projects (New Staggered Cards Section) */}
+      <TopProjectsSection
+        onNavigateToProjects={onNavigateToProjects}
+      />
+
+      {/* 5. Key Pillars / Why Choose Us */}
       <KeyPillarsSection />
 
       {/* 3. Top Featured Courses Catalog */}

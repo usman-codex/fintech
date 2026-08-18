@@ -93,6 +93,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenPromptModal 
                 { label: 'Home Page', id: 'home' },
                 { label: 'About Us', id: 'about' },
                 { label: 'Services', id: 'services' },
+                { label: 'Top Projects', id: 'projects' },
                 { label: 'Courses', id: 'courses' },
                 { label: 'Careers', id: 'career' },
                 { label: 'Blog & Insights', id: 'blog' },

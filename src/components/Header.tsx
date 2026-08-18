@@ -9,7 +9,8 @@ import {
   Briefcase, 
   Sparkles, 
   Menu, 
-  X 
+  X,
+  LayoutGrid
 } from 'lucide-react';
 
 // 💡 LOGO IMAGE LINK: Imported PNG logo from assets
@@ -59,6 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'home', label: 'Home', icon: BookOpen },
     { id: 'about', label: 'About Us', icon: Info },
     { id: 'services', label: 'Services', icon: Sparkles },
+    { id: 'projects', label: 'Projects', icon: LayoutGrid },
     { id: 'courses', label: 'Course', icon: Layers },
     { id: 'career', label: 'Career', icon: Briefcase },
     { id: 'blog', label: 'Blog', icon: BookOpen },
