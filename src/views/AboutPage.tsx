@@ -9,13 +9,21 @@ import {
   Zap,
   TrendingUp,
   Award,
-  BookOpen
+  BookOpen,
+  Users,
+  Target,
+  DollarSign,
+  Headphones
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   // Ref for Mission & Who We Are Section
   const missionRef = useRef<HTMLDivElement>(null);
   const isMissionInView = useInView(missionRef, { once: false, amount: 0.2 });
+
+  // Ref for Team Interpersonal Skills Section
+  const teamSkillsRef = useRef<HTMLDivElement>(null);
+  const isTeamSkillsInView = useInView(teamSkillsRef, { once: false, amount: 0.15 });
 
   return (
     <div className="min-h-screen bg-white text-[#1A314C] font-poppins overflow-x-hidden">
@@ -67,7 +75,7 @@ export const AboutPage: React.FC = () => {
       {/* ========================================================================= */}
       <section 
         ref={missionRef}
-        className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden"
+        className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden border-b border-[#F1F5F9]"
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -186,12 +194,125 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. "OUR FOUNDERS" SECTION                                                 */}
+      {/* 3. TEAM WITH STRONG INTERPERSONAL SKILLS (ALTERNATING LEFT/RIGHT ANIMATIONS) */}
+      {/* ========================================================================= */}
+      <section
+        ref={teamSkillsRef}
+        className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden border-b border-[#F1F5F9]"
+      >
+        <div className="max-w-6xl mx-auto space-y-12">
+          
+          {/* Section Header */}
+          <div className="space-y-4">
+            {/* Top Category Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={isTeamSkillsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="flex items-center gap-2"
+            >
+              <span className="text-base sm:text-lg font-bold text-[#E5A83B] font-poppins">
+                FinTech Edge Institute
+              </span>
+              <span className="text-[#E5A83B] font-bold tracking-widest text-lg">——</span>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              animate={isTeamSkillsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A314C] tracking-tight font-poppins"
+            >
+              Team With Strong Interpersonal Skills
+            </motion.h2>
+
+            {/* Lead Intro Paragraph */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={isTeamSkillsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="text-base sm:text-lg text-[#475569] leading-relaxed font-poppins"
+            >
+              We have managed to build a team of developers with exceptional interpersonal skills. Here are some qualities of our fintech engineers and developers that you would love to learn about:
+            </motion.p>
+          </div>
+
+          {/* Interactive Feature Paragraphs with Alternating Left/Right Animations */}
+          <div className="space-y-10 pt-4">
+
+            {/* 1. DEDICATION & FOCUS — SLIDES IN FROM LEFT (Screen Left side se nikal k ai) */}
+            <motion.div
+              initial={{ x: '-60vw', opacity: 0 }}
+              animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              className="p-6 sm:p-8 rounded-3xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#107C8E] transition-all duration-300 shadow-xs space-y-3"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#107C8E]/10 text-[#107C8E] flex items-center justify-center font-bold">
+                  <Target className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#1A314C] font-poppins">
+                  Dedication & Focus
+                </h3>
+              </div>
+              <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
+                At <strong className="font-bold text-[#107C8E] bg-[#107C8E]/10 px-1.5 py-0.5 rounded-md">FinTech Edge Institute</strong>, we have curated a team of blockchain and software engineers who consistently deliver their best work. They invest their time and effort into your project to meet your specific needs. By hiring professional developers with practical knowledge, you gain an advantage over your competitors, enabling you to grow and reach potential customers in more innovative ways.
+              </p>
+            </motion.div>
+
+            {/* 2. BUDGET FRIENDLY — SLIDES IN FROM RIGHT (Screen Right side se nikal k ai) */}
+            <motion.div
+              initial={{ x: '60vw', opacity: 0 }}
+              animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '60vw', opacity: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
+              className="p-6 sm:p-8 rounded-3xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#1DA5B8] transition-all duration-300 shadow-xs space-y-3"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#1DA5B8]/15 text-[#107C8E] flex items-center justify-center font-bold">
+                  <DollarSign className="w-5 h-5 text-[#1DA5B8]" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#1A314C] font-poppins">
+                  Budget Friendly
+                </h3>
+              </div>
+              <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
+                Our services and institutional programs are designed to be cost-effective without compromising on quality. We understand the importance of budget constraints, and our team works diligently to provide solutions that align with your financial resources. We strive to deliver excellent value for your investment, ensuring that you receive high-quality development and education services within your budget.
+              </p>
+            </motion.div>
+
+            {/* 3. 24/7 SUPPORT TEAM — SLIDES IN FROM LEFT (Screen Left side se nikal k ai) */}
+            <motion.div
+              initial={{ x: '-60vw', opacity: 0 }}
+              animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+              className="p-6 sm:p-8 rounded-3xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#107C8E] transition-all duration-300 shadow-xs space-y-3"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#107C8E]/10 text-[#107C8E] flex items-center justify-center font-bold">
+                  <Headphones className="w-5 h-5 text-[#107C8E]" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#1A314C] font-poppins">
+                  24/7 Support Team
+                </h3>
+              </div>
+              <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
+                We have a dedicated support team available round-the-clock to address any concerns or queries you may have. Whether its technical assistance or general inquiries, our support team is committed to providing prompt and reliable assistance. We understand the importance of uninterrupted support, and our team is always ready to assist you, ensuring a smooth and hassle-free experience throughout your fintech development journey.
+              </p>
+            </motion.div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. "OUR FOUNDERS" SECTION                                                 */}
       {/* ========================================================================= */}
       <OurFoundersSection />
 
       {/* ========================================================================= */}
-      {/* 4. COMPANY CORE VALUES & GUIDING PRINCIPLES                               */}
+      {/* 5. COMPANY CORE VALUES & GUIDING PRINCIPLES                               */}
       {/* ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#FAFAFA] border-t border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
