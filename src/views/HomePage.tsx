@@ -3,6 +3,7 @@ import { HeroSection } from '../components/HeroSection';
 import { BusinessNeedsSection } from '../components/BusinessNeedsSection';
 import { DesignersDevelopersSection } from '../components/DesignersDevelopersSection';
 import { TopProjectsSection } from '../components/TopProjectsSection';
+import { WhyFintechSection } from '../components/WhyFintechSection';
 import { KeyPillarsSection } from '../components/KeyPillarsSection';
 import { FeaturedCoursesSection } from '../components/FeaturedCoursesSection';
 import { BundleSection } from '../components/BundleSection';
@@ -72,7 +73,10 @@ export const HomePage: React.FC<HomePageProps> = ({
         onNavigateToProjects={onNavigateToProjects}
       />
 
-      {/* 5. Key Pillars / Why Choose Us */}
+      {/* 5. Why FinTech (Radial Showcase with Live Running Counters) */}
+      <WhyFintechSection />
+
+      {/* 6. Key Pillars / Why Choose Us */}
       <KeyPillarsSection />
 
       {/* 3. Top Featured Courses Catalog */}
