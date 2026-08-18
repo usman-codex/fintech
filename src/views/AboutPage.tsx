@@ -6,7 +6,10 @@ import {
   ShieldCheck, 
   Compass,
   CheckCircle,
-  Zap
+  Zap,
+  TrendingUp,
+  Award,
+  BookOpen
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
@@ -53,7 +56,7 @@ export const AboutPage: React.FC = () => {
               }}
               className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-poppins font-normal max-w-3xl drop-shadow-xs"
             >
-              With a focus on creative ideas, innovation, and determination, Zweidevs strives to facilitate your marketing journey. We utilize advanced technology and robust business strategies that your company requires in this digital age. As a professional marketing agency, we are dedicated to bringing the future into the present.
+              With a relentless focus on practical mastery, financial technology innovation, and decentralized architecture, FinTech Edge Institute empowers the next generation of fintech engineers, Web3 developers, and digital finance leaders. We bridge cutting-edge blockchain protocols, quantitative trading algorithms, and modern software engineering to prepare ambitious professionals for global fintech careers and high-impact digital ventures.
             </motion.p>
           </div>
         </div>
@@ -106,7 +109,7 @@ export const AboutPage: React.FC = () => {
                 <div className="relative z-10 overflow-hidden rounded-tr-[56px] rounded-bl-[56px] rounded-tl-2xl rounded-br-2xl shadow-xl border-4 border-white bg-[#F8FAFC]">
                   <img
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=80"
-                    alt="Zweidevs Team Collaboration"
+                    alt="FinTech Edge Institute Mentorship & Labs"
                     className="w-full h-[380px] sm:h-[460px] object-cover object-center hover:scale-103 transition-transform duration-700"
                     loading="lazy"
                   />
@@ -119,7 +122,7 @@ export const AboutPage: React.FC = () => {
                 <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border border-[#C9E5ED] z-20 flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-[#107C8E] animate-ping" />
                   <span className="text-xs sm:text-sm font-bold text-[#1A314C] font-poppins">
-                    Innovative Digital Agency
+                    FinTech & Web3 Institute
                   </span>
                 </div>
 
@@ -147,12 +150,12 @@ export const AboutPage: React.FC = () => {
 
               {/* Paragraph 1 */}
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                Zweidevs stands as the preeminent digital agency in the realm of business solutions. Our commitment to excellence and a service-oriented approach defines our very essence. We specialize in providing dynamic and groundbreaking solutions meticulously crafted to suit your unique business domain.
+                FinTech Edge Institute stands as a premier specialized education institute and technology hub dedicated to decentralized finance (DeFi), algorithmic trading, blockchain engineering, and modern full-stack financial software. Our commitment to rigorous practical training, live testnet simulations, and verified industry mentorship defines our core essence.
               </p>
 
               {/* Paragraph 2 */}
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                At Zweidevs, we not only meet but exceed your expectations, driven by a passion for delivering thoughtfully innovated, eye-catching products that leave a lasting impression. Our dedicated team of professionals takes immense pride in their ability to engineer your requirements into robust software solutions, harnessing the full potential of cutting-edge technologies spanning mobile, web, cloud, and e-commerce. We go beyond mere solutions; we are your strategic partner, committed to propelling your business forward in the digital landscape.
+                At FinTech Edge Institute, we go beyond conventional theory. We immerse our students in real-world smart contract development, quantitative market modeling, automated bot algorithms, and institutional financial security protocols. Our dedicated faculty and industry practitioners take immense pride in engineering career-ready skills that empower learners to secure top global remote roles and build groundbreaking fintech solutions.
               </p>
 
               {/* Feature Highlights Grid */}
@@ -162,7 +165,7 @@ export const AboutPage: React.FC = () => {
                     <CheckCircle className="w-4.5 h-4.5" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#1A314C]">
-                    Next-Gen Web & Mobile
+                    Hands-on FinTech & DeFi Labs
                   </span>
                 </div>
 
@@ -171,7 +174,7 @@ export const AboutPage: React.FC = () => {
                     <Zap className="w-4.5 h-4.5 text-[#1DA5B8]" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#1A314C]">
-                    Rapid Digital Scale
+                    1-on-1 Industry Mentorship
                   </span>
                 </div>
               </div>
@@ -200,7 +203,7 @@ export const AboutPage: React.FC = () => {
               How We Deliver Groundbreaking Impact
             </h2>
             <p className="text-sm sm:text-base text-[#64748B] font-poppins">
-              Every project is powered by systematic execution, modern engineering standards, and unmatched dedication.
+              Every training module and research track is powered by systematic execution, modern engineering standards, and unmatched dedication.
             </p>
           </div>
 
@@ -208,18 +211,18 @@ export const AboutPage: React.FC = () => {
             {[
               {
                 icon: <Sparkles className="w-6 h-6 text-[#1DA5B8]" />,
-                title: 'Thoughtful Innovation',
-                desc: 'Crafting user experiences and technical architectures that solve core market bottlenecks effectively.',
+                title: 'Applied FinTech Mastery',
+                desc: 'Immersive hands-on bootcamps with real-world smart contracts, algorithmic trading bots, and API integrations.',
               },
               {
                 icon: <ShieldCheck className="w-6 h-6 text-[#107C8E]" />,
-                title: 'Unwavering Reliability',
-                desc: 'Building resilient cloud structures, robust security layers, and enterprise-grade performance benchmarks.',
+                title: 'Institutional Standards & Security',
+                desc: 'Industry-grade security frameworks, smart contract auditing methodologies, and quantitative risk management.',
               },
               {
                 icon: <Compass className="w-6 h-6 text-[#1A314C]" />,
-                title: 'Strategic Partnership',
-                desc: 'Co-creating roadmaps and providing ongoing advisory to maximize long-term client expansion.',
+                title: 'Career & Venture Incubation',
+                desc: 'Direct global job placement assistance, portfolio reviews, and decentralized venture capital networking.',
               },
             ].map((v, i) => (
               <div 
