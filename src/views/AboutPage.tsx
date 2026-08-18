@@ -2,15 +2,11 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { OurFoundersSection } from '../components/OurFoundersSection';
 import { 
-  Target, 
-  Eye, 
-  Award, 
-  Users, 
-  CheckCircle, 
   Sparkles, 
   ShieldCheck, 
-  Zap, 
-  Compass
+  Compass,
+  CheckCircle,
+  Zap
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
@@ -22,19 +18,21 @@ export const AboutPage: React.FC = () => {
     <div className="min-h-screen bg-white text-[#1A314C] font-poppins overflow-x-hidden">
       
       {/* ========================================================================= */}
-      {/* 1. TOP "OUR VISION" HERO BANNER WITH RIGHT-TO-LEFT TEXT ANIMATION        */}
+      {/* 1. TOP "OUR VISION" HERO BANNER WITH BRAND DEEP NAVY/TEAL PALETTE        */}
       {/* ========================================================================= */}
-      <section className="relative w-full bg-gradient-to-r from-[#F59E0B] via-[#FF9700] to-[#E68A00] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-md">
-        {/* Background Geometric Diamond / Rhombus Overlays */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none opacity-25 overflow-hidden flex items-center justify-end">
-          <div className="relative w-96 h-96 mr-[-50px]">
-            {/* Diamond 1 */}
-            <div className="absolute top-10 right-10 w-48 h-48 bg-white/30 rounded-3xl transform rotate-45 backdrop-blur-xs" />
-            {/* Diamond 2 */}
-            <div className="absolute top-28 right-32 w-56 h-56 bg-white/20 rounded-3xl transform rotate-45 backdrop-blur-xs" />
-            {/* Diamond 3 */}
-            <div className="absolute -top-10 right-52 w-40 h-40 bg-white/15 rounded-3xl transform rotate-45" />
-          </div>
+      <section className="relative w-full bg-gradient-to-r from-[#1A314C] via-[#10566E] to-[#107C8E] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-lg">
+        
+        {/* Signature Layered Rounded Diamond Graphic on the Right (Same as Home) */}
+        <div className="absolute right-[-40px] sm:right-10 top-1/2 -translate-y-1/2 pointer-events-none opacity-40 lg:opacity-60 overflow-hidden w-72 h-72 sm:w-96 sm:h-96">
+          {/* Outer Light Cyan & Teal diamond */}
+          <div className="absolute top-0 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/40 bg-gradient-to-br from-[#C9E5ED]/30 to-[#1DA5B8]/20 backdrop-blur-xs" />
+          {/* Middle Deep Teal diamond */}
+          <div className="absolute top-6 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#107C8E]/50 bg-gradient-to-br from-[#107C8E]/30 to-[#10566E]/30" />
+          {/* Inner solid Dark Navy & Bright Teal gradient diamond */}
+          <div className="absolute top-12 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#1DA5B8] opacity-90 shadow-xl shadow-[#107C8E]/30" />
+          {/* Floating cyan dots */}
+          <div className="absolute top-4 right-36 w-3 h-3 rounded-full bg-[#1DA5B8] animate-pulse" />
+          <div className="absolute top-44 right-8 w-2.5 h-2.5 rounded-full bg-[#C9E5ED]" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -50,7 +48,7 @@ export const AboutPage: React.FC = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{
                 duration: 1.0,
-                ease: [0.16, 1, 0.3, 1], // Smooth custom ease curve
+                ease: [0.16, 1, 0.3, 1],
                 delay: 0.15,
               }}
               className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-poppins font-normal max-w-3xl drop-shadow-xs"
@@ -71,7 +69,7 @@ export const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* LEFT COLUMN: Image with Custom Triangles (Animates from LEFT of screen) */}
+            {/* LEFT COLUMN: Image with Signature Concentric Layered Diamonds (Same as Home) */}
             <motion.div
               initial={{ x: '-60vw', opacity: 0 }}
               animate={isMissionInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
@@ -80,23 +78,29 @@ export const AboutPage: React.FC = () => {
             >
               <div className="relative w-full max-w-lg">
                 
-                {/* 1. TOP TRIANGLE SHAPE (Soft Peach/Gold pointing up behind image) */}
-                <div 
-                  className="absolute -top-10 left-1/3 w-32 h-24 bg-[#FED7AA] z-0"
-                  style={{
-                    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
-                    borderRadius: '8px',
-                  }}
-                />
+                {/* 1. TOP-RIGHT LAYERED CONCENTRIC DIAMOND (Home Section Style in Brand Teal/Cyan) */}
+                <div className="absolute -top-12 -right-8 w-44 h-44 pointer-events-none z-0">
+                  {/* Outer Diamond */}
+                  <div className="absolute top-0 right-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#1DA5B8]/30 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/20 backdrop-blur-xs" />
+                  {/* Middle Diamond */}
+                  <div className="absolute top-4 right-4 w-28 h-28 rotate-45 rounded-xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/25 to-[#10566E]/20" />
+                  {/* Inner Diamond */}
+                  <div className="absolute top-8 right-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-md shadow-[#107C8E]/20" />
+                  {/* Floating Cyan Accent Dot */}
+                  <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#1DA5B8]" />
+                </div>
 
-                {/* 2. LEFT TRIANGLE SHAPE (Vibrant Orange pointing left behind image) */}
-                <div 
-                  className="absolute top-1/4 -left-10 w-24 h-32 bg-[#FF9700] z-0"
-                  style={{
-                    clipPath: 'polygon(100% 0%, 0% 50%, 100% 100%)',
-                    borderRadius: '8px',
-                  }}
-                />
+                {/* 2. BOTTOM-LEFT LAYERED CONCENTRIC DIAMOND (Home Section Style in Brand Teal/Cyan) */}
+                <div className="absolute -bottom-10 -left-10 w-44 h-44 pointer-events-none z-0">
+                  {/* Outer Diamond */}
+                  <div className="absolute bottom-0 left-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#1DA5B8]/30 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/20 backdrop-blur-xs" />
+                  {/* Middle Diamond */}
+                  <div className="absolute bottom-4 left-4 w-28 h-28 rotate-45 rounded-xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/25 to-[#10566E]/20" />
+                  {/* Inner Diamond */}
+                  <div className="absolute bottom-8 left-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-md shadow-[#107C8E]/20" />
+                  {/* Floating Cyan Accent Dot */}
+                  <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
+                </div>
 
                 {/* Main Team Image Container with Custom Stylized Asymmetric Rounded Corners */}
                 <div className="relative z-10 overflow-hidden rounded-tr-[56px] rounded-bl-[56px] rounded-tl-2xl rounded-br-2xl shadow-xl border-4 border-white bg-[#F8FAFC]">
@@ -111,8 +115,8 @@ export const AboutPage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
                 </div>
 
-                {/* Small floating decorative pill accent */}
-                <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border border-[#FDBA74] z-20 flex items-center gap-3">
+                {/* Floating decorative badge */}
+                <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border border-[#C9E5ED] z-20 flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-[#107C8E] animate-ping" />
                   <span className="text-xs sm:text-sm font-bold text-[#1A314C] font-poppins">
                     Innovative Digital Agency
@@ -131,7 +135,7 @@ export const AboutPage: React.FC = () => {
             >
               {/* Category Badge */}
               <div className="space-y-1">
-                <span className="text-base sm:text-lg font-bold text-[#FF9700] font-poppins">
+                <span className="text-base sm:text-lg font-bold text-[#107C8E] font-poppins">
                   Who We Are
                 </span>
                 
@@ -163,8 +167,8 @@ export const AboutPage: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#FF9700]/10 text-[#FF9700] flex items-center justify-center font-bold">
-                    <Zap className="w-4.5 h-4.5" />
+                  <div className="w-8 h-8 rounded-full bg-[#1DA5B8]/15 text-[#107C8E] flex items-center justify-center font-bold">
+                    <Zap className="w-4.5 h-4.5 text-[#1DA5B8]" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#1A314C]">
                     Rapid Digital Scale
@@ -179,12 +183,12 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. "OUR FOUNDERS" SECTION (INTEGRATED ON ABOUT PAGE AS WELL)              */}
+      {/* 3. "OUR FOUNDERS" SECTION                                                 */}
       {/* ========================================================================= */}
       <OurFoundersSection />
 
       {/* ========================================================================= */}
-      {/* 4. COMPANY CORE VALUES & STRENGTHS                                        */}
+      {/* 4. COMPANY CORE VALUES & GUIDING PRINCIPLES                               */}
       {/* ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#FAFAFA] border-t border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -203,7 +207,7 @@ export const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Sparkles className="w-6 h-6 text-[#FF9700]" />,
+                icon: <Sparkles className="w-6 h-6 text-[#1DA5B8]" />,
                 title: 'Thoughtful Innovation',
                 desc: 'Crafting user experiences and technical architectures that solve core market bottlenecks effectively.',
               },
@@ -213,7 +217,7 @@ export const AboutPage: React.FC = () => {
                 desc: 'Building resilient cloud structures, robust security layers, and enterprise-grade performance benchmarks.',
               },
               {
-                icon: <Compass className="w-6 h-6 text-[#1DA5B8]" />,
+                icon: <Compass className="w-6 h-6 text-[#1A314C]" />,
                 title: 'Strategic Partnership',
                 desc: 'Co-creating roadmaps and providing ongoing advisory to maximize long-term client expansion.',
               },
