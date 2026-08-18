@@ -73,17 +73,18 @@ export const WhyFintechSection: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading */}
+        {/* Section Heading with stylish Google Font Poppins */}
         <motion.div
           initial={{ opacity: 0, y: -25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16 sm:mb-24"
+          className="text-center mb-16 sm:mb-24 flex flex-col items-center"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A314C] tracking-tight font-heading">
-            Why FinTech
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A314C] tracking-tight font-poppins">
+            Fintech Edge <span className="text-[#107C8E] font-semibold">Institute</span>
           </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#F58220] via-[#00C2CB] to-[#107C8E] rounded-full mt-3"></div>
         </motion.div>
 
         {/* 🌟 DESKTOP & TABLET: Pixel-Perfect Radial Fan Showcase with Exact Geometry & Connectors */}
