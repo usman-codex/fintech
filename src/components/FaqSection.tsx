@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { FaqItem } from '../types';
-import { HelpCircle, ChevronDown, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface FaqSectionProps {
   faqs: FaqItem[];
 }
 
 export const FaqSection: React.FC<FaqSectionProps> = ({ faqs }) => {
-  const [openId, setOpenId] = useState<string | null>(faqs[0]?.id || null);
-
-  const toggle = (id: string) => {
-    setOpenId(openId === id ? null : id);
-  };
+  const [openId, setOpenId] = useState<string | null>(null);
 
   return (
     <section className="py-20 bg-[#C9E5ED]/15 text-[#1A314C] relative border-b border-[#C9E5ED]">
@@ -19,38 +15,56 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ faqs }) => {
         
         {/* Header */}
         <div className="text-center space-y-3 mb-12">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C] font-poppins">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#10566E] text-sm">
+          <p className="text-[#10566E] text-sm sm:text-base font-poppins">
             Everything you need to know about course access, certificates, drip schedules, and payment options.
           </p>
         </div>
 
         {/* Accordions */}
-        <div className="space-y-4">
+        <div 
+          className="space-y-3.5"
+          onMouseLeave={() => setOpenId(null)}
+        >
           {faqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div
                 key={faq.id}
-                className="bg-white rounded-2xl border border-[#C9E5ED] overflow-hidden transition-all duration-200 shadow-sm"
+                onMouseEnter={() => setOpenId(faq.id)}
+                onClick={() => setOpenId(isOpen ? null : faq.id)}
+                className={`bg-white rounded-2xl border transition-all duration-300 shadow-xs cursor-pointer overflow-hidden ${
+                  isOpen 
+                    ? 'border-[#107C8E] shadow-md ring-1 ring-[#107C8E]/20 bg-[#FAFCFD]' 
+                    : 'border-[#C9E5ED] hover:border-[#107C8E]/40 hover:bg-[#F8FAFC]'
+                }`}
               >
-                <button
-                  onClick={() => toggle(faq.id)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 text-sm sm:text-base font-bold text-[#1A314C] hover:text-[#107C8E] cursor-pointer"
-                >
-                  <span>{faq.question}</span>
-                  <div className={`p-1.5 rounded-lg bg-[#C9E5ED]/30 border border-[#C9E5ED] text-[#107C8E] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
+                {/* Question Title (Arrow Box Removed) */}
+                <div className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 text-base sm:text-lg font-bold transition-colors duration-200">
+                  <span className={`${isOpen ? 'text-[#107C8E]' : 'text-[#1A314C]'} font-poppins transition-colors duration-200`}>
+                    {faq.question}
+                  </span>
+                </div>
 
-                {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-[#1A314C]/80 leading-relaxed border-t border-[#C9E5ED] pt-3">
-                    {faq.answer}
-                  </div>
-                )}
+                {/* Animated Answer Content */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 sm:px-6 pb-6 text-sm sm:text-base text-[#475569] leading-relaxed border-t border-[#E2E8F0] pt-4 font-poppins">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             );
           })}
@@ -60,3 +74,4 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ faqs }) => {
     </section>
   );
 };
+

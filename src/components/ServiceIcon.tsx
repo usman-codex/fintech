@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ServiceIconProps {
-  name: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | string;
+  name: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | 'digital-marketing' | 'facebook-monetization' | 'graphic-design' | 'wordpress' | string;
   className?: string;
   size?: number;
   color?: string;
@@ -16,6 +16,156 @@ export const ServiceIcon: React.FC<ServiceIconProps> = ({
   accentColor = '#1DA5B8'
 }) => {
   switch (name) {
+    case 'graphic-design':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Pen Tool / Vector Art Anchor Path */}
+          <path
+            d="M24 6L32 14L18 28L10 30L12 22L24 6Z"
+            stroke={color}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M20 10L28 18"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          {/* Vector Handle Points */}
+          <circle cx="10" cy="30" r="2.5" fill={accentColor} />
+          {/* Color Palette Arc */}
+          <path
+            d="M16 38C20 42 34 42 38 34C41 28 39 20 35 17"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeDasharray="2 3"
+          />
+          <circle cx="36" cy="36" r="2" fill={accentColor} />
+          <circle cx="28" cy="40" r="2" fill={accentColor} />
+        </svg>
+      );
+
+    case 'wordpress':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Circular Badge */}
+          <circle
+            cx="24"
+            cy="24"
+            r="17"
+            stroke={color}
+            strokeWidth="2.5"
+          />
+          {/* WordPress Signature 'W' Legs */}
+          <path
+            d="M15 18L21 34L25 24L28 32L33 18"
+            stroke={color}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Top serif subtle strokes */}
+          <path
+            d="M13 18H17M31 18H35"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          {/* Accent dot */}
+          <circle cx="24" cy="24" r="1.5" fill={accentColor} />
+        </svg>
+      );
+    case 'digital-marketing':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Bullhorn / Megaphone Outline */}
+          <path
+            d="M8 20V28H14L26 36V12L14 20H8Z"
+            stroke={color}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Handle */}
+          <path
+            d="M12 28V36C12 37.1046 12.8954 38 14 38H16C17.1046 38 18 37.1046 18 36V28"
+            stroke={color}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Sound / Growth Broadcast Waves */}
+          <path
+            d="M32 18C34 20 35 22 35 24C35 26 34 28 32 30"
+            stroke={accentColor}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M37 13C40.5 16.5 42 20 42 24C42 28 40.5 31.5 37 35"
+            stroke={accentColor}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+          />
+          {/* Marketing Sparkle / Target Star */}
+          <circle cx="18" cy="24" r="2" fill={accentColor} />
+        </svg>
+      );
+
+    case 'facebook-monetization':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Modern Facebook Card / Rounded Frame */}
+          <rect
+            x="8"
+            y="8"
+            width="32"
+            height="32"
+            rx="8"
+            stroke={color}
+            strokeWidth="2.5"
+          />
+          {/* Facebook 'f' path */}
+          <path
+            d="M26 15C23.7909 15 22 16.7909 22 19V23H18V27H22V36H26V27H30L31 23H26V19.5C26 19.2239 26.2239 19 26.5 19H30V15H26Z"
+            stroke={color}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
     case 'blockchain':
       return (
         <svg

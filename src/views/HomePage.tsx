@@ -27,6 +27,7 @@ interface HomePageProps {
   onSelectService: (service: ServiceItem) => void;
   onNavigateToAbout: () => void;
   onNavigateToProjects: () => void;
+  onNavigateToContact?: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -43,6 +44,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   onSelectService,
   onNavigateToAbout,
   onNavigateToProjects,
+  onNavigateToContact,
 }) => {
   const featuredCourse = courses.find((c) => c.id === 'airdrop-mastery-course') || courses[0];
   const bundleCourse = courses.find((c) => c.id === 'all-access-bundle-coaching') || courses[courses.length - 1];
@@ -96,7 +98,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 8. Conversion CTA Banner */}
       <CtaSection
         onExploreCourses={onExploreCourses}
-        onOpenPromptModal={onOpenPromptModal}
+        onContactUs={onNavigateToContact}
       />
     </div>
   );

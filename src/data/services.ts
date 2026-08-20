@@ -2,6 +2,110 @@ import { ServiceItem } from '../types';
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
+    id: 'digital-marketing',
+    slug: 'digital-marketing',
+    shortTitle: 'Digital Marketing',
+    title: 'Digital Marketing & Growth Strategy',
+    shortDescription: 'Data-driven SEO, PPC, social advertising, and conversion rate optimization campaigns engineered to scale your audience and maximize business revenue.',
+    fullDescription: 'Data-driven SEO, Google Ads, meta advertising, content funnels, and conversion rate optimization campaigns engineered to scale your audience, generate high-intent leads, and maximize business revenue.',
+    bannerHeadline: 'Scale Your Brand: Performance Digital Marketing & High-ROI Growth Engines',
+    bannerDescription: 'Accelerate user acquisition and revenue with full-funnel digital marketing strategies. From viral content distribution and paid media management to technical SEO and conversion rate optimization.',
+    accentColor: '#107C8E',
+    iconName: 'digital-marketing',
+    tools: [
+      { name: 'Google Ads', color: '#4285F4' },
+      { name: 'Meta Ads', color: '#0668E1' },
+      { name: 'Google Analytics 4', color: '#E37400' },
+      { name: 'SEMrush', color: '#FF642D' },
+      { name: 'HubSpot', color: '#FF7A59' },
+      { name: 'TikTok Ads', color: '#000000' }
+    ],
+    deliverablesHeading: 'Full-Funnel Acquisition, Performance Ads & Organic Search Dominance',
+    deliverablesDescription: 'Our growth marketers and media buyers build high-converting inbound marketing architectures that transform online attention into loyal paying customers.',
+    keyFeatures: [
+      'Precision Targeted Paid Media Campaigns (Google Search, Meta, TikTok, LinkedIn)',
+      'Technical On-Page & Off-Page Search Engine Optimization (SEO)',
+      'High-Converting Landing Page Copywriting & A/B Split Testing',
+      'Automated Lead Nurturing Email Sequences & CRM Integrations',
+      'Multi-Touch Attribution Tracking, ROAS Analytics & KPI Dashboards',
+      'Influencer Marketing Partnerships & Viral Social Media Distribution'
+    ],
+    processSteps: [
+      {
+        number: '01',
+        title: 'Market Research & Audience Persona Mapping',
+        description: 'Analyzing competitor funnels, keyword opportunities, customer pain points, and buyer intent signals.'
+      },
+      {
+        number: '02',
+        title: 'Creative Strategy & Ad Copy Production',
+        description: 'Crafting compelling ad creatives, dynamic video scripts, and conversion-optimized landing pages.'
+      },
+      {
+        number: '03',
+        title: 'Campaign Deployment & Scaling',
+        description: 'Launching segmented audience tests, managing daily bidding budgets, and scaling high-performing ad sets.'
+      },
+      {
+        number: '04',
+        title: 'Continuous Optimization & Reporting',
+        description: 'Refining cost-per-acquisition (CPA), maximizing Return On Ad Spend (ROAS), and weekly transparent reporting.'
+      }
+    ]
+  },
+  {
+    id: 'facebook-monetization',
+    slug: 'facebook-monetization',
+    shortTitle: 'Facebook Monetization',
+    title: 'Facebook Monetization & Page Scaling',
+    shortDescription: 'Unlock maximum earnings with In-Stream Ads, Reels bonuses, fan subscriptions, policy compliance approval, and viral content strategies for Facebook pages.',
+    fullDescription: 'Unlock maximum earnings with Facebook In-Stream Ads, Reels Performance bonuses, fan subscriptions, policy compliance approval, and viral content distribution strategies tailored for digital creators and businesses.',
+    bannerHeadline: 'Monetize Facebook Content: In-Stream Ads, Reels Bonuses & Page Growth',
+    bannerDescription: 'Turn your Facebook presence into a consistent passive revenue stream. We provide end-to-end setup for In-Stream Ads approval, Level Up programs, viral video editing, and payout policy compliance.',
+    accentColor: '#107C8E',
+    iconName: 'facebook-monetization',
+    tools: [
+      { name: 'Meta Business Suite', color: '#0668E1' },
+      { name: 'In-Stream Ads', color: '#00C3FF' },
+      { name: 'Reels Bonus', color: '#E1306C' },
+      { name: 'Payout Hub', color: '#107C8E' },
+      { name: 'Creator Studio', color: '#4267B2' },
+      { name: 'Brand Collabs', color: '#5851DB' }
+    ],
+    deliverablesHeading: 'End-to-End Creator Monetization & Policy-Safe Content Distribution',
+    deliverablesDescription: 'We help content creators, agencies, and businesses achieve monetization criteria rapidly while maintaining 100% adherence to Facebook Partner Monetization Policies.',
+    keyFeatures: [
+      'In-Stream Ads & Performance Bonus Program Activation',
+      'Facebook Partner & Content Monetization Policy Issue Resolution',
+      'Viral Short-Form Reels Editing & Retention Optimization',
+      'Organic Watch Time & Active Follower Growth Strategies',
+      'International Bank Payout Setup & Tax Verification Support',
+      'Original Content Protection, Rights Manager & Copyright Safeguarding'
+    ],
+    processSteps: [
+      {
+        number: '01',
+        title: 'Page Health & Eligibility Audit',
+        description: 'Checking Policy guidelines, Yellow/Red flags, watch-time minutes, and eligible country settings.'
+      },
+      {
+        number: '02',
+        title: 'Monetization Setup & Bank Approval',
+        description: 'Applying for In-Stream Ads, Stars, and setting up legitimate payment gateways and tax profiles.'
+      },
+      {
+        number: '03',
+        title: 'High-Retention Video Production',
+        description: 'Editing content with high-retention hooks to maximize 1-minute and 3-minute video views.'
+      },
+      {
+        number: '04',
+        title: 'Viral Distribution & Payout Scaling',
+        description: 'Leveraging organic sharing networks, cross-posting algorithms, and tracking monthly revenue growth.'
+      }
+    ]
+  },
+  {
     id: 'blockchain-development',
     slug: 'blockchain-development',
     shortTitle: 'Blockchain Development',
@@ -369,6 +473,110 @@ export const SERVICES_DATA: ServiceItem[] = [
         number: '04',
         title: 'Interactive Prototype & Dev Handoff',
         description: 'Building full clickable prototypes for user testing and generating complete code-ready component specifications.'
+      }
+    ]
+  },
+  {
+    id: 'graphic-design',
+    slug: 'graphic-design',
+    shortTitle: 'Graphic Design',
+    title: 'Graphic Design & Creative Branding',
+    shortDescription: 'Memorable brand identities, vector illustrations, promotional social media banners, marketing collateral, and custom print materials crafted with precision.',
+    fullDescription: 'Establish an unforgettable visual identity with custom brand guidelines, logo systems, social media assets, marketing decks, infographics, and packaging designs that distinguish your business.',
+    bannerHeadline: 'Creative Graphic Design: Distinctive Visual Identities & High-Impact Brand Assets',
+    bannerDescription: 'Elevate your brand perception with custom graphics crafted by expert visual artists. From iconic logos and complete brand guidelines to high-converting social media creatives and print collateral.',
+    accentColor: '#107C8E',
+    iconName: 'graphic-design',
+    tools: [
+      { name: 'Adobe Photoshop', color: '#31A8FF' },
+      { name: 'Adobe Illustrator', color: '#FF9A00' },
+      { name: 'Adobe InDesign', color: '#FF3366' },
+      { name: 'Figma', color: '#F24E1E' },
+      { name: 'Canva Pro', color: '#00C4CC' },
+      { name: 'After Effects', color: '#9999FF' }
+    ],
+    deliverablesHeading: 'Visual Storytelling, Brand Identity Systems & Creative Collateral',
+    deliverablesDescription: 'We craft cohesive, striking visual experiences that convey credibility, tell your story clearly, and captivate your target audience across both digital and physical touchpoints.',
+    keyFeatures: [
+      'Custom Logo Design, Typography Pairing & Complete Brand Style Guides',
+      'High-Impact Social Media Graphics (Posters, Carousels, Stories, Banners)',
+      'Corporate Pitch Decks, Annual Reports & Investor Presentation Design',
+      'Custom Vector Illustrations, Iconography Sets & Infographics',
+      'Print Collateral: Business Cards, Brochures, Roll-up Banners & Merchandise',
+      'Product Packaging, Label Design & 3D Realistic Product Mockups'
+    ],
+    processSteps: [
+      {
+        number: '01',
+        title: 'Brand Discovery & Moodboarding',
+        description: 'Exploring brand values, color psychology, competitor aesthetics, and visual tone boards.'
+      },
+      {
+        number: '02',
+        title: 'Concept Ideation & Vector Sketching',
+        description: 'Creating initial design drafts, logo variations, and layout structures for feedback.'
+      },
+      {
+        number: '03',
+        title: 'Refinement & Style Systematization',
+        description: 'Polishing typography, proportions, grid alignment, and color consistency across all assets.'
+      },
+      {
+        number: '04',
+        title: 'Final Master Asset Handoff',
+        description: 'Delivering print-ready CMYK files, vector SVGs/AI/EPS, and digital web-optimized formats.'
+      }
+    ]
+  },
+  {
+    id: 'wordpress-development',
+    slug: 'wordpress-development',
+    shortTitle: 'WordPress Development',
+    title: 'WordPress & Custom CMS Development',
+    shortDescription: 'Fast, secure, and SEO-optimized custom WordPress websites, Elementor/Gutenberg builds, WooCommerce stores, and tailored plugin integrations.',
+    fullDescription: 'Build scalable, secure, and easily manageable web solutions with custom WordPress theme development, WooCommerce online stores, speed optimization, and seamless third-party API integrations.',
+    bannerHeadline: 'Custom WordPress Solutions: Fast, Secure & High-Converting Websites',
+    bannerDescription: 'Empower your business with a tailored WordPress website designed for lightning speed, effortless content publishing, top-ranking SEO architecture, and rock-solid enterprise security.',
+    accentColor: '#107C8E',
+    iconName: 'wordpress',
+    tools: [
+      { name: 'WordPress Core', color: '#21759B' },
+      { name: 'WooCommerce', color: '#96588A' },
+      { name: 'Elementor Pro', color: '#92003B' },
+      { name: 'ACF Pro', color: '#00E676' },
+      { name: 'PHP 8.2', color: '#777BB4' },
+      { name: 'MySQL', color: '#4479A1' }
+    ],
+    deliverablesHeading: 'Custom Theme Crafting, WooCommerce Scaling & Speed Optimization',
+    deliverablesDescription: 'Our WordPress engineers deliver clean, modular codebases free of bloat, guaranteeing 95+ Google PageSpeed scores and an intuitive backend editorial experience.',
+    keyFeatures: [
+      'Pixel-Perfect Custom Theme Development from Figma / XD Designs',
+      'Full-Featured WooCommerce Store Setup with Secure Payment Gateways',
+      'Advanced Custom Fields (ACF) & Gutenberg Custom Block Architectures',
+      'Core Web Vitals & Speed Optimization (Caching, CDN & Image Compression)',
+      'Enterprise Hardening: Malware Protection, SSL & Automated Daily Backups',
+      'Seamless Third-Party API, CRM, and Email Marketing Automation Integrations'
+    ],
+    processSteps: [
+      {
+        number: '01',
+        title: 'Architecture & Theme Planning',
+        description: 'Structuring custom post types, taxonomy schemas, plugins matrix, and responsive design layouts.'
+      },
+      {
+        number: '02',
+        title: 'Custom Development & Configuration',
+        description: 'Coding lightweight PHP templates, integrating ACF blocks, and setting up WooCommerce flows.'
+      },
+      {
+        number: '03',
+        title: 'Speed & Security Hardening',
+        description: 'Auditing Core Web Vitals, configuring Redis/WP Rocket caching, and enforcing firewall protocols.'
+      },
+      {
+        number: '04',
+        title: 'Deployment & Client CMS Training',
+        description: 'Migrating to live production hosting with SSL and providing step-by-step editorial training.'
       }
     ]
   }

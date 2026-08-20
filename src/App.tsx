@@ -155,12 +155,14 @@ export default function App() {
             onSelectService={(service) => navigateTo('services', service.slug || service.id)}
             onNavigateToAbout={() => navigateTo('about', null)}
             onNavigateToProjects={() => navigateTo('projects', null)}
+            onNavigateToContact={() => navigateTo('contact', null)}
           />
         )}
 
         {activeTab === 'projects' && (
           <ProjectsPage
             onNavigateToContact={() => navigateTo('contact', null)}
+            onSelectService={(slug) => navigateTo('services', slug)}
           />
         )}
 

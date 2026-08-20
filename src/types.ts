@@ -108,7 +108,7 @@ export interface ServiceItem {
   bannerHeadline: string;
   bannerDescription: string;
   accentColor?: string;
-  iconName: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux';
+  iconName: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | 'digital-marketing' | 'facebook-monetization' | string;
   tools: ToolTechnology[];
   deliverablesHeading: string;
   deliverablesDescription: string;

@@ -16,8 +16,8 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
 }) => {
   // 5 featured services
   const featuredServices = [
-    SERVICES_DATA.find((s) => s.id === 'blockchain-development') || SERVICES_DATA[0],
-    SERVICES_DATA.find((s) => s.id === 'devops-development') || SERVICES_DATA[1],
+    SERVICES_DATA.find((s) => s.id === 'digital-marketing') || SERVICES_DATA[0],
+    SERVICES_DATA.find((s) => s.id === 'facebook-monetization') || SERVICES_DATA[1],
     SERVICES_DATA.find((s) => s.id === 'web-development') || SERVICES_DATA[2],
     SERVICES_DATA.find((s) => s.id === 'ecommerce-development') || SERVICES_DATA[3],
     SERVICES_DATA.find((s) => s.id === 'mobile-app-development') || SERVICES_DATA[4],

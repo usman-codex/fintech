@@ -149,21 +149,21 @@ export const GrowBusinessSection: React.FC = () => {
         </div>
 
         {/* ========================================================================= */}
-        {/* 2. 3 ZOOM-IN CARDS (SCALE 0 -> 100%) WITH SOFT BACKGROUND HOVER TRANSITION */}
+        {/* 2. 3 ELEGANT SMOOTH CARDS WITH GENTLE FADE & SCALE ENTRANCE               */}
         {/* ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.id}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+              initial={{ y: 35, opacity: 0, scale: 0.92 }}
+              animate={isInView ? { y: 0, opacity: 1, scale: 1 } : { y: 35, opacity: 0, scale: 0.92 }}
               transition={{
-                duration: 0.65,
-                delay: 0.25 + index * 0.18,
-                ease: [0.34, 1.56, 0.64, 1], // Springy zoom-out to 100%
+                duration: 1.0,
+                delay: 0.15 + index * 0.18,
+                ease: [0.16, 1, 0.3, 1], // Ultra smooth cinematic ease-out
               }}
-              whileHover={{ y: -6 }}
-              className="group relative bg-white hover:bg-[#F0F8FA] p-8 lg:p-10 rounded-2xl border border-transparent hover:border-[#C9E5ED] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center cursor-pointer"
+              whileHover={{ y: -6, transition: { duration: 0.3, ease: "easeOut" } }}
+              className="group relative bg-white hover:bg-[#F0F8FA] p-8 lg:p-10 rounded-2xl border border-[#E2E8F0]/70 hover:border-[#107C8E]/40 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center cursor-pointer"
             >
               {/* Icon Container with subtle animation on hover */}
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">

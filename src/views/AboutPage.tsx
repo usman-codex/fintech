@@ -14,7 +14,11 @@ import {
   Users,
   Target,
   DollarSign,
-  Headphones
+  Headphones,
+  Cpu,
+  Lock,
+  Rocket,
+  Layers
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
@@ -320,8 +324,27 @@ export const AboutPage: React.FC = () => {
       {/* ========================================================================= */}
       {/* 5. COMPANY CORE VALUES & GUIDING PRINCIPLES                               */}
       {/* ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#FAFAFA] border-t border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 sm:py-24 bg-[#FAFAFA] border-t border-[#E2E8F0] overflow-hidden">
+        
+        {/* Top Right Signature Decorative Geometric Diamond Art in Official Brand Palette */}
+        <div 
+          aria-hidden="true" 
+          className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-70"
+        >
+          <div className="relative w-full h-full">
+            {/* Outer Light Cyan & Teal diamond */}
+            <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/30 bg-gradient-to-br from-[#C9E5ED]/40 to-[#1DA5B8]/10 backdrop-blur-[1px]" />
+            {/* Middle Deep Teal diamond */}
+            <div className="absolute top-5 right-9 w-36 h-36 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/20" />
+            {/* Inner solid Dark Navy & Bright Teal gradient diamond */}
+            <div className="absolute top-10 right-14 w-24 h-24 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-xl shadow-[#107C8E]/20" />
+            {/* Floating cyan dots */}
+            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#1DA5B8]" />
+            <div className="absolute top-36 right-6 w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
+          </div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
             <span className="text-sm sm:text-base font-bold text-[#107C8E] font-poppins">
               Guiding Principles
@@ -337,29 +360,32 @@ export const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Sparkles className="w-6 h-6 text-[#1DA5B8]" />,
+                icon: <Cpu className="w-6 h-6 text-[#107C8E]" />,
+                iconBg: 'bg-[#E6F7FA] border-[#1DA5B8]/40 shadow-xs text-[#107C8E]',
                 title: 'Applied FinTech Mastery',
                 desc: 'Immersive hands-on bootcamps with real-world smart contracts, algorithmic trading bots, and API integrations.',
               },
               {
-                icon: <ShieldCheck className="w-6 h-6 text-[#107C8E]" />,
+                icon: <ShieldCheck className="w-6 h-6 text-[#10566E]" />,
+                iconBg: 'bg-[#EBF3F7] border-[#107C8E]/30 shadow-xs text-[#10566E]',
                 title: 'Institutional Standards & Security',
                 desc: 'Industry-grade security frameworks, smart contract auditing methodologies, and quantitative risk management.',
               },
               {
-                icon: <Compass className="w-6 h-6 text-[#1A314C]" />,
+                icon: <Rocket className="w-6 h-6 text-[#1DA5B8]" />,
+                iconBg: 'bg-[#F0FAFC] border-[#1DA5B8]/40 shadow-xs text-[#1DA5B8]',
                 title: 'Career & Venture Incubation',
                 desc: 'Direct global job placement assistance, portfolio reviews, and decentralized venture capital networking.',
               },
             ].map((v, i) => (
               <div 
                 key={i}
-                className="bg-white rounded-3xl p-8 border border-[#E2E8F0] hover:border-[#1DA5B8] hover:shadow-lg transition-all duration-300 space-y-4"
+                className="bg-white rounded-3xl p-8 border border-[#E2E8F0] hover:border-[#1DA5B8] hover:shadow-lg transition-all duration-300 space-y-5 group hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center shadow-xs">
+                <div className={`w-14 h-14 rounded-2xl border flex items-center justify-center transition-transform group-hover:scale-110 ${v.iconBg}`}>
                   {v.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#1A314C] font-poppins">{v.title}</h3>
+                <h3 className="text-xl font-bold text-[#1A314C] font-poppins group-hover:text-[#107C8E] transition-colors">{v.title}</h3>
                 <p className="text-sm text-[#64748B] leading-relaxed font-poppins">{v.desc}</p>
               </div>
             ))}
