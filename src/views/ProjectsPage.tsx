@@ -141,8 +141,45 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
       </section>
 
       {/* 3. Have a Project in Mind CTA Section with Short Paragraphs for All Our Services */}
-      <section className="w-full py-16 sm:py-24 bg-white border-t border-[#C9E5ED]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="relative w-full py-16 sm:py-24 bg-white border-t border-[#C9E5ED] overflow-hidden">
+        
+        {/* Top-Right Decorative Geometric Diamond Art in Official Brand Palette */}
+        <div 
+          aria-hidden="true" 
+          className="pointer-events-none absolute -top-8 -right-6 sm:right-4 md:right-10 w-60 h-60 sm:w-72 sm:h-72 z-0 opacity-80"
+        >
+          <div className="relative w-full h-full">
+            {/* Outer Diamond */}
+            <div className="absolute top-0 right-4 w-40 h-40 sm:w-52 sm:h-52 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/35 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/15 backdrop-blur-xs" />
+            {/* Middle Diamond */}
+            <div className="absolute top-5 right-9 w-32 h-32 sm:w-40 sm:h-40 rotate-45 rounded-2xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/15" />
+            {/* Inner Diamond */}
+            <div className="absolute top-10 right-14 w-20 h-20 sm:w-28 sm:h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-lg shadow-[#107C8E]/20" />
+            {/* Floating Cyan Accent Dots */}
+            <div className="absolute top-2 right-28 w-3 h-3 rounded-full bg-[#1DA5B8]" />
+            <div className="absolute top-32 right-6 w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
+          </div>
+        </div>
+
+        {/* Bottom-Left Decorative Geometric Diamond Art in Official Brand Palette */}
+        <div 
+          aria-hidden="true" 
+          className="pointer-events-none absolute -bottom-10 -left-6 sm:left-4 md:left-8 w-56 h-56 sm:w-68 sm:h-68 z-0 opacity-75"
+        >
+          <div className="relative w-full h-full">
+            {/* Outer Diamond */}
+            <div className="absolute bottom-0 left-4 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/35 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/15 backdrop-blur-xs" />
+            {/* Middle Diamond */}
+            <div className="absolute bottom-5 left-9 w-28 h-28 sm:w-36 sm:h-36 rotate-45 rounded-2xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/15" />
+            {/* Inner Diamond */}
+            <div className="absolute bottom-10 left-14 w-18 h-18 sm:w-24 sm:h-24 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-lg shadow-[#107C8E]/20" />
+            {/* Floating Cyan Accent Dots */}
+            <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#1DA5B8]" />
+            <div className="absolute bottom-28 left-6 w-2 h-2 rounded-full bg-[#107C8E]" />
+          </div>
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#107C8E]/10 text-[#107C8E] text-xs sm:text-sm font-bold font-heading">
