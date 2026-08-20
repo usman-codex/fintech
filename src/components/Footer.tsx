@@ -194,7 +194,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenPromptModal 
           </div>
           <div className="flex items-center gap-1 text-[#5EA4AA]">
             <span>Powered by</span>
-            <span className="font-semibold text-[#C9E5ED]">EzyCourse</span>
+            <span className="font-semibold text-[#C9E5ED]">Fintech Developer</span>
           </div>
         </div>
 
