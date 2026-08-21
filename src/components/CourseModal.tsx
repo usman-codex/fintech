@@ -253,16 +253,11 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
 
         </div>
 
-        {/* Footer Checkout Bar */}
+        {/* Footer Action Bar */}
         <div className="sticky bottom-0 bg-white border-t border-[#C9E5ED] p-6 rounded-b-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <div className="text-2xl font-extrabold text-[#107C8E]">
-              ${course.priceUSD} <span className="text-xs font-normal text-[#5EA4AA]">/ Rs {course.pricePKR.toLocaleString()}</span>
-            </div>
-            <div className="text-xs text-[#10566E] flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#107C8E]" />
-              <span>Lifetime access + Verified Certificate</span>
-            </div>
+          <div className="text-xs text-[#10566E] flex items-center gap-1.5 font-medium">
+            <ShieldCheck className="w-4 h-4 text-[#107C8E]" />
+            <span>Full Lifetime Access + Official Verified Certificate</span>
           </div>
 
           <button

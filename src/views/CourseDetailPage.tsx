@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import React, { useEffect } from 'react';
 import { 
   ArrowLeft, 
   Clock, 
   BookOpen, 
   GraduationCap, 
-  CheckCircle2, 
-  ChevronDown, 
-  ChevronUp, 
-  PlayCircle, 
-  FileText, 
-  Award, 
   Users, 
-  Star, 
   Sparkles, 
   ShieldCheck, 
   Zap, 
   ArrowRight,
+  Award,
+  Target,
   Layers,
-  Share2
+  Briefcase
 } from 'lucide-react';
 import { Course } from '../types';
 
@@ -33,32 +27,20 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
   onBack,
   onEnroll,
 }) => {
-  const [openModuleId, setOpenModuleId] = useState<string | null>(
-    course.modules?.[0]?.id || null
-  );
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [course.id]);
 
-  const toggleModule = (id: string) => {
-    setOpenModuleId(openModuleId === id ? null : id);
-  };
-
-  const discountPercent = Math.round(
-    ((course.originalPriceUSD - course.priceUSD) / course.originalPriceUSD) * 100
-  );
-
   return (
     <div className="w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col font-sans">
       
-      {/* 1. Hero Section with Course-Specific Heading, Tagline & Rotated Decorative Diamond Art */}
+      {/* 1. Hero Section with Clean Heading, Tagline & Layered Geometric Diamond Art */}
       <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden shadow-lg border-b border-[#107C8E]/30">
         
         {/* Ambient Grid Pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#C9E5ED_1px,transparent_1px)] [background-size:20px_20px]" />
 
-        {/* Rotated Box Art: Top-Right Layered Geometric Diamonds (Brand Identity) */}
+        {/* Rotated Box Art: Top-Right Layered Geometric Diamonds */}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-12 right-0 sm:right-6 md:right-16 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-80"
@@ -108,35 +90,9 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Content Area: Course Title, Short Description, Badges & Meta */}
+            {/* Left Content Area: Course Title, Short Description & Quick Meta */}
             <div className="lg:col-span-8 space-y-4 sm:space-y-6">
               
-              {/* Badge & Level Pill */}
-              <div className="flex flex-wrap items-center gap-2.5">
-                {course.badge && (
-                  <span className={`text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-lg text-white shadow-sm flex items-center gap-1.5 ${
-                    course.badge === 'Best Seller' 
-                      ? 'bg-gradient-to-r from-[#FF6B6B] to-[#FF8E53]' 
-                      : course.badge === 'Hot'
-                      ? 'bg-gradient-to-r from-[#E65100] to-[#F57C00]'
-                      : 'bg-gradient-to-r from-[#107C8E] to-[#1DA5B8]'
-                  }`}>
-                    <Sparkles className="w-3.5 h-3.5" />
-                    {course.badge}
-                  </span>
-                )}
-                
-                <span className="bg-[#1A314C]/80 backdrop-blur-md text-[#C9E5ED] text-xs font-semibold px-3 py-1 rounded-lg border border-[#107C8E]/50">
-                  Level: {course.level}
-                </span>
-
-                <div className="flex items-center gap-1.5 bg-white/10 backdrop-blur-md px-3 py-1 rounded-lg border border-white/20 text-xs font-bold text-[#D8F0F5]">
-                  <Star className="w-3.5 h-3.5 fill-[#1DA5B8] text-[#1DA5B8]" />
-                  <span>{course.rating}</span>
-                  <span className="text-[#C9E5ED] font-normal">({course.reviewCount} reviews)</span>
-                </div>
-              </div>
-
               {/* Main Course Heading */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-heading leading-tight tracking-tight bg-gradient-to-r from-white via-[#D8F0F5] to-[#1DA5B8] bg-clip-text text-transparent drop-shadow-sm">
                 {course.title}
@@ -176,7 +132,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
             </div>
 
-            {/* Right Featured Image / Quick Action Preview */}
+            {/* Right Featured Image Frame (Clean, without badges or price overlays) */}
             <div className="lg:col-span-4">
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#1DA5B8]/50 shadow-2xl bg-[#1A314C] group">
                 <img
@@ -190,16 +146,6 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   }}
                   className="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A314C] via-transparent to-transparent opacity-80" />
-
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
-                  <span className="font-semibold bg-[#107C8E]/90 px-2.5 py-1 rounded-md">
-                    {course.instructor.name}
-                  </span>
-                  <span className="bg-emerald-500 font-black px-2 py-0.5 rounded text-[11px]">
-                    {discountPercent}% OFF
-                  </span>
-                </div>
               </div>
             </div>
 
@@ -208,10 +154,10 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
         </div>
       </section>
 
-      {/* 2. Main Course Detailed Content & Curriculum Breakdown */}
+      {/* 2. Main Course Detail Cards Section */}
       <section className="relative w-full py-12 sm:py-16">
         
-        {/* Rotated Box Art: Middle Section Accent (Subtle) */}
+        {/* Rotated Box Art: Middle Section Accent */}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute top-40 right-4 w-44 h-44 z-0 opacity-20 hidden lg:block"
@@ -226,25 +172,32 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             
-            {/* Left Main Details Column (8 cols) */}
-            <div className="lg:col-span-8 space-y-10">
+            {/* Left Column: Heading & Paragraph Detail Cards (8 cols) */}
+            <div className="lg:col-span-8 space-y-8">
               
-              {/* Comprehensive Description */}
+              {/* Detail Card 1: Course Overview & Learning Scope */}
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-4">
-                <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C] flex items-center gap-2.5">
-                  <Zap className="w-6 h-6 text-[#107C8E]" />
-                  <span>Course Overview & Learning Scope</span>
-                </h2>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
+                    <Zap className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C]">
+                      Course Overview & Learning Scope
+                    </h2>
+                    <p className="text-xs text-[#5EA4AA] font-medium">Program summary and structural scope</p>
+                  </div>
+                </div>
                 
-                <p className="text-sm sm:text-base text-[#1A314C]/85 leading-relaxed">
+                <p className="text-sm sm:text-base text-[#1A314C]/85 leading-relaxed font-sans">
                   {course.description}
                 </p>
 
-                {/* Tools & Tech Chips */}
+                {/* Tools & Technologies */}
                 {course.tools && course.tools.length > 0 && (
-                  <div className="pt-4 border-t border-[#C9E5ED]/60">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#5EA4AA] mb-3">
-                      Key Tools, Frameworks & Technologies Covered:
+                  <div className="pt-4 border-t border-[#C9E5ED]/60 space-y-2.5">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#107C8E]">
+                      Key Tools & Technologies Covered:
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {course.tools.map((tool, idx) => (
@@ -260,150 +213,165 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 )}
               </div>
 
-              {/* What You Will Learn Grid */}
+              {/* Detail Card 2: Core Learning Pillars */}
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-5">
-                <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C] flex items-center gap-2.5">
-                  <CheckCircle2 className="w-6 h-6 text-[#107C8E]" />
-                  <span>What You Will Master in this Program</span>
-                </h2>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
+                    <Target className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C]">
+                      Core Competencies & Learning Outcomes
+                    </h2>
+                    <p className="text-xs text-[#5EA4AA] font-medium">Skills and practical methodologies you will gain</p>
+                  </div>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <p className="text-sm text-[#1A314C]/80 leading-relaxed">
+                  Every concept is delivered through applied exercises designed to transition you from foundational understanding to full operational execution.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
                   {course.whatYouWillLearn.map((item, idx) => (
                     <div 
                       key={idx}
-                      className="flex items-start gap-3 p-3.5 rounded-xl bg-[#FAFDFE] border border-[#C9E5ED]/80 hover:border-[#1DA5B8] transition-colors"
+                      className="p-4 rounded-2xl bg-[#FAFDFE] border border-[#C9E5ED] space-y-1.5"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#107C8E] shrink-0 mt-0.5" />
-                      <span className="text-xs sm:text-sm text-[#1A314C] font-medium leading-relaxed">
+                      <h4 className="text-xs sm:text-sm font-bold text-[#107C8E]">
+                        Pillar {idx + 1}: Key Objective
+                      </h4>
+                      <p className="text-xs sm:text-sm text-[#1A314C]/85 leading-relaxed font-sans">
                         {item}
-                      </span>
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Complete Curriculum & Module Breakdown Accordions */}
-              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-5">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#C9E5ED] pb-4">
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C] flex items-center gap-2.5">
-                      <BookOpen className="w-6 h-6 text-[#107C8E]" />
-                      <span>Full Course Syllabus</span>
-                    </h2>
-                    <p className="text-xs sm:text-sm text-[#5EA4AA] mt-1">
-                      {course.modules?.length || 0} Modules • {course.lessonsCount} Total Lessons • {course.durationHours} Hours On-Demand
-                    </p>
+              {/* Detail Cards 3+: Structured Module Detail Cards (Heading & Paragraph format replacing accordion) */}
+              <div className="space-y-5">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
+                    <Layers className="w-5 h-5" />
                   </div>
-
-                  <span className="text-xs font-semibold text-[#107C8E] bg-[#1DA5B8]/10 px-3 py-1 rounded-full border border-[#1DA5B8]/20">
-                    Step-by-Step Hands-on Labs
-                  </span>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C]">
+                      Comprehensive Program Modules
+                    </h2>
+                    <p className="text-xs text-[#5EA4AA] font-medium">In-depth overview of each progressive training phase</p>
+                  </div>
                 </div>
 
-                <div className="space-y-3 pt-2">
-                  {course.modules?.map((mod, mIdx) => {
-                    const isOpen = openModuleId === mod.id;
-                    return (
-                      <div 
-                        key={mod.id}
-                        className={`rounded-2xl border transition-all overflow-hidden ${
-                          isOpen 
-                            ? 'border-[#107C8E] bg-[#FAFDFE] shadow-sm' 
-                            : 'border-[#C9E5ED] bg-white hover:border-[#1DA5B8]'
-                        }`}
-                      >
-                        {/* Module Header Button */}
-                        <button
-                          onClick={() => toggleModule(mod.id)}
-                          className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer"
-                        >
-                          <div className="flex items-center gap-3">
-                            <span className={`w-8 h-8 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 ${
-                              isOpen ? 'bg-[#107C8E] text-white' : 'bg-[#EBF4F7] text-[#10566E]'
-                            }`}>
-                              {mIdx + 1}
-                            </span>
-                            <div>
-                              <h3 className="font-bold text-sm sm:text-base text-[#1A314C]">
-                                {mod.title}
-                              </h3>
-                              <p className="text-xs text-[#5EA4AA] font-medium mt-0.5">
-                                {mod.lessonsCount} lessons • {mod.duration}
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="text-[#107C8E] p-1 rounded-lg hover:bg-[#EBF4F7] transition-colors">
-                            {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                          </div>
-                        </button>
-
-                        {/* Module Lessons List */}
-                        {isOpen && (
-                          <div className="px-4 sm:px-5 pb-5 pt-1 space-y-2 border-t border-[#C9E5ED]/60">
-                            {mod.lessons.map((lesson) => (
-                              <div
-                                key={lesson.id}
-                                className="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white border border-[#C9E5ED]/70 text-xs sm:text-sm"
-                              >
-                                <div className="flex items-center gap-2.5">
-                                  {lesson.type === 'video' ? (
-                                    <PlayCircle className="w-4 h-4 text-[#107C8E] shrink-0" />
-                                  ) : (
-                                    <FileText className="w-4 h-4 text-[#10566E] shrink-0" />
-                                  )}
-                                  <span className="font-medium text-[#1A314C] line-clamp-1">
-                                    {lesson.title}
-                                  </span>
-                                </div>
-
-                                <div className="flex items-center gap-2 shrink-0">
-                                  {lesson.isPreview && (
-                                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#107C8E] bg-[#1DA5B8]/15 px-2 py-0.5 rounded border border-[#1DA5B8]/30">
-                                      Preview
-                                    </span>
-                                  )}
-                                  <span className="text-xs text-[#5EA4AA] font-semibold">
-                                    {lesson.duration}
-                                  </span>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                {course.modules?.map((mod, mIdx) => (
+                  <div 
+                    key={mod.id}
+                    className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#C9E5ED] shadow-sm hover:border-[#107C8E] transition-all space-y-3.5"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-3">
+                        <span className="w-8 h-8 rounded-xl bg-[#107C8E] text-white flex items-center justify-center font-black text-xs shrink-0">
+                          {mIdx + 1}
+                        </span>
+                        <h3 className="font-extrabold text-base sm:text-lg text-[#1A314C]">
+                          {mod.title}
+                        </h3>
                       </div>
-                    );
-                  })}
-                </div>
+                      <span className="text-xs font-semibold text-[#107C8E] bg-[#EBF4F7] px-3 py-1 rounded-full border border-[#C9E5ED]">
+                        {mod.lessonsCount} lessons • {mod.duration}
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-[#1A314C]/80 leading-relaxed">
+                      This module focuses on the practical workflows, architectural principles, and execution strategies required to build and scale production-ready systems in this domain.
+                    </p>
+
+                    <div className="pt-2">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-[#5EA4AA] mb-2">
+                        Lessons Covered in this Phase:
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {mod.lessons.map((lesson) => (
+                          <div 
+                            key={lesson.id}
+                            className="flex items-center gap-2 p-2.5 rounded-xl bg-[#FAFDFE] border border-[#C9E5ED]/70 text-xs text-[#1A314C]"
+                          >
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#107C8E] shrink-0" />
+                            <span className="font-medium line-clamp-1">{lesson.title}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              {/* Requirements & Target Audience */}
+              {/* Detail Card: Prerequisites & Who Should Enroll */}
               {course.requirements && course.requirements.length > 0 && (
                 <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-4">
-                  <h2 className="text-lg sm:text-xl font-black font-heading text-[#1A314C] flex items-center gap-2.5">
-                    <ShieldCheck className="w-5 h-5 text-[#107C8E]" />
-                    <span>Prerequisites & Requirements</span>
-                  </h2>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
+                      <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C]">
+                        Prerequisites & Target Audience
+                      </h2>
+                      <p className="text-xs text-[#5EA4AA] font-medium">Recommended baseline knowledge and hardware setup</p>
+                    </div>
+                  </div>
 
-                  <ul className="space-y-2">
+                  <p className="text-sm text-[#1A314C]/85 leading-relaxed font-sans">
+                    This training program is structured to accommodate ambitious learners who want to develop verified skills from scratch or level up their existing workflow.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                     {course.requirements.map((req, rIdx) => (
-                      <li key={rIdx} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#1A314C]/85">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#107C8E]" />
+                      <div 
+                        key={rIdx}
+                        className="p-3 rounded-xl bg-[#FAFDFE] border border-[#C9E5ED] flex items-start gap-2.5 text-xs sm:text-sm text-[#1A314C]/85"
+                      >
+                        <div className="w-2 h-2 rounded-full bg-[#107C8E] shrink-0 mt-1.5" />
                         <span>{req}</span>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
 
-              {/* Instructor Information */}
+              {/* Detail Card: Career Pathways & Industry Application */}
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-4">
-                <h2 className="text-lg sm:text-xl font-black font-heading text-[#1A314C] flex items-center gap-2.5">
-                  <Award className="w-5 h-5 text-[#107C8E]" />
-                  <span>Lead Program Instructor</span>
-                </h2>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
+                    <Briefcase className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C]">
+                      Career Pathways & Monetization Opportunities
+                    </h2>
+                    <p className="text-xs text-[#5EA4AA] font-medium">Real-world commercial relevance and earning potential</p>
+                  </div>
+                </div>
 
-                <div className="flex items-center gap-4 pt-2">
+                <p className="text-sm sm:text-base text-[#1A314C]/85 leading-relaxed font-sans">
+                  Graduates of this program leverage their hands-on portfolio to secure high-paying remote roles, launch scalable agency services, or monetize independent digital assets worldwide.
+                </p>
+              </div>
+
+              {/* Detail Card: Lead Instructor */}
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
+                    <Award className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C]">
+                      Lead Program Instructor
+                    </h2>
+                    <p className="text-xs text-[#5EA4AA] font-medium">Industry practitioner and dedicated mentor</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pt-1">
                   <img
                     src={course.instructor.avatar}
                     alt={course.instructor.name}
@@ -413,17 +381,17 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                       target.onerror = null;
                       target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
                     }}
-                    className="w-16 h-16 rounded-2xl object-cover border-2 border-[#107C8E]/40 shadow-sm"
+                    className="w-16 h-16 rounded-2xl object-cover border-2 border-[#107C8E]/40 shadow-sm shrink-0"
                   />
-                  <div>
+                  <div className="space-y-1">
                     <h3 className="font-extrabold text-base sm:text-lg text-[#1A314C]">
                       {course.instructor.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#107C8E] font-bold">
                       {course.instructor.role}
                     </p>
-                    <p className="text-xs text-[#5EA4AA] mt-1">
-                      Mentored 5,000+ engineers, marketers & creators at FinTech Edge Institute.
+                    <p className="text-xs sm:text-sm text-[#1A314C]/80 leading-relaxed pt-1">
+                      Professional instructor with years of hands-on industry expertise, guiding students through practical development, optimization frameworks, and live deployment.
                     </p>
                   </div>
                 </div>
@@ -431,29 +399,21 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
             </div>
 
-            {/* Right Sticky Enrollment Sidebar (4 cols) */}
+            {/* Right Sticky Enrollment Sidebar (4 cols - Clean & Without Price) */}
             <div className="lg:col-span-4">
               <div className="sticky top-24 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border-2 border-[#107C8E]/30 shadow-xl space-y-6">
                 
-                {/* Price Header */}
-                <div className="space-y-1 pb-4 border-b border-[#C9E5ED]">
-                  <div className="flex items-baseline gap-2.5">
-                    <span className="text-3xl sm:text-4xl font-black text-[#107C8E]">
-                      ${course.priceUSD}
-                    </span>
-                    <span className="text-base line-through text-[#5EA4AA] font-semibold">
-                      ${course.originalPriceUSD}
-                    </span>
-                    <span className="text-xs font-black bg-emerald-500 text-white px-2 py-0.5 rounded-md">
-                      {discountPercent}% OFF
-                    </span>
-                  </div>
-                  <p className="text-xs font-bold text-[#5EA4AA]">
-                    Rs {course.pricePKR.toLocaleString()} PKR (One-time investment)
+                {/* Program Access Header */}
+                <div className="space-y-2 pb-4 border-b border-[#C9E5ED]">
+                  <h3 className="text-xl font-black font-heading text-[#1A314C]">
+                    Program Enrollment
+                  </h3>
+                  <p className="text-xs text-[#1A314C]/75 leading-relaxed font-sans">
+                    Get immediate lifetime access to full video lectures, hands-on labs, resource files, and 1-on-1 mentor guidance.
                   </p>
                 </div>
 
-                {/* Direct Action Buttons */}
+                {/* Action Buttons */}
                 <div className="space-y-3">
                   <button
                     onClick={() => onEnroll(course)}
@@ -471,40 +431,40 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   </button>
                 </div>
 
-                {/* Course Inclusions Checklist */}
+                {/* Program Inclusions */}
                 <div className="space-y-3 pt-2">
                   <p className="text-xs font-extrabold uppercase tracking-wider text-[#1A314C]">
                     This Program Includes:
                   </p>
                   
-                  <div className="space-y-2 text-xs text-[#1A314C]/90">
+                  <div className="space-y-2.5 text-xs text-[#1A314C]/90">
                     <div className="flex items-center gap-2.5">
-                      <Clock className="w-4 h-4 text-[#107C8E]" />
+                      <Clock className="w-4 h-4 text-[#107C8E] shrink-0" />
                       <span>{course.durationHours} hours full on-demand video</span>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <BookOpen className="w-4 h-4 text-[#107C8E]" />
+                      <BookOpen className="w-4 h-4 text-[#107C8E] shrink-0" />
                       <span>{course.lessonsCount} downloadable resources & code labs</span>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <Award className="w-4 h-4 text-[#107C8E]" />
+                      <Award className="w-4 h-4 text-[#107C8E] shrink-0" />
                       <span>Official FinTech Edge Certificate of Completion</span>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <ShieldCheck className="w-4 h-4 text-[#107C8E]" />
+                      <ShieldCheck className="w-4 h-4 text-[#107C8E] shrink-0" />
                       <span>1-on-1 Mentorship & QA support access</span>
                     </div>
                     <div className="flex items-center gap-2.5">
-                      <Sparkles className="w-4 h-4 text-[#107C8E]" />
+                      <Sparkles className="w-4 h-4 text-[#107C8E] shrink-0" />
                       <span>Lifetime access with continuous updates</span>
                     </div>
                   </div>
                 </div>
 
-                {/* 100% Satisfaction Guarantee Note */}
+                {/* Consultation Note */}
                 <div className="p-3.5 rounded-xl bg-[#FAFDFE] border border-[#C9E5ED] text-center text-xs text-[#5EA4AA]">
-                  <p className="font-semibold text-[#10566E]">Need corporate or group billing?</p>
-                  <p className="text-[11px] mt-0.5">Contact our counselor team for custom cohorts.</p>
+                  <p className="font-semibold text-[#10566E]">Need corporate or group cohorts?</p>
+                  <p className="text-[11px] mt-0.5">Contact our counselor team for custom training batches.</p>
                 </div>
 
               </div>
@@ -515,7 +475,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
         </div>
       </section>
 
-      {/* 3. Bottom Rotated Box Art Call To Action Card */}
+      {/* 3. Bottom Call To Action Card */}
       <section className="relative w-full py-12 bg-gradient-to-r from-[#10566E] to-[#1A314C] text-white overflow-hidden shadow-inner mt-8">
         
         {/* Rotated Box Art: Bottom Right Layered Diamonds */}
