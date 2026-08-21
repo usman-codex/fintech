@@ -1,4 +1,9 @@
 import img1 from '../assets/images/fintech-logo.png';
+export interface GalleryHexagon {
+  id: string;
+  image: string;
+  alt: string;
+}
 export const HEXAGON_GALLERY: GalleryHexagon[] = [
   // Left Wing (Top raised)
   {
