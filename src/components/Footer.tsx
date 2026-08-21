@@ -1,49 +1,57 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { LOGO_IMAGE_URL } from './Header';
 import { 
-  GraduationCap, 
-  Mail, 
   Phone, 
   MapPin, 
-  Send, 
-  ArrowUpRight, 
-  CheckCircle2, 
   Globe, 
   Shield, 
-  Heart
+  Linkedin, 
+  Twitter, 
+  Facebook, 
+  Instagram, 
+  Youtube, 
+  MessageCircle,
+  X,
+  CheckCircle2,
+  HelpCircle,
+  FileText,
+  Lock
 } from 'lucide-react';
 
 interface FooterProps {
-  setActiveTab: (tab: string) => void;
-  onOpenPromptModal: () => void;
+  setActiveTab?: (tab: string) => void;
+  onOpenPromptModal?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenPromptModal }) => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
+  const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | 'help' | null>(null);
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setEmail('');
-      setTimeout(() => setSubscribed(false), 5000);
-    }
-  };
+  const socialLinks = [
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com', color: 'hover:bg-[#0077B5] hover:border-[#0077B5]' },
+    { name: 'Twitter / X', icon: Twitter, href: 'https://twitter.com', color: 'hover:bg-[#1DA1F2] hover:border-[#1DA1F2]' },
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com', color: 'hover:bg-[#1877F2] hover:border-[#1877F2]' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com', color: 'hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:border-transparent' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com', color: 'hover:bg-[#FF0000] hover:border-[#FF0000]' },
+    { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/923111222595', color: 'hover:bg-[#25D366] hover:border-[#25D366]' },
+  ];
 
   return (
-    <footer className="bg-[#1A314C] text-[#C9E5ED] border-t border-[#10566E] pt-16 pb-12 relative overflow-hidden">
-      {/* Subtle Glow Background Accent */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#107C8E]/20 rounded-full blur-3xl pointer-events-none" />
+    <footer className="relative w-full bg-gradient-to-r from-[#0F1E2E] via-[#162A40] to-[#10566E] text-[#C9E5ED] border-t border-[#1DA5B8]/30 py-8 sm:py-10 overflow-hidden shadow-2xl">
+      {/* Decorative ambient glowing accents */}
+      <div className="absolute top-0 right-10 w-72 h-72 bg-[#1DA5B8]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-72 h-72 bg-[#107C8E]/15 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Main Compact 3-Column Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-center pb-8 border-b border-[#1DA5B8]/20">
           
           {/* Column 1: Brand Info */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="space-y-3 text-center md:text-left">
             <div 
-              onClick={() => setActiveTab('home')} 
-              className="flex items-center gap-3 cursor-pointer group w-fit select-none"
+              onClick={() => setActiveTab && setActiveTab('home')} 
+              className="inline-flex items-center gap-3 cursor-pointer group select-none"
             >
               <img 
                 src={LOGO_IMAGE_URL} 
@@ -55,9 +63,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenPromptModal 
                 }}
                 alt="Fintech Edge Institute Logo" 
                 referrerPolicy="no-referrer"
-                className="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               />
-              <div className="flex flex-col leading-tight">
+              <div className="flex flex-col text-left leading-tight">
                 <span className="text-base sm:text-lg font-black tracking-tight text-white group-hover:text-[#1DA5B8] transition-colors">
                   FinTech Edge
                 </span>
@@ -67,138 +75,245 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenPromptModal 
               </div>
             </div>
 
-            <p className="text-sm text-[#C9E5ED]/80 leading-relaxed max-w-sm">
-              Empowering the next generation of financial technologists, Web3 pioneers, and AI innovators through industry-driven self-paced education, hands-on projects, and 1-on-1 mentorship.
+            <p className="text-xs sm:text-sm text-[#C9E5ED]/80 leading-relaxed max-w-sm mx-auto md:mx-0">
+              Empowering next-gen financial technologists, Web3 pioneers, and AI innovators with verified certifications and hands-on mentorship.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#10566E] text-[#C9E5ED] border border-[#107C8E] shadow-sm">
-                <Globe className="w-3.5 h-3.5 text-[#1DA5B8]" />
+            <div className="flex items-center justify-center md:justify-start gap-2.5 pt-1">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#10566E]/60 text-[#C9E5ED] border border-[#1DA5B8]/40 shadow-xs">
+                <Globe className="w-3 h-3 text-[#1DA5B8]" />
                 Global Platform
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#10566E] text-[#C9E5ED] border border-[#107C8E]">
-                <Shield className="w-3.5 h-3.5 text-[#1DA5B8]" />
-                Verified Certificates
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#10566E]/60 text-[#C9E5ED] border border-[#1DA5B8]/40 shadow-xs">
+                <Shield className="w-3 h-3 text-[#1DA5B8]" />
+                Verified Certs
               </span>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-[#1DA5B8] pl-2">
-              Navigation
+          {/* Column 2: Exact Physical Address & Phone */}
+          <div className="space-y-3 text-center md:text-left bg-black/15 p-4 rounded-2xl border border-white/5 backdrop-blur-xs">
+            <h4 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-center md:justify-start gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
+              <span>Campus & Head Office</span>
             </h4>
-            <ul className="space-y-2.5 text-sm">
-              {[
-                { label: 'Home Page', id: 'home' },
-                { label: 'About Us', id: 'about' },
-                { label: 'Services', id: 'services' },
-                { label: 'Top Projects', id: 'projects' },
-                { label: 'Courses', id: 'courses' },
-                { label: 'Careers', id: 'career' },
-                { label: 'Blog & Insights', id: 'blog' },
-                { label: 'Contact Us', id: 'contact' },
-              ].map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => setActiveTab(link.id)}
-                    className="hover:text-[#1DA5B8] transition-colors flex items-center gap-1.5 cursor-pointer group text-[#C9E5ED]"
-                  >
-                    <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-[#1DA5B8]" />
-                    <span>{link.label}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+            
+            <div className="space-y-2 text-xs sm:text-sm">
+              <div className="flex items-start justify-center md:justify-start gap-2.5 text-[#C9E5ED]">
+                <MapPin className="w-4 h-4 text-[#1DA5B8] shrink-0 mt-0.5" />
+                <span className="leading-snug">
+                  Plot #40, Sector B1, Block 1, Abubakar Rd, Township, Lahore.
+                </span>
+              </div>
 
-          {/* Column 3: Contact Details */}
-          <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-[#1DA5B8] pl-2">
-              Contact Info
-            </h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-3 text-[#C9E5ED]">
-                <Mail className="w-4 h-4 text-[#1DA5B8] shrink-0 mt-1" />
-                <a href="mailto:info@fintechedgeinstitute.com" className="hover:text-[#1DA5B8] break-all">
-                  info@fintechedgeinstitute.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3 text-[#C9E5ED]">
+              <div className="flex items-center justify-center md:justify-start gap-2.5 text-[#C9E5ED] pt-1">
                 <Phone className="w-4 h-4 text-[#1DA5B8] shrink-0" />
-                <a href="tel:+923111222595" className="hover:text-[#1DA5B8]">
+                <a 
+                  href="tel:+923111222595" 
+                  className="hover:text-[#1DA5B8] font-bold text-white transition-colors tracking-wide"
+                >
                   +92 311 1222 595
                 </a>
-              </li>
-              <li className="flex items-start gap-3 text-[#C9E5ED]">
-                <MapPin className="w-4 h-4 text-[#1DA5B8] shrink-0 mt-1" />
-                <span>Lahore, Punjab, Pakistan</span>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
 
-          {/* Column 4: Newsletter */}
-          <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-[#1DA5B8] pl-2">
-              Newsletter
+          {/* Column 3: Social Media Icons with Smooth Hover Animations */}
+          <div className="space-y-3 text-center md:text-right flex flex-col items-center md:items-end justify-center">
+            <h4 className="text-xs font-black uppercase tracking-wider text-white">
+              Connect With Us
             </h4>
-            <p className="text-xs text-[#C9E5ED]/80 mb-3">
-              Subscribe for weekly Web3 airdrop guides, market research & course discounts.
+            <p className="text-xs text-[#C9E5ED]/70 max-w-xs">
+              Follow our verified community channels for announcements & updates.
             </p>
 
-            {subscribed ? (
-              <div className="p-3 rounded-xl bg-[#10566E] border border-[#1DA5B8] text-[#C9E5ED] text-xs flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 shrink-0 text-[#1DA5B8]" />
-                <span>Subscribed successfully! Thank you.</span>
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="space-y-2">
-                <div className="relative">
-                  <input
-                    type="email"
-                    required
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-[#10566E]/40 border border-[#107C8E] rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#C9E5ED]/60 focus:outline-none focus:border-[#1DA5B8]"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-1 top-1 bottom-1 px-3 bg-[#1DA5B8] hover:bg-[#107C8E] text-[#1A314C] hover:text-white font-bold rounded-lg text-xs flex items-center justify-center transition-all cursor-pointer"
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-2.5 pt-1">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    className={`w-9 h-9 rounded-xl bg-[#10566E]/50 border border-[#1DA5B8]/30 flex items-center justify-center text-[#C9E5ED] hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#1DA5B8]/20 cursor-pointer ${social.color}`}
                   >
-                    <Send className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </form>
-            )}
-
-            <div className="mt-4 pt-3 border-t border-[#10566E]">
-              <button
-                onClick={onOpenPromptModal}
-                className="text-xs text-[#1DA5B8] hover:underline flex items-center gap-1.5 font-semibold cursor-pointer"
-              >
-                <span>Export Claude Website Prompt</span>
-              </button>
+                    <Icon className="w-4 h-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="pt-8 border-t border-[#10566E] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#5EA4AA]">
-          <p>© 2026 Fintech Edge Institute. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <button onClick={() => setActiveTab('about')} className="hover:text-white">Privacy Policy</button>
-            <button onClick={() => setActiveTab('about')} className="hover:text-white">Terms of Service</button>
-            <button onClick={() => setActiveTab('contact')} className="hover:text-white">Help & Support</button>
+        {/* Bottom Bar: Copyright & Interactive Popups for Privacy, Terms, Help */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#C9E5ED]/70">
+          <p>© 2026 FinTech Edge Institute. All rights reserved.</p>
+
+          <div className="flex items-center gap-5 sm:gap-6 font-semibold">
+            <button 
+              onClick={() => setActiveModal('privacy')} 
+              className="text-[#C9E5ED] hover:text-[#1DA5B8] transition-colors cursor-pointer hover:underline"
+            >
+              Privacy Policy
+            </button>
+            <span className="text-[#1DA5B8]/40">•</span>
+            <button 
+              onClick={() => setActiveModal('terms')} 
+              className="text-[#C9E5ED] hover:text-[#1DA5B8] transition-colors cursor-pointer hover:underline"
+            >
+              Terms of Service
+            </button>
+            <span className="text-[#1DA5B8]/40">•</span>
+            <button 
+              onClick={() => setActiveModal('help')} 
+              className="text-[#C9E5ED] hover:text-[#1DA5B8] transition-colors cursor-pointer hover:underline"
+            >
+              Help & Support
+            </button>
           </div>
-          <div className="flex items-center gap-1 text-[#5EA4AA]">
+
+          <div className="flex items-center gap-1.5 text-xs text-[#C9E5ED]/70">
             <span>Powered by</span>
-            <span className="font-semibold text-[#C9E5ED]">Fintech Developer</span>
+            <span className="font-extrabold text-[#1DA5B8]">FinTech Developer</span>
           </div>
         </div>
 
       </div>
+
+      {/* Interactive Popups / Modals */}
+      <AnimatePresence>
+        {activeModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.94, y: 15 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-full max-w-xl bg-[#1A314C] text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#1DA5B8]/40 overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setActiveModal(null)}
+                className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              {/* Modal Header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#107C8E] text-[#1DA5B8] flex items-center justify-center shadow-md">
+                  {activeModal === 'privacy' && <Lock className="w-5 h-5 text-white" />}
+                  {activeModal === 'terms' && <FileText className="w-5 h-5 text-white" />}
+                  {activeModal === 'help' && <HelpCircle className="w-5 h-5 text-white" />}
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-black font-heading text-white">
+                    {activeModal === 'privacy' && 'Privacy Policy'}
+                    {activeModal === 'terms' && 'Terms of Service'}
+                    {activeModal === 'help' && 'Help & Student Support'}
+                  </h3>
+                  <span className="text-xs text-[#1DA5B8] font-bold">
+                    FinTech Edge Institute Official Document
+                  </span>
+                </div>
+              </div>
+
+              {/* Modal Body Content */}
+              <div className="space-y-3 text-xs sm:text-sm text-[#C9E5ED]/90 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
+                {activeModal === 'privacy' && (
+                  <>
+                    <p>
+                      At <strong>FinTech Edge Institute</strong>, we are committed to protecting your personal data and digital privacy in compliance with international data standards.
+                    </p>
+                    <div className="p-3 rounded-xl bg-black/20 space-y-1.5 border border-white/5">
+                      <h5 className="font-bold text-white flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1DA5B8]" />
+                        Data Encryption & Security
+                      </h5>
+                      <p className="text-xs text-[#C9E5ED]/80">
+                        All student records, course evaluations, and certification hashes are encrypted using modern cryptographic protocols.
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-black/20 space-y-1.5 border border-white/5">
+                      <h5 className="font-bold text-white flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1DA5B8]" />
+                        No Third-Party Data Sharing
+                      </h5>
+                      <p className="text-xs text-[#C9E5ED]/80">
+                        We never sell or monetize user contact information or academic performance logs to unauthorized third-party advertisers.
+                      </p>
+                    </div>
+                  </>
+                )}
+
+                {activeModal === 'terms' && (
+                  <>
+                    <p>
+                      By enrolling in courses or accessing services at <strong>FinTech Edge Institute</strong>, you agree to adhere to our academic integrity and institutional terms.
+                    </p>
+                    <div className="p-3 rounded-xl bg-black/20 space-y-1.5 border border-white/5">
+                      <h5 className="font-bold text-white flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1DA5B8]" />
+                        Verified Certification Issuance
+                      </h5>
+                      <p className="text-xs text-[#C9E5ED]/80">
+                        Official certificates are awarded only upon meeting verified project submission benchmarks, code review criteria, and attendance quotas.
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-black/20 space-y-1.5 border border-white/5">
+                      <h5 className="font-bold text-white flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1DA5B8]" />
+                        Intellectual Property & Code Rights
+                      </h5>
+                      <p className="text-xs text-[#C9E5ED]/80">
+                        Students retain 100% full commercial and copyright ownership of applications, smart contracts, and projects built during their internship cohorts.
+                      </p>
+                    </div>
+                  </>
+                )}
+
+                {activeModal === 'help' && (
+                  <>
+                    <p>
+                      Need assistance with enrollment, curriculum mentorship, or technical labs? Our student support desk is available to assist you.
+                    </p>
+                    <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#107C8E]/30 to-[#10566E]/30 border border-[#1DA5B8]/30 space-y-2">
+                      <div className="flex items-center gap-2 text-white font-bold">
+                        <Phone className="w-4 h-4 text-[#1DA5B8]" />
+                        <span>Direct Help Hotline:</span>
+                        <a href="tel:+923111222595" className="text-[#1DA5B8] underline">+92 311 1222 595</a>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs text-[#C9E5ED]">
+                        <MapPin className="w-4 h-4 text-[#1DA5B8] shrink-0 mt-0.5" />
+                        <span>Physical Helpdesk: Plot #40, Sector B1, Block 1, Abubakar Rd, Township, Lahore.</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-[#C9E5ED]/70">
+                      Support hours: Monday – Saturday (9:00 AM – 7:00 PM PKT). Walk-in campus inquiries are welcome during operating hours.
+                    </p>
+                  </>
+                )}
+              </div>
+
+              {/* Modal Footer */}
+              <div className="mt-6 pt-4 border-t border-white/10 flex justify-end">
+                <button
+                  onClick={() => setActiveModal(null)}
+                  className="px-5 py-2 rounded-xl bg-[#107C8E] hover:bg-[#1DA5B8] text-white text-xs font-bold font-heading transition-colors cursor-pointer"
+                >
+                  Close Window
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
     </footer>
   );
 };
+
