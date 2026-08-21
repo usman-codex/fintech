@@ -1,217 +1,212 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { motion } from 'motion/react';
 import { Course } from '../types';
 import { 
-  Search, 
-  Filter, 
-  Layers, 
   Star, 
-  Clock, 
-  BookOpen, 
   Users, 
   Sparkles,
-  SlidersHorizontal
+  BookOpen
 } from 'lucide-react';
 
 interface CoursesPageProps {
   courses: Course[];
   onSelectCourse: (course: Course) => void;
-  searchQuery: string;
-  setSearchQuery: (q: string) => void;
+  searchQuery?: string;
+  setSearchQuery?: (q: string) => void;
 }
 
 export const CoursesPage: React.FC<CoursesPageProps> = ({
   courses,
   onSelectCourse,
-  searchQuery,
-  setSearchQuery,
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [selectedLevel, setSelectedLevel] = useState<string>('All');
-
-  const categories = ['All', 'Trading & Airdrops', 'Web3 & Blockchain', 'FinTech & AI', 'All Access'];
-  const levels = ['All', 'Beginner', 'Intermediate', 'Advanced', 'All Levels'];
-
-  const filtered = courses.filter((c) => {
-    const matchesSearch = c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          c.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          c.category.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCat = selectedCategory === 'All' || c.category === selectedCategory;
-    const matchesLvl = selectedLevel === 'All' || c.level === selectedLevel;
-    return matchesSearch && matchesCat && matchesLvl;
-  });
-
   return (
-    <div className="py-12 bg-[#C9E5ED]/10 min-h-screen text-[#1A314C]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div className="w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col">
+      
+      {/* 1. Hero Banner with Gradient & Layered Geometric Diamond Art */}
+      <section className="relative w-full py-16 sm:py-24 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden shadow-xl">
+        {/* Ambient Grid Pattern */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#C9E5ED_1px,transparent_1px)] [background-size:20px_20px]" />
         
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
-            All Fintech Edge Courses
+        {/* Top-Right Signature Decorative Layered Geometric Diamond Art */}
+        <div 
+          aria-hidden="true" 
+          className="pointer-events-none absolute -top-12 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-88 sm:h-88 z-0 opacity-75"
+        >
+          <div className="relative w-full h-full">
+            {/* Outer Light Cyan & Teal diamond */}
+            <div className="absolute top-0 right-4 w-48 h-48 sm:w-64 sm:h-64 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/40 bg-gradient-to-br from-[#C9E5ED]/30 to-[#1DA5B8]/10 backdrop-blur-[1px]" />
+            {/* Middle Deep Teal diamond */}
+            <div className="absolute top-6 right-10 w-36 h-36 sm:w-50 sm:h-50 rotate-45 rounded-2xl border-2 border-[#107C8E]/50 bg-gradient-to-br from-[#107C8E]/30 to-[#10566E]/30" />
+            {/* Inner solid Dark Navy & Bright Teal gradient diamond */}
+            <div className="absolute top-12 right-16 w-24 h-24 sm:w-34 sm:h-34 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-95 shadow-2xl shadow-[#107C8E]/30" />
+            {/* Floating glowing cyan accent dots */}
+            <div className="absolute top-2 right-36 w-3 h-3 rounded-full bg-[#1DA5B8] shadow-sm shadow-[#1DA5B8]" />
+            <div className="absolute top-40 right-6 w-2.5 h-2.5 rounded-full bg-[#C9E5ED]" />
+            <div className="absolute top-28 right-48 w-2 h-2 rounded-full bg-[#1DA5B8]/80" />
+          </div>
+        </div>
+
+        {/* Bottom-Left Complementary Geometric Diamond Art */}
+        <div 
+          aria-hidden="true" 
+          className="pointer-events-none absolute -bottom-16 -left-12 w-64 h-64 sm:w-72 sm:h-72 z-0 opacity-40 hidden sm:block"
+        >
+          <div className="relative w-full h-full">
+            <div className="absolute bottom-4 left-4 w-44 h-44 rotate-45 rounded-3xl border border-[#1DA5B8]/30 bg-gradient-to-tr from-[#10566E]/20 to-[#1DA5B8]/10" />
+            <div className="absolute bottom-8 left-8 w-32 h-32 rotate-45 rounded-2xl border border-[#107C8E]/40 bg-[#1A314C]/40" />
+            <div className="absolute bottom-12 left-12 w-20 h-20 rotate-45 rounded-xl bg-gradient-to-tr from-[#107C8E] to-[#1DA5B8] opacity-70" />
+            <div className="absolute bottom-2 left-32 w-2.5 h-2.5 rounded-full bg-[#1DA5B8]" />
+          </div>
+        </div>
+
+        {/* Content Container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#10566E]/80 border border-[#1DA5B8]/40 text-xs font-semibold tracking-wide text-[#C9E5ED] shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-[#1DA5B8]" />
+            <span>Industry-Standard Curriculum</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight font-heading">
+            All FinTech Edge Courses
           </h1>
-          <p className="text-[#10566E] text-sm">
-            Master high-demand skills in decentralized finance, Web3 marketing, crypto airdrops, and financial artificial intelligence.
+
+          <p className="text-[#C9E5ED] text-sm sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-sans font-normal">
+            Master high-demand skills in decentralized finance, Web3 marketing, crypto airdrops, and financial artificial intelligence with verified certifications and hands-on 1-on-1 mentorship.
           </p>
-        </div>
 
-        {/* Filter Toolbar */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 border border-[#C9E5ED] space-y-4 shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            
-            {/* Search Input */}
-            <div className="md:col-span-6 relative">
-              <Search className="w-4 h-4 text-[#5EA4AA] absolute left-3.5 top-3.5" />
-              <input
-                type="text"
-                placeholder="Search by course title, topic or keyword..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#C9E5ED]/15 border border-[#C9E5ED] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#1A314C] placeholder-[#5EA4AA] focus:outline-none focus:border-[#107C8E]"
-              />
+          <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-xs sm:text-sm text-[#C9E5ED]/90 font-medium">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
+              <span>{courses.length} Comprehensive Programs</span>
             </div>
-
-            {/* Level Selector */}
-            <div className="md:col-span-3">
-              <select
-                value={selectedLevel}
-                onChange={(e) => setSelectedLevel(e.target.value)}
-                className="w-full bg-[#C9E5ED]/15 border border-[#C9E5ED] text-[#1A314C] rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-[#107C8E]"
-              >
-                {levels.map((lvl) => (
-                  <option key={lvl} value={lvl}>
-                    Level: {lvl}
-                  </option>
-                ))}
-              </select>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
+              <span>Self-Paced & Cohort Learning</span>
             </div>
-
-            {/* Result Counter */}
-            <div className="md:col-span-3 flex items-center justify-end text-xs text-[#5EA4AA] font-medium">
-              Showing <span className="font-bold text-[#107C8E] mx-1">{filtered.length}</span> programs
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
+              <span>Lifetime Project Access</span>
             </div>
-
-          </div>
-
-          {/* Category Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto pt-2 border-t border-[#C9E5ED] scrollbar-none">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                  selectedCategory === cat
-                    ? 'bg-[#107C8E] text-white font-bold shadow-sm'
-                    : 'bg-[#C9E5ED]/20 text-[#10566E] hover:bg-[#C9E5ED]/50 border border-[#C9E5ED]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
           </div>
         </div>
+      </section>
 
-        {/* Course Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((course) => (
-            <div
-              key={course.id}
-              className="group relative bg-white rounded-2xl border border-[#C9E5ED] hover:border-[#1DA5B8] overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 hover:-translate-y-2 hover:z-10 transition-all duration-300 flex flex-col justify-between text-[#1A314C]"
-            >
-              <div>
-                <div 
-                  className="relative h-48 overflow-hidden cursor-pointer"
-                  onClick={() => onSelectCourse(course)}
-                >
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.onerror = null;
-                      target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80';
-                    }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A314C]/80 via-transparent to-transparent opacity-80" />
-
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-xs">
-                    <span className="bg-[#1A314C]/85 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-md border border-[#107C8E]">
-                      {course.category}
-                    </span>
-                    {course.badge && (
-                      <span className="bg-[#107C8E] text-white font-extrabold text-[10px] px-2.5 py-0.5 rounded-full shadow-md">
-                        {course.badge}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="p-5 space-y-3">
-                  <div className="flex items-center justify-between text-xs text-[#5EA4AA]">
-                    <div className="flex items-center gap-1 bg-[#1DA5B8]/15 text-[#10566E] px-2 py-0.5 rounded font-bold border border-[#1DA5B8]/30">
-                      <Star className="w-3.5 h-3.5 fill-[#1DA5B8] text-[#1DA5B8]" />
-                      <span>{course.rating}</span>
-                      <span className="text-[#5EA4AA] font-normal">({course.reviewCount})</span>
-                    </div>
-
-                    <div className="flex items-center gap-1 text-[#5EA4AA]">
-                      <Users className="w-3.5 h-3.5 text-[#107C8E]" />
-                      <span>{course.studentCount.toLocaleString()} enrolled</span>
-                    </div>
-                  </div>
-
-                  <h3
+      {/* 2. Courses Grid Section (Search bar & filter list removed as requested) */}
+      <section className="w-full py-14 sm:py-20 flex-1">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {courses.map((course, idx) => (
+              <motion.div
+                key={course.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: idx * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative bg-white rounded-2xl sm:rounded-3xl border border-[#C9E5ED]/80 hover:border-[#1DA5B8] overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between text-[#1A314C]"
+              >
+                <div>
+                  {/* Course Thumbnail Image */}
+                  <div 
+                    className="relative aspect-[16/10] overflow-hidden cursor-pointer bg-[#EBF4F7]"
                     onClick={() => onSelectCourse(course)}
-                    className="text-base font-bold text-[#1A314C] group-hover:text-[#107C8E] transition-colors line-clamp-2 cursor-pointer leading-snug"
                   >
-                    {course.title}
-                  </h3>
-
-                  <p className="text-xs text-[#1A314C]/75 line-clamp-2 leading-relaxed">
-                    {course.tagline}
-                  </p>
-
-                  <div className="flex items-center gap-2 pt-2 border-t border-[#C9E5ED]">
                     <img
-                      src={course.instructor.avatar}
-                      alt={course.instructor.name}
+                      src={course.image}
+                      alt={course.title}
                       referrerPolicy="no-referrer"
                       onError={(e) => {
                         const target = e.currentTarget;
                         target.onerror = null;
-                        target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
+                        target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80';
                       }}
-                      className="w-6 h-6 rounded-full object-cover border border-[#107C8E]"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <span className="text-xs text-[#1A314C] font-medium">{course.instructor.name}</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A314C]/85 via-transparent to-transparent opacity-75" />
+
+                    {/* Category & Badge */}
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-xs">
+                      <span className="bg-[#1A314C]/90 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-lg border border-[#107C8E]/60 shadow-xs">
+                        {course.category}
+                      </span>
+                      {course.badge && (
+                        <span className="bg-[#107C8E] text-white font-black text-[10px] px-2.5 py-0.5 rounded-full shadow-md">
+                          {course.badge}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Course Details */}
+                  <div className="p-5 sm:p-6 space-y-3">
+                    <div className="flex items-center justify-between text-xs text-[#5EA4AA]">
+                      <div className="flex items-center gap-1.5 bg-[#1DA5B8]/15 text-[#10566E] px-2.5 py-0.5 rounded-md font-bold border border-[#1DA5B8]/30">
+                        <Star className="w-3.5 h-3.5 fill-[#1DA5B8] text-[#1DA5B8]" />
+                        <span>{course.rating}</span>
+                        <span className="text-[#5EA4AA] font-normal">({course.reviewCount})</span>
+                      </div>
+
+                      <div className="flex items-center gap-1 text-[#5EA4AA]">
+                        <Users className="w-3.5 h-3.5 text-[#107C8E]" />
+                        <span>{course.studentCount.toLocaleString()} enrolled</span>
+                      </div>
+                    </div>
+
+                    <h3
+                      onClick={() => onSelectCourse(course)}
+                      className="text-base sm:text-lg font-bold font-heading text-[#1A314C] group-hover:text-[#107C8E] transition-colors line-clamp-2 cursor-pointer leading-snug"
+                    >
+                      {course.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-[#1A314C]/75 line-clamp-2 leading-relaxed font-sans">
+                      {course.tagline}
+                    </p>
+
+                    {/* Instructor Info */}
+                    <div className="flex items-center gap-2.5 pt-3 border-t border-[#C9E5ED]/80">
+                      <img
+                        src={course.instructor.avatar}
+                        alt={course.instructor.name}
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          target.onerror = null;
+                          target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
+                        }}
+                        className="w-7 h-7 rounded-full object-cover border border-[#107C8E]/40"
+                      />
+                      <span className="text-xs text-[#1A314C] font-semibold">{course.instructor.name}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="p-5 pt-0 mt-2 border-t border-[#C9E5ED] flex items-center justify-between">
-                <div>
-                  <div className="text-lg font-extrabold text-[#107C8E]">
-                    ${course.priceUSD}
+                {/* Footer Price & CTA */}
+                <div className="p-5 sm:p-6 pt-0 mt-2 border-t border-[#C9E5ED]/80 flex items-center justify-between">
+                  <div>
+                    <div className="text-lg sm:text-xl font-black text-[#107C8E]">
+                      ${course.priceUSD}
+                    </div>
+                    <div className="text-[11px] text-[#5EA4AA] font-medium">
+                      Rs {course.pricePKR.toLocaleString()}
+                    </div>
                   </div>
-                  <div className="text-[10px] text-[#5EA4AA]">
-                    Rs {course.pricePKR.toLocaleString()}
-                  </div>
+
+                  <button
+                    onClick={() => onSelectCourse(course)}
+                    className="px-4 sm:px-5 py-2.5 rounded-xl bg-[#107C8E] hover:bg-[#10566E] text-white font-extrabold text-xs transition-all cursor-pointer shadow-md shadow-[#107C8E]/20 hover:scale-105 active:scale-95"
+                  >
+                    View Course
+                  </button>
                 </div>
 
-                <button
-                  onClick={() => onSelectCourse(course)}
-                  className="px-4 py-2 rounded-xl bg-[#107C8E] hover:bg-[#10566E] text-white font-extrabold text-xs transition-all cursor-pointer shadow-md shadow-[#107C8E]/20"
-                >
-                  View Course
-                </button>
-              </div>
+              </motion.div>
+            ))}
+          </div>
 
-            </div>
-          ))}
         </div>
+      </section>
 
-      </div>
     </div>
   );
 };
