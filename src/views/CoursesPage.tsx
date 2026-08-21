@@ -4,8 +4,10 @@ import { Course } from '../types';
 import { 
   Star, 
   Users, 
-  Sparkles,
-  BookOpen
+  BookOpen,
+  Clock,
+  Infinity as InfinityIcon,
+  GraduationCap
 } from 'lucide-react';
 
 interface CoursesPageProps {
@@ -22,69 +24,64 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
   return (
     <div className="w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col">
       
-      {/* 1. Hero Banner with Gradient & Layered Geometric Diamond Art */}
-      <section className="relative w-full py-16 sm:py-24 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden shadow-xl">
+      {/* 1. Compact Hero Banner with Gradient & Layered Geometric Diamond Art */}
+      <section className="relative w-full py-10 sm:py-14 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden shadow-lg">
         {/* Ambient Grid Pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#C9E5ED_1px,transparent_1px)] [background-size:20px_20px]" />
         
         {/* Top-Right Signature Decorative Layered Geometric Diamond Art */}
         <div 
           aria-hidden="true" 
-          className="pointer-events-none absolute -top-12 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-88 sm:h-88 z-0 opacity-75"
+          className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-12 w-56 h-56 sm:w-72 sm:h-72 z-0 opacity-75"
         >
           <div className="relative w-full h-full">
             {/* Outer Light Cyan & Teal diamond */}
-            <div className="absolute top-0 right-4 w-48 h-48 sm:w-64 sm:h-64 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/40 bg-gradient-to-br from-[#C9E5ED]/30 to-[#1DA5B8]/10 backdrop-blur-[1px]" />
+            <div className="absolute top-0 right-4 w-40 h-40 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/40 bg-gradient-to-br from-[#C9E5ED]/30 to-[#1DA5B8]/10 backdrop-blur-[1px]" />
             {/* Middle Deep Teal diamond */}
-            <div className="absolute top-6 right-10 w-36 h-36 sm:w-50 sm:h-50 rotate-45 rounded-2xl border-2 border-[#107C8E]/50 bg-gradient-to-br from-[#107C8E]/30 to-[#10566E]/30" />
+            <div className="absolute top-4 right-8 w-32 h-32 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#107C8E]/50 bg-gradient-to-br from-[#107C8E]/30 to-[#10566E]/30" />
             {/* Inner solid Dark Navy & Bright Teal gradient diamond */}
-            <div className="absolute top-12 right-16 w-24 h-24 sm:w-34 sm:h-34 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-95 shadow-2xl shadow-[#107C8E]/30" />
+            <div className="absolute top-8 right-12 w-20 h-20 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-95 shadow-2xl shadow-[#107C8E]/30" />
             {/* Floating glowing cyan accent dots */}
-            <div className="absolute top-2 right-36 w-3 h-3 rounded-full bg-[#1DA5B8] shadow-sm shadow-[#1DA5B8]" />
-            <div className="absolute top-40 right-6 w-2.5 h-2.5 rounded-full bg-[#C9E5ED]" />
-            <div className="absolute top-28 right-48 w-2 h-2 rounded-full bg-[#1DA5B8]/80" />
+            <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#1DA5B8] shadow-sm shadow-[#1DA5B8]" />
+            <div className="absolute top-32 right-4 w-2 h-2 rounded-full bg-[#C9E5ED]" />
+            <div className="absolute top-20 right-40 w-2 h-2 rounded-full bg-[#1DA5B8]/80" />
           </div>
         </div>
 
         {/* Bottom-Left Complementary Geometric Diamond Art */}
         <div 
           aria-hidden="true" 
-          className="pointer-events-none absolute -bottom-16 -left-12 w-64 h-64 sm:w-72 sm:h-72 z-0 opacity-40 hidden sm:block"
+          className="pointer-events-none absolute -bottom-12 -left-10 w-52 h-52 sm:w-64 sm:h-64 z-0 opacity-40 hidden sm:block"
         >
           <div className="relative w-full h-full">
-            <div className="absolute bottom-4 left-4 w-44 h-44 rotate-45 rounded-3xl border border-[#1DA5B8]/30 bg-gradient-to-tr from-[#10566E]/20 to-[#1DA5B8]/10" />
-            <div className="absolute bottom-8 left-8 w-32 h-32 rotate-45 rounded-2xl border border-[#107C8E]/40 bg-[#1A314C]/40" />
-            <div className="absolute bottom-12 left-12 w-20 h-20 rotate-45 rounded-xl bg-gradient-to-tr from-[#107C8E] to-[#1DA5B8] opacity-70" />
-            <div className="absolute bottom-2 left-32 w-2.5 h-2.5 rounded-full bg-[#1DA5B8]" />
+            <div className="absolute bottom-4 left-4 w-36 h-36 rotate-45 rounded-2xl border border-[#1DA5B8]/30 bg-gradient-to-tr from-[#10566E]/20 to-[#1DA5B8]/10" />
+            <div className="absolute bottom-8 left-8 w-28 h-28 rotate-45 rounded-xl border border-[#107C8E]/40 bg-[#1A314C]/40" />
+            <div className="absolute bottom-10 left-10 w-16 h-16 rotate-45 rounded-lg bg-gradient-to-tr from-[#107C8E] to-[#1DA5B8] opacity-70" />
+            <div className="absolute bottom-2 left-28 w-2 h-2 rounded-full bg-[#1DA5B8]" />
           </div>
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#10566E]/80 border border-[#1DA5B8]/40 text-xs font-semibold tracking-wide text-[#C9E5ED] shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#1DA5B8]" />
-            <span>Industry-Standard Curriculum</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight font-heading">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight font-heading bg-gradient-to-r from-white via-[#D8F0F5] to-[#1DA5B8] bg-clip-text text-transparent drop-shadow-sm">
             All FinTech Edge Courses
           </h1>
 
-          <p className="text-[#C9E5ED] text-sm sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-sans font-normal">
+          <p className="text-[#C9E5ED] text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed font-sans font-normal">
             Master high-demand skills in decentralized finance, Web3 marketing, crypto airdrops, and financial artificial intelligence with verified certifications and hands-on 1-on-1 mentorship.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-xs sm:text-sm text-[#C9E5ED]/90 font-medium">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-7 pt-1 text-xs sm:text-sm text-[#C9E5ED] font-medium">
+            <div className="flex items-center gap-2 bg-white/5 border border-[#1DA5B8]/25 backdrop-blur-xs px-3.5 py-1.5 rounded-full shadow-xs">
+              <GraduationCap className="w-4 h-4 text-[#1DA5B8]" />
               <span>{courses.length} Comprehensive Programs</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
+            <div className="flex items-center gap-2 bg-white/5 border border-[#1DA5B8]/25 backdrop-blur-xs px-3.5 py-1.5 rounded-full shadow-xs">
+              <Clock className="w-4 h-4 text-[#1DA5B8]" />
               <span>Self-Paced & Cohort Learning</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
+            <div className="flex items-center gap-2 bg-white/5 border border-[#1DA5B8]/25 backdrop-blur-xs px-3.5 py-1.5 rounded-full shadow-xs">
+              <InfinityIcon className="w-4 h-4 text-[#1DA5B8]" />
               <span>Lifetime Project Access</span>
             </div>
           </div>
