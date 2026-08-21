@@ -1,4 +1,4 @@
-import img1 from '../assets/images/fintech-logo.png';
+import img1 from '../assets/fintech-logo.png';
 export interface GalleryHexagon {
   id: string;
   image: string;
