@@ -32,7 +32,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
   }, [course.id]);
 
   return (
-    <div className="w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col font-sans">
+    <div className="w-full max-w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col font-sans overflow-x-hidden">
       
       {/* 1. Hero Section with Clean Heading, Tagline & Layered Geometric Diamond Art */}
       <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden shadow-lg border-b border-[#107C8E]/30">
@@ -155,7 +155,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
       </section>
 
       {/* 2. Main Course Detail Cards Section */}
-      <section className="relative w-full py-12 sm:py-16">
+      <section className="relative w-full py-12 sm:py-16 overflow-hidden">
         
         {/* Rotated Box Art: Middle Section Accent */}
         <div 

@@ -136,7 +136,7 @@ export default function App() {
     : null;
 
   return (
-    <div className="min-h-screen bg-[#FAFDFE] text-[#1A314C] flex flex-col font-sans antialiased selection:bg-[#107C8E] selection:text-white">
+    <div className="min-h-screen bg-[#FAFDFE] text-[#1A314C] flex flex-col font-sans antialiased selection:bg-[#107C8E] selection:text-white overflow-x-hidden w-full max-w-full">
       
       {/* Global Header */}
       <Header
