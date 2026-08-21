@@ -1,4 +1,19 @@
-import img1 from '../assets/fintech-logo.png';
+import img1 from '../assets/img1.jpg';
+import img2 from '../assets/img2.jpg';
+import img3 from '../assets/img3.jpg';
+
+
+import img5 from '../assets/img5.jpg';
+import img5 from '../assets/img6.jpg';
+import img7 from '../assets/img7.jpg';
+import img8 from '../assets/img8.jpg';
+import img9 from '../assets/img9.jpg';
+import img10 from '../assets/img10.jpg';
+import img11 from '../assets/img11.JPG'; 
+import img12 from '../assets/img12.JPG';
+
+
+
 
 export interface GalleryHexagon {
   id: string;
@@ -40,67 +55,67 @@ export const HEXAGON_GALLERY: GalleryHexagon[] = [
   // Center-Left Upper
   {
     id: 'hex-6',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
+    image: img12,
     alt: 'Full Stack Tech Lead',
   },
   // Center-Left Lower
   {
     id: 'hex-7',
-    image: 'https://images.unsplash.com/photo-1522071823990-252c8a98f1f7?auto=format&fit=crop&w=800&q=80',
+    image: img11,
     alt: 'Smart Contract Developer',
   },
   // Center Raised
   {
     id: 'hex-8',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+    image: img9,
     alt: 'AI Researcher & Faculty',
   },
   // Center
   {
     id: 'hex-9',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80',
+    image: img7,
     alt: 'Product Manager & Fellow',
   },
   // Center Bottom
   {
     id: 'hex-10',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80',
+    image: img6,
     alt: 'FinTech Founder & Strategist',
   },
   // Center-Right Upper
   {
     id: 'hex-11',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80',
+    image: img5,
     alt: 'UI/UX Design Director',
   },
   // Center-Right Lower
   {
     id: 'hex-12',
-    image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80',
+    image: img10,
     alt: 'DevOps & Cloud Architect',
   },
   // Right Wing Upper
   {
     id: 'hex-13',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80',
+    image: img4,
     alt: 'Senior Web3 Specialist',
   },
   // Right Wing Middle
   {
     id: 'hex-14',
-    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
+    image: img3,
     alt: 'Cybersecurity Analyst',
   },
   // Right Wing Bottom
   {
     id: 'hex-15',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    image: img2,
     alt: 'Corporate Partner',
   },
   // Right Column (Office interior)
   {
     id: 'hex-16',
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
+    image: img1,
     alt: 'Annual Conference Hall',
   },
 ];
