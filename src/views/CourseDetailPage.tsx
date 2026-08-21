@@ -32,7 +32,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
   }, [course.id]);
 
   return (
-    <div className="w-full max-w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col font-sans overflow-x-hidden">
+    <div className="w-full max-w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col font-sans overflow-x-clip">
       
       {/* 1. Hero Section with Clean Heading, Tagline & Layered Geometric Diamond Art */}
       <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden shadow-lg border-b border-[#107C8E]/30">
@@ -355,8 +355,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
             </div>
 
             {/* Right Sticky Enrollment Sidebar (4 cols - Clean & Without Price) */}
-            <div className="lg:col-span-4 self-start">
-              <div className="sticky top-24 z-20 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border-2 border-[#107C8E]/30 shadow-xl space-y-6">
+            <div className="lg:col-span-4 lg:sticky lg:top-24 z-20 self-start">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border-2 border-[#107C8E]/30 shadow-xl space-y-6">
                 
                 {/* Program Access Header */}
                 <div className="space-y-2 pb-4 border-b border-[#C9E5ED]">
