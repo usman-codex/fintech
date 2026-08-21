@@ -127,6 +127,25 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
           {/* Tab Content: Overview */}
           {activeTab === 'overview' && (
             <div className="space-y-6">
+              {course.tools && course.tools.length > 0 && (
+                <div>
+                  <h3 className="text-base font-bold text-[#1A314C] mb-2 flex items-center gap-2">
+                    <Award className="w-4 h-4 text-[#107C8E]" />
+                    Tools & Technologies Covered
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {course.tools.map((tool, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs font-semibold bg-[#107C8E]/10 text-[#107C8E] border border-[#107C8E]/30 px-3 py-1 rounded-lg"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div>
                 <h3 className="text-base font-bold text-[#1A314C] mb-3 flex items-center gap-2">
                   <Zap className="w-4 h-4 text-[#107C8E]" />

@@ -20,8 +20,8 @@ export interface Course {
   slug: string;
   tagline: string;
   description: string;
-  category: 'Web3 & Blockchain' | 'FinTech & AI' | 'Trading & Airdrops' | 'All Access';
-  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels';
+  category: string;
+  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels' | string;
   rating: number;
   reviewCount: number;
   studentCount: number;
@@ -31,7 +31,8 @@ export interface Course {
   originalPriceUSD: number;
   pricePKR: number;
   image: string;
-  badge?: 'Best Seller' | 'Featured' | 'New' | 'Hot';
+  badge?: string;
+  tools?: string[];
   instructor: {
     name: string;
     role: string;

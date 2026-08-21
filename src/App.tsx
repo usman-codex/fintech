@@ -4,6 +4,7 @@ import { Footer } from './components/Footer';
 
 import { HomePage } from './views/HomePage';
 import { CoursesPage } from './views/CoursesPage';
+import { CourseDetailPage } from './views/CourseDetailPage';
 import { AboutPage } from './views/AboutPage';
 import { ServicesPage } from './views/ServicesPage';
 import { CareerPage } from './views/CareerPage';
@@ -22,8 +23,8 @@ import { TESTIMONIALS_DATA, FAQS_DATA } from './data/faqs';
 import { SERVICES_DATA } from './data/services';
 import { Course, BlogPost, ServiceItem } from './types';
 
-// Helper to parse current path/hash into active tab and service slug
-function parseCurrentRoute(): { tab: string; serviceSlug: string | null } {
+// Helper to parse current path/hash into active tab and sub-item slug
+function parseCurrentRoute(): { tab: string; slug: string | null } {
   const hash = window.location.hash.replace(/^#\/?/, '');
   const pathname = window.location.pathname.replace(/^\//, '');
 
@@ -36,22 +37,29 @@ function parseCurrentRoute(): { tab: string; serviceSlug: string | null } {
   if (mainSegment === 'service' || mainSegment === 'services') {
     return {
       tab: 'services',
-      serviceSlug: subSegment,
+      slug: subSegment,
+    };
+  }
+
+  if (mainSegment === 'course' || mainSegment === 'courses') {
+    return {
+      tab: 'courses',
+      slug: subSegment,
     };
   }
 
   const validTabs = ['home', 'about', 'services', 'projects', 'courses', 'career', 'blog', 'contact'];
   const tab = validTabs.includes(mainSegment) ? mainSegment : 'home';
 
-  return { tab, serviceSlug: null };
+  return { tab, slug: null };
 }
 
 export default function App() {
   const initialRoute = parseCurrentRoute();
   const [activeTab, setActiveTabState] = useState<string>(initialRoute.tab);
-  const [selectedServiceSlug, setSelectedServiceSlug] = useState<string | null>(initialRoute.serviceSlug);
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(initialRoute.slug);
 
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [selectedCourseModal, setSelectedCourseModal] = useState<Course | null>(null);
   const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null);
   const [promptModalOpen, setPromptModalOpen] = useState<boolean>(false);
   const [authModalOpen, setAuthModalOpen] = useState<boolean>(false);
@@ -59,21 +67,24 @@ export default function App() {
   const [user, setUser] = useState<{ name: string; email: string } | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Synchronize URL when tab or service slug changes
-  const navigateTo = useCallback((tab: string, serviceSlug: string | null = null) => {
+  // Synchronize URL when tab or slug changes
+  const navigateTo = useCallback((tab: string, slug: string | null = null) => {
     setActiveTabState(tab);
-    setSelectedServiceSlug(serviceSlug);
+    setSelectedSlug(slug);
 
     let newUrl = tab === 'home' ? '/' : `/${tab}`;
     let newHash = `#${tab}`;
 
-    if (tab === 'services' && serviceSlug) {
-      newUrl = `/services/${serviceSlug}`;
-      newHash = `#services/${serviceSlug}`;
+    if (tab === 'services' && slug) {
+      newUrl = `/services/${slug}`;
+      newHash = `#services/${slug}`;
+    } else if (tab === 'courses' && slug) {
+      newUrl = `/courses/${slug}`;
+      newHash = `#courses/${slug}`;
     }
 
     try {
-      window.history.pushState({ tab, serviceSlug }, '', newUrl);
+      window.history.pushState({ tab, slug }, '', newUrl);
     } catch {
       // Fallback if pushState restricted in certain iframe contexts
       window.location.hash = newHash;
@@ -83,9 +94,9 @@ export default function App() {
   // Listen to browser navigation (Back / Forward buttons)
   useEffect(() => {
     const handlePopState = () => {
-      const { tab, serviceSlug } = parseCurrentRoute();
+      const { tab, slug } = parseCurrentRoute();
       setActiveTabState(tab);
-      setSelectedServiceSlug(serviceSlug);
+      setSelectedSlug(slug);
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -99,16 +110,15 @@ export default function App() {
   // Scroll to top on route switch
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [activeTab, selectedServiceSlug]);
+  }, [activeTab, selectedSlug]);
 
   const handleEnrollCourse = (course: Course) => {
     if (!user) {
-      setSelectedCourse(null);
-      setAuthMode('login');
+      setSelectedCourseModal(course);
+      setAuthMode('signup');
       setAuthModalOpen(true);
     } else {
-      alert(`Success! You have initiated enrollment in "${course.title}". Check your email (${user.email}) for portal access.`);
-      setSelectedCourse(null);
+      alert(`Success! You have enrolled in "${course.title}". Portal credentials sent to ${user.email}.`);
     }
   };
 
@@ -119,6 +129,11 @@ export default function App() {
       navigateTo('services', null);
     }
   };
+
+  // Check if a specific course detail page is requested
+  const matchedCourse = (activeTab === 'courses' && selectedSlug)
+    ? COURSES_DATA.find((c) => c.slug === selectedSlug || c.id === selectedSlug) || null
+    : null;
 
   return (
     <div className="min-h-screen bg-[#FAFDFE] text-[#1A314C] flex flex-col font-sans antialiased selection:bg-[#107C8E] selection:text-white">
@@ -146,7 +161,7 @@ export default function App() {
             blogs={BLOGS_DATA}
             testimonials={TESTIMONIALS_DATA}
             faqs={FAQS_DATA}
-            onSelectCourse={(course) => setSelectedCourse(course)}
+            onSelectCourse={(course) => navigateTo('courses', course.slug || course.id)}
             onSelectBlog={(blog) => setSelectedBlog(blog)}
             onExploreCourses={() => navigateTo('courses', null)}
             onViewAllBlogs={() => navigateTo('blog', null)}
@@ -167,19 +182,27 @@ export default function App() {
         )}
 
         {activeTab === 'courses' && (
-          <CoursesPage
-            courses={COURSES_DATA}
-            onSelectCourse={(course) => setSelectedCourse(course)}
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-          />
+          matchedCourse ? (
+            <CourseDetailPage
+              course={matchedCourse}
+              onBack={() => navigateTo('courses', null)}
+              onEnroll={handleEnrollCourse}
+            />
+          ) : (
+            <CoursesPage
+              courses={COURSES_DATA}
+              onSelectCourse={(course) => navigateTo('courses', course.slug || course.id)}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+            />
+          )
         )}
 
         {activeTab === 'about' && <AboutPage />}
 
         {activeTab === 'services' && (
           <ServicesPage
-            selectedServiceSlug={selectedServiceSlug}
+            selectedServiceSlug={selectedSlug}
             onSelectService={handleSelectService}
             onExploreCourses={() => navigateTo('courses', null)}
             onContactUs={() => navigateTo('contact', null)}
@@ -209,10 +232,10 @@ export default function App() {
         onOpenPromptModal={() => setPromptModalOpen(true)}
       />
 
-      {/* Modals */}
+      {/* Quick Modals */}
       <CourseModal
-        course={selectedCourse}
-        onClose={() => setSelectedCourse(null)}
+        course={selectedCourseModal}
+        onClose={() => setSelectedCourseModal(null)}
         onEnroll={handleEnrollCourse}
       />
 
