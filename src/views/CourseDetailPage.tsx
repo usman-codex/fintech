@@ -155,12 +155,12 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
       </section>
 
       {/* 2. Main Course Detail Cards Section */}
-      <section className="relative w-full py-12 sm:py-16 overflow-hidden">
+      <section className="relative w-full py-12 sm:py-16">
         
         {/* Rotated Box Art: Middle Section Accent */}
         <div 
           aria-hidden="true" 
-          className="pointer-events-none absolute top-40 right-4 w-44 h-44 z-0 opacity-20 hidden lg:block"
+          className="pointer-events-none absolute top-40 right-4 w-44 h-44 z-0 opacity-20 hidden lg:block overflow-hidden"
         >
           <div className="relative w-full h-full">
             <div className="absolute top-0 right-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#107C8E] bg-[#C9E5ED]/30" />
@@ -170,7 +170,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
             {/* Left Column: Heading & Paragraph Detail Cards (8 cols) */}
             <div className="lg:col-span-8 space-y-8">
@@ -355,8 +355,8 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
             </div>
 
             {/* Right Sticky Enrollment Sidebar (4 cols - Clean & Without Price) */}
-            <div className="lg:col-span-4">
-              <div className="sticky top-24 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border-2 border-[#107C8E]/30 shadow-xl space-y-6">
+            <div className="lg:col-span-4 self-start">
+              <div className="sticky top-24 z-20 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border-2 border-[#107C8E]/30 shadow-xl space-y-6">
                 
                 {/* Program Access Header */}
                 <div className="space-y-2 pb-4 border-b border-[#C9E5ED]">
