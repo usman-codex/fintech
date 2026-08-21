@@ -14,12 +14,48 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
   return (
     <section 
       id="fintech-achievements-section" 
-      className="relative w-full py-16 sm:py-24 bg-white overflow-hidden"
+      className="relative w-full pt-12 pb-16 sm:pt-16 sm:pb-24 bg-white overflow-hidden"
     >
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Top-Left Decorative Geometric Diamond Art in Official Brand Palette */}
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute -top-8 -left-6 sm:left-4 md:left-8 w-60 h-60 sm:w-72 sm:h-72 z-0 opacity-80"
+      >
+        <div className="relative w-full h-full">
+          {/* Outer Diamond */}
+          <div className="absolute top-0 left-4 w-40 h-40 sm:w-52 sm:h-52 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/35 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/15 backdrop-blur-xs" />
+          {/* Middle Diamond */}
+          <div className="absolute top-5 left-9 w-32 h-32 sm:w-40 sm:h-40 rotate-45 rounded-2xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/15" />
+          {/* Inner Diamond */}
+          <div className="absolute top-10 left-14 w-20 h-20 sm:w-28 sm:h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-lg shadow-[#107C8E]/20" />
+          {/* Floating Cyan Accent Dots */}
+          <div className="absolute top-2 left-28 w-3 h-3 rounded-full bg-[#1DA5B8]" />
+          <div className="absolute top-32 left-6 w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
+        </div>
+      </div>
+
+      {/* Bottom-Right Decorative Geometric Diamond Art in Official Brand Palette */}
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute -bottom-10 -right-6 sm:right-4 md:right-8 w-56 h-56 sm:w-68 sm:h-68 z-0 opacity-75"
+      >
+        <div className="relative w-full h-full">
+          {/* Outer Diamond */}
+          <div className="absolute bottom-0 right-4 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/35 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/15 backdrop-blur-xs" />
+          {/* Middle Diamond */}
+          <div className="absolute bottom-5 right-9 w-28 h-28 sm:w-36 sm:h-36 rotate-45 rounded-2xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/15" />
+          {/* Inner Diamond */}
+          <div className="absolute bottom-10 right-14 w-18 h-18 sm:w-24 sm:h-24 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-lg shadow-[#107C8E]/20" />
+          {/* Floating Cyan Accent Dots */}
+          <div className="absolute bottom-2 right-28 w-2.5 h-2.5 rounded-full bg-[#1DA5B8]" />
+          <div className="absolute bottom-28 right-6 w-2 h-2 rounded-full bg-[#107C8E]" />
+        </div>
+      </div>
+
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* 1. Header with exact typography styling from screenshot */}
-        <div className="text-center max-w-4xl mx-auto space-y-4 mb-12 sm:mb-16">
+        <div className="text-center max-w-4xl mx-auto space-y-3 mb-4 sm:mb-6">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#1A314C] tracking-tight font-heading">
             FinTech Edge Achievements
           </h2>
@@ -32,8 +68,8 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
         {/* 2. Exact Interlocking Honeycomb Hexagonal Wall (Pure Clean Photos - No text on images) */}
         
         {/* Desktop / Tablet View: Continuous Interlocking Honeycomb Wall */}
-        <div className="hidden lg:block w-full overflow-x-auto pb-6">
-          <div className="min-w-[1100px] max-w-[1300px] mx-auto relative pt-8 pb-4">
+        <div className="hidden lg:block w-full overflow-x-auto pb-4">
+          <div className="min-w-[1100px] max-w-[1300px] mx-auto relative pt-4 pb-2">
             
             {/* COLUMN 1: Far Left (Building / Campus) */}
             <div className="absolute left-[0%] top-[45px] w-[140px] h-[162px] z-10">
