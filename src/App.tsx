@@ -112,10 +112,14 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeTab, selectedSlug]);
 
-  const handleEnrollCourse = (_course?: Course) => {
-    setSelectedCourseModal(null);
-    setAuthModalOpen(false);
-    navigateTo('contact', null);
+  const handleEnrollCourse = (course: Course) => {
+    if (!user) {
+      setSelectedCourseModal(course);
+      setAuthMode('signup');
+      setAuthModalOpen(true);
+    } else {
+      alert(`Success! You have enrolled in "${course.title}". Portal credentials sent to ${user.email}.`);
+    }
   };
 
   const handleSelectService = (service: ServiceItem | null) => {
