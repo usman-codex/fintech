@@ -1,14 +1,9 @@
-export interface GalleryHexagon {
-  id: string;
-  image: string;
-  alt: string;
-}
-
+import img1 from '../assets/images/fintech-logo.png';
 export const HEXAGON_GALLERY: GalleryHexagon[] = [
   // Left Wing (Top raised)
   {
     id: 'hex-1',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    image: img1,
     alt: 'FinTech Edge Mentor',
   },
   // Left Column (Office / Campus)
