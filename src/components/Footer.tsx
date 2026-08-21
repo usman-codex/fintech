@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LOGO_IMAGE_URL } from './Header';
 import { 
+  Mail,
   Phone, 
   MapPin, 
   Globe, 
@@ -91,8 +92,8 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </div>
           </div>
 
-          {/* Column 2: Exact Physical Address & Phone */}
-          <div className="space-y-3 text-center md:text-left bg-black/15 p-4 rounded-2xl border border-white/5 backdrop-blur-xs">
+          {/* Column 2: Exact Physical Address, Phone & Email */}
+          <div className="space-y-3 text-center md:text-left">
             <h4 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-center md:justify-start gap-2">
               <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
               <span>Campus & Head Office</span>
@@ -106,7 +107,17 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 </span>
               </div>
 
-              <div className="flex items-center justify-center md:justify-start gap-2.5 text-[#C9E5ED] pt-1">
+              <div className="flex items-center justify-center md:justify-start gap-2.5 text-[#C9E5ED]">
+                <Mail className="w-4 h-4 text-[#1DA5B8] shrink-0" />
+                <a 
+                  href="mailto:info@fintechedgeinstitute.com" 
+                  className="hover:text-[#1DA5B8] text-white/90 hover:underline transition-colors"
+                >
+                  info@fintechedgeinstitute.com
+                </a>
+              </div>
+
+              <div className="flex items-center justify-center md:justify-start gap-2.5 text-[#C9E5ED] pt-0.5">
                 <Phone className="w-4 h-4 text-[#1DA5B8] shrink-0" />
                 <a 
                   href="tel:+923111222595" 
