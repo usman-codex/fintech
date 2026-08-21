@@ -267,18 +267,13 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                     key={mod.id}
                     className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#C9E5ED] shadow-sm hover:border-[#107C8E] transition-all space-y-3.5"
                   >
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-xl bg-[#107C8E] text-white flex items-center justify-center font-black text-xs shrink-0">
-                          {mIdx + 1}
-                        </span>
-                        <h3 className="font-extrabold text-base sm:text-lg text-[#1A314C]">
-                          {mod.title}
-                        </h3>
-                      </div>
-                      <span className="text-xs font-semibold text-[#107C8E] bg-[#EBF4F7] px-3 py-1 rounded-full border border-[#C9E5ED]">
-                        {mod.lessonsCount} lessons • {mod.duration}
+                    <div className="flex items-center gap-3">
+                      <span className="w-8 h-8 rounded-xl bg-[#107C8E] text-white flex items-center justify-center font-black text-xs shrink-0">
+                        {mIdx + 1}
                       </span>
+                      <h3 className="font-extrabold text-base sm:text-lg text-[#1A314C]">
+                        {mod.title}
+                      </h3>
                     </div>
 
                     <p className="text-sm text-[#1A314C]/80 leading-relaxed">
@@ -355,46 +350,6 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 <p className="text-sm sm:text-base text-[#1A314C]/85 leading-relaxed font-sans">
                   Graduates of this program leverage their hands-on portfolio to secure high-paying remote roles, launch scalable agency services, or monetize independent digital assets worldwide.
                 </p>
-              </div>
-
-              {/* Detail Card: Lead Instructor */}
-              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
-                    <Award className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-black font-heading text-[#1A314C]">
-                      Lead Program Instructor
-                    </h2>
-                    <p className="text-xs text-[#5EA4AA] font-medium">Industry practitioner and dedicated mentor</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 pt-1">
-                  <img
-                    src={course.instructor.avatar}
-                    alt={course.instructor.name}
-                    referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.onerror = null;
-                      target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
-                    }}
-                    className="w-16 h-16 rounded-2xl object-cover border-2 border-[#107C8E]/40 shadow-sm shrink-0"
-                  />
-                  <div className="space-y-1">
-                    <h3 className="font-extrabold text-base sm:text-lg text-[#1A314C]">
-                      {course.instructor.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#107C8E] font-bold">
-                      {course.instructor.role}
-                    </p>
-                    <p className="text-xs sm:text-sm text-[#1A314C]/80 leading-relaxed pt-1">
-                      Professional instructor with years of hands-on industry expertise, guiding students through practical development, optimization frameworks, and live deployment.
-                    </p>
-                  </div>
-                </div>
               </div>
 
             </div>
