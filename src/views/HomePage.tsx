@@ -3,6 +3,7 @@ import { HeroSection } from '../components/HeroSection';
 import { BusinessNeedsSection } from '../components/BusinessNeedsSection';
 import { DesignersDevelopersSection } from '../components/DesignersDevelopersSection';
 import { TopProjectsSection } from '../components/TopProjectsSection';
+import { AchievementsSection } from '../components/AchievementsSection';
 import { WhyFintechSection } from '../components/WhyFintechSection';
 import { GrowBusinessSection } from '../components/GrowBusinessSection';
 import { OurFoundersSection } from '../components/OurFoundersSection';
@@ -74,7 +75,13 @@ export const HomePage: React.FC<HomePageProps> = ({
         onNavigateToProjects={onNavigateToProjects}
       />
 
-      {/* 5. Why FinTech (Radial Showcase with Live Running Counters) */}
+      {/* 5. FinTech Edge Institute Achievements (Hexagon Mosaic Gallery & Milestones) */}
+      <AchievementsSection
+        onNavigateToAbout={onNavigateToAbout}
+        onNavigateToContact={onNavigateToContact}
+      />
+
+      {/* 6. Why FinTech (Radial Showcase with Live Running Counters) */}
       <WhyFintechSection />
 
       {/* 6. Grow Your Business (Establish Control 3 Zoom-In Feature Cards) */}
