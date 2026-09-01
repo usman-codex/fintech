@@ -118,9 +118,6 @@ export const CareerPage: React.FC<CareerPageProps> = ({
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#1A314C]">Open Positions & Internships</h2>
-            <span className="text-xs font-bold text-[#107C8E] bg-[#C9E5ED]/30 px-3 py-1 rounded-full border border-[#C9E5ED]">
-              Lahore Hub & Remote
-            </span>
           </div>
 
           <div className="space-y-4">

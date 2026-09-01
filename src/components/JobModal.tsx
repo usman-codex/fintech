@@ -6,7 +6,7 @@ import {
   Clock, 
   Briefcase, 
   CheckCircle2, 
-  Sparkles, 
+  ListChecks, 
   ArrowRight, 
   Building2, 
   GraduationCap, 
@@ -157,7 +157,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
               {/* Responsibilities */}
               <div className="space-y-3">
                 <h3 className="text-base font-bold text-[#1A314C] flex items-center gap-2 border-b border-[#C9E5ED]/60 pb-2">
-                  <Sparkles className="w-4 h-4 text-[#107C8E]" />
+                  <ListChecks className="w-4 h-4 text-[#107C8E]" />
                   <span>Key Responsibilities</span>
                 </h3>
                 <div className="space-y-2.5">
