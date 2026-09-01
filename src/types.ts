@@ -121,3 +121,19 @@ export interface ServiceItem {
     description: string;
   }[];
 }
+
+export interface JobPosition {
+  id: string;
+  title: string;
+  department: string;
+  type: string;
+  location: string;
+  workplaceType: 'On-site' | 'Hybrid' | 'Remote';
+  experienceLevel: string;
+  description: string;
+  overview: string;
+  responsibilities: string[];
+  requirements: string[];
+  preferredSkills?: string[];
+  perks: string[];
+}

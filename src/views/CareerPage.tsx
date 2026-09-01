@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   MapPin, 
   Clock, 
   ArrowRight, 
   Rocket, 
   Network, 
-  Coins
+  Coins,
+  Briefcase,
+  Building
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { CAREERS_DATA } from '../data/careers';
+import { JobPosition } from '../types';
+import { JobModal } from '../components/JobModal';
 
 interface CareerPageProps {
   onContactUs: () => void;
@@ -18,36 +23,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({
   onContactUs,
   onExploreCourses,
 }) => {
-  const jobs = [
-    {
-      id: 'job-ai',
-      title: 'AI & Automation Specialist',
-      type: 'Full-time / Remote',
-      location: 'Remote (Pakistan / Global)',
-      description: 'Design and deploy generative AI workflows, intelligent chatbots, and custom LLM integrations for enterprise clients and fintech platforms.'
-    },
-    {
-      id: 'job-fb-monetization',
-      title: 'Facebook Monetization & Video Content Expert',
-      type: 'Full-time / Hybrid',
-      location: 'Lahore, Pakistan / Remote',
-      description: 'Manage high-traffic Facebook Pages, oversee in-stream video editing workflows, optimize Reel retention, and scale payout-eligible digital assets.'
-    },
-    {
-      id: 'job-web-dev',
-      title: 'Full Stack Web Developer (React / Next.js)',
-      type: 'Full-time / Remote',
-      location: 'Remote / Hybrid',
-      description: 'Build fast, responsive modern web applications, interactive student portals, and robust API endpoints with clean UI/UX and seamless integrations.'
-    },
-    {
-      id: 'job-digital-marketing',
-      title: 'Digital Marketing & Performance Strategist',
-      type: 'Full-time / Remote',
-      location: 'Remote (Pakistan / Global)',
-      description: 'Execute high-ROI Meta & Google ad campaigns, optimize multi-channel conversion funnels, and drive targeted growth across digital platforms.'
-    }
-  ];
+  const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null);
 
   return (
     <div className="relative py-16 bg-[#C9E5ED]/10 min-h-screen text-[#1A314C] space-y-16 overflow-hidden">
@@ -142,46 +118,61 @@ export const CareerPage: React.FC<CareerPageProps> = ({
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#1A314C]">Open Positions & Internships</h2>
+            <span className="text-xs font-bold text-[#107C8E] bg-[#C9E5ED]/30 px-3 py-1 rounded-full border border-[#C9E5ED]">
+              Lahore Hub & Remote
+            </span>
           </div>
 
           <div className="space-y-4">
-            {jobs.map((job) => (
+            {CAREERS_DATA.map((job) => (
               <div 
                 key={job.id}
-                className="bg-white rounded-2xl p-6 sm:p-7 border border-[#C9E5ED] hover:border-[#1DA5B8] shadow-sm hover:shadow-lg transition-all space-y-4"
+                onClick={() => setSelectedJob(job)}
+                className="bg-white rounded-2xl p-6 sm:p-7 border border-[#C9E5ED] hover:border-[#107C8E] shadow-sm hover:shadow-xl transition-all duration-300 space-y-4 cursor-pointer group"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-                  <div className="space-y-2 flex-1">
+                  <div className="space-y-2.5 flex-1">
                     <div className="flex flex-wrap items-center gap-3">
-                      <span className="text-xs font-semibold text-[#107C8E] flex items-center gap-1.5 bg-[#C9E5ED]/20 px-2.5 py-1 rounded-lg border border-[#C9E5ED]/60">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#107C8E]/10 text-[#107C8E] border border-[#107C8E]/25 text-xs font-bold">
                         <Clock className="w-3.5 h-3.5" />
                         {job.type}
                       </span>
-                      <span className="text-xs text-[#5EA4AA]">•</span>
-                      <span className="text-xs font-medium text-[#10566E] flex items-center gap-1.5">
-                        <MapPin className="w-3.5 h-3.5" />
+                      <span className="text-xs text-[#5EA4AA] hidden sm:inline">•</span>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#10566E]">
+                        <MapPin className="w-3.5 h-3.5 text-[#107C8E]" />
                         {job.location}
+                      </span>
+                      <span className="text-xs text-[#5EA4AA] hidden sm:inline">•</span>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#5EA4AA] bg-[#C9E5ED]/20 px-2 py-0.5 rounded-md border border-[#C9E5ED]/50">
+                        {job.workplaceType}
                       </span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#1A314C] pt-0.5">{job.title}</h3>
-                    <p className="text-xs sm:text-sm text-[#1A314C]/75 leading-relaxed max-w-3xl">{job.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#1A314C] group-hover:text-[#107C8E] transition-colors pt-0.5">
+                      {job.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#1A314C]/80 leading-relaxed max-w-3xl">
+                      {job.description}
+                    </p>
                   </div>
 
                   <div className="shrink-0 flex items-center">
                     <button
-                      onClick={onContactUs}
-                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#107C8E] hover:bg-[#10566E] text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-[#107C8E]/20 flex items-center justify-center gap-2 cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedJob(job);
+                      }}
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#107C8E] hover:bg-[#10566E] group-hover:bg-[#10566E] text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-[#107C8E]/20 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <span>Apply Now</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                     </button>
                   </div>
                 </div>
 
-                <div className="pt-3.5 border-t border-[#C9E5ED]/70 flex items-center justify-between text-xs text-[#5EA4AA]">
-                  <span>Submit application via form or email</span>
-                  <span>Send resume to <a href="mailto:careers@fintechedgeinstitute.com" className="font-bold text-[#107C8E] hover:underline">careers@fintechedgeinstitute.com</a></span>
+                <div className="pt-3.5 border-t border-[#C9E5ED]/70 flex flex-wrap items-center justify-between gap-2 text-xs text-[#5EA4AA]">
+                  <span className="text-[11px] sm:text-xs">Click position for full role details & responsibilities</span>
+                  <span className="text-[11px] sm:text-xs">Send resume to <a href="mailto:careers@fintechedgeinstitute.com" onClick={(e) => e.stopPropagation()} className="font-bold text-[#107C8E] hover:underline">careers@fintechedgeinstitute.com</a></span>
                 </div>
               </div>
             ))}
@@ -189,6 +180,14 @@ export const CareerPage: React.FC<CareerPageProps> = ({
         </div>
 
       </div>
+
+      {/* Detailed Job Position Modal */}
+      {selectedJob && (
+        <JobModal 
+          job={selectedJob} 
+          onClose={() => setSelectedJob(null)} 
+        />
+      )}
     </div>
   );
 };
