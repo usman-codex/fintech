@@ -1,6 +1,6 @@
 import React from 'react';
 import { BlogPost } from '../types';
-import { X, Clock, User, Calendar, Tag, Share2, ArrowLeft } from 'lucide-react';
+import { X, Clock, User, Calendar, ArrowLeft } from 'lucide-react';
 
 interface BlogModalProps {
   post: BlogPost | null;
@@ -82,20 +82,9 @@ export const BlogModal: React.FC<BlogModalProps> = ({ post, onClose }) => {
               {post.excerpt}
             </p>
             <div className="whitespace-pre-line leading-relaxed text-[#1A314C]/80 space-y-4">
-              {post.content}
+              {post.content.replace(/^#+\s*/gm, '').replace(/\*\*(.*?)\*\*/g, '$1')}
             </div>
           </div>
-
-          {/* Tags */}
-          <div className="pt-6 border-t border-[#C9E5ED] flex flex-wrap items-center gap-2">
-            <Tag className="w-3.5 h-3.5 text-[#5EA4AA]" />
-            {post.tags.map((tag, idx) => (
-              <span key={idx} className="bg-[#C9E5ED]/20 border border-[#C9E5ED] text-[#10566E] text-xs px-2.5 py-1 rounded-lg">
-                #{tag}
-              </span>
-            ))}
-          </div>
-
         </div>
 
       </div>

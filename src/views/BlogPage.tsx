@@ -9,7 +9,6 @@ import {
   Copy, 
   Check, 
   BookOpen, 
-  Tag, 
   ChevronRight,
   TrendingUp,
   User
@@ -195,10 +194,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({
           {/* Main Formatted Article Body with Rich Typography & Highlighted Text */}
           <div className="prose prose-slate max-w-none text-[#1A314C] leading-relaxed space-y-6 text-sm sm:text-base">
             {(() => {
-              // Normalize content: ensure headings and list items have line breaks
+              // Normalize content cleanly without duplicating hash symbols
               const normalized = currentPost.content
-                .replace(/(###\s+[^\n]+)/g, '\n\n$1\n\n')
-                .replace(/(##\s+[^\n]+)/g, '\n\n$1\n\n')
                 .replace(/(\n\d+\.\s+\*\*)/g, '\n\n$1')
                 .replace(/\n{3,}/g, '\n\n');
 
@@ -210,26 +207,18 @@ export const BlogPage: React.FC<BlogPageProps> = ({
 
               return sections.map((sec, sIdx) => {
                 const trimmed = sec.trim();
-                if (!trimmed) return null;
+                if (!trimmed || /^#+\s*$/.test(trimmed)) return null;
 
-                // H3 Heading
-                if (trimmed.startsWith('### ')) {
-                  const headingText = trimmed.replace('### ', '');
+                // Headings (e.g. ### or ## or #)
+                if (/^#{1,6}\s+/.test(trimmed)) {
+                  const cleanHeading = trimmed.replace(/^#{1,6}\s+/, '').trim();
+                  if (!cleanHeading) return null;
+                  
                   return (
                     <h3 key={sIdx} className="text-xl sm:text-2xl font-black text-[#1A314C] pt-6 pb-2 border-b border-[#C9E5ED]/70 flex items-center gap-2.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
-                      <span>{headingText}</span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#107C8E] shrink-0" />
+                      <span>{cleanHeading}</span>
                     </h3>
-                  );
-                }
-
-                // H2 Heading
-                if (trimmed.startsWith('## ')) {
-                  const headingText = trimmed.replace('## ', '');
-                  return (
-                    <h2 key={sIdx} className="text-2xl sm:text-3xl font-black text-[#1A314C] pt-8 pb-3 border-b-2 border-[#C9E5ED]">
-                      {headingText}
-                    </h2>
                   );
                 }
 
@@ -239,7 +228,8 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                   return (
                     <div key={sIdx} className="space-y-3 my-4">
                       {lines.map((line, lIdx) => {
-                        const clean = line.replace(/^[-*•]\s+/, '');
+                        const clean = line.replace(/^[-*•]\s+/, '').replace(/^#+\s*/, '');
+                        if (!clean.trim()) return null;
                         return (
                           <div key={lIdx} className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-[#C9E5ED]/70 shadow-2xs hover:border-[#1DA5B8]/50 transition-colors">
                             <span className="mt-1.5 w-2 h-2 rounded-full bg-[#107C8E] shrink-0" />
@@ -260,9 +250,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                   return (
                     <div key={sIdx} className="space-y-3 my-4">
                       {lines.map((line, lIdx) => {
-                        const match = line.match(/^(\d+)\.\s+(.*)$/);
+                        const cleanLine = line.replace(/^#+\s*/, '');
+                        const match = cleanLine.match(/^(\d+)\.\s+(.*)$/);
                         const num = match ? match[1] : `${lIdx + 1}`;
-                        const content = match ? match[2] : line;
+                        const content = match ? match[2] : cleanLine;
+                        if (!content.trim()) return null;
                         return (
                           <div key={lIdx} className="flex items-start gap-3.5 p-4 rounded-xl bg-[#C9E5ED]/15 border border-[#C9E5ED] shadow-2xs hover:bg-[#C9E5ED]/25 transition-colors">
                             <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-[#107C8E] text-white text-xs font-black shrink-0 shadow-xs">
@@ -280,31 +272,18 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                 }
 
                 // Standard Paragraph with highlighted keywords
+                const cleanParagraph = trimmed.replace(/^#+\s*/, '');
+                if (!cleanParagraph.trim()) return null;
+
                 return (
                   <p
                     key={sIdx}
                     className="text-sm sm:text-base leading-relaxed text-[#1A314C]/90 font-normal"
-                    dangerouslySetInnerHTML={{ __html: formatHtmlText(trimmed) }}
+                    dangerouslySetInnerHTML={{ __html: formatHtmlText(cleanParagraph) }}
                   />
                 );
               });
             })()}
-          </div>
-
-          {/* Tags Section */}
-          <div className="pt-6 border-t border-[#C9E5ED] flex flex-wrap items-center gap-2">
-            <div className="text-xs font-bold text-[#5EA4AA] flex items-center gap-1 mr-2">
-              <Tag className="w-3.5 h-3.5" />
-              <span>Related Topics:</span>
-            </div>
-            {currentPost.tags.map((tag, idx) => (
-              <span 
-                key={idx} 
-                className="bg-[#C9E5ED]/25 hover:bg-[#C9E5ED]/50 border border-[#C9E5ED] text-[#10566E] text-xs font-semibold px-3 py-1 rounded-lg transition-colors cursor-default"
-              >
-                #{tag}
-              </span>
-            ))}
           </div>
 
           {/* Author Bio Card */}
@@ -587,15 +566,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                       <p className="text-xs text-[#1A314C]/75 line-clamp-3 leading-relaxed">
                         {post.excerpt}
                       </p>
-
-                      {/* Tag preview */}
-                      <div className="pt-2 flex flex-wrap gap-1.5">
-                        {post.tags.slice(0, 3).map((tag, idx) => (
-                          <span key={idx} className="text-[10px] font-semibold bg-[#C9E5ED]/20 text-[#10566E] px-2 py-0.5 rounded-md">
-                            #{tag}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
 
