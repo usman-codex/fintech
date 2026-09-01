@@ -1,1 +1,1 @@
-Codex Resume Mailer
+Fintech Edge Institute , Lahore
