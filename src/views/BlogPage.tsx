@@ -14,6 +14,7 @@ import {
   User
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import Markdown from 'react-markdown';
 
 interface BlogPageProps {
   blogs: BlogPost[];
@@ -192,98 +193,60 @@ export const BlogPage: React.FC<BlogPageProps> = ({
           </div>
 
           {/* Main Formatted Article Body with Rich Typography & Highlighted Text */}
-          <div className="prose prose-slate max-w-none text-[#1A314C] leading-relaxed space-y-6 text-sm sm:text-base">
-            {(() => {
-              // Normalize content cleanly without duplicating hash symbols
-              const normalized = currentPost.content
-                .replace(/(\n\d+\.\s+\*\*)/g, '\n\n$1')
-                .replace(/\n{3,}/g, '\n\n');
-
-              const sections = normalized.split('\n\n');
-
-              const formatHtmlText = (text: string) => {
-                return text.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-[#107C8E] bg-[#C9E5ED]/40 px-1.5 py-0.5 rounded-md">$1</strong>');
-              };
-
-              return sections.map((sec, sIdx) => {
-                const trimmed = sec.trim();
-                if (!trimmed || /^#+\s*$/.test(trimmed)) return null;
-
-                // Headings (e.g. ### or ## or #)
-                if (/^#{1,6}\s+/.test(trimmed)) {
-                  const cleanHeading = trimmed.replace(/^#{1,6}\s+/, '').trim();
-                  if (!cleanHeading) return null;
-                  
-                  return (
-                    <h3 key={sIdx} className="text-xl sm:text-2xl font-black text-[#1A314C] pt-6 pb-2 border-b border-[#C9E5ED]/70 flex items-center gap-2.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#107C8E] shrink-0" />
-                      <span>{cleanHeading}</span>
-                    </h3>
-                  );
-                }
-
-                // Bullet List (e.g. - item or * item)
-                if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
-                  const lines = trimmed.split('\n').filter(l => l.trim().length > 0);
-                  return (
-                    <div key={sIdx} className="space-y-3 my-4">
-                      {lines.map((line, lIdx) => {
-                        const clean = line.replace(/^[-*•]\s+/, '').replace(/^#+\s*/, '');
-                        if (!clean.trim()) return null;
-                        return (
-                          <div key={lIdx} className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-[#C9E5ED]/70 shadow-2xs hover:border-[#1DA5B8]/50 transition-colors">
-                            <span className="mt-1.5 w-2 h-2 rounded-full bg-[#107C8E] shrink-0" />
-                            <div
-                              className="text-sm sm:text-base text-[#1A314C] leading-relaxed"
-                              dangerouslySetInnerHTML={{ __html: formatHtmlText(clean) }}
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  );
-                }
-
-                // Numbered List (e.g. 1. item)
-                if (/^\d+\.\s+/.test(trimmed)) {
-                  const lines = trimmed.split('\n').filter(l => l.trim().length > 0);
-                  return (
-                    <div key={sIdx} className="space-y-3 my-4">
-                      {lines.map((line, lIdx) => {
-                        const cleanLine = line.replace(/^#+\s*/, '');
-                        const match = cleanLine.match(/^(\d+)\.\s+(.*)$/);
-                        const num = match ? match[1] : `${lIdx + 1}`;
-                        const content = match ? match[2] : cleanLine;
-                        if (!content.trim()) return null;
-                        return (
-                          <div key={lIdx} className="flex items-start gap-3.5 p-4 rounded-xl bg-[#C9E5ED]/15 border border-[#C9E5ED] shadow-2xs hover:bg-[#C9E5ED]/25 transition-colors">
-                            <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-[#107C8E] text-white text-xs font-black shrink-0 shadow-xs">
-                              {num}
-                            </span>
-                            <div
-                              className="text-sm sm:text-base text-[#1A314C] leading-relaxed pt-0.5"
-                              dangerouslySetInnerHTML={{ __html: formatHtmlText(content) }}
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  );
-                }
-
-                // Standard Paragraph with highlighted keywords
-                const cleanParagraph = trimmed.replace(/^#+\s*/, '');
-                if (!cleanParagraph.trim()) return null;
-
-                return (
-                  <p
-                    key={sIdx}
-                    className="text-sm sm:text-base leading-relaxed text-[#1A314C]/90 font-normal"
-                    dangerouslySetInnerHTML={{ __html: formatHtmlText(cleanParagraph) }}
-                  />
-                );
-              });
-            })()}
+          <div className="prose prose-slate max-w-none text-[#1A314C] leading-relaxed text-sm sm:text-base">
+            <Markdown
+              components={{
+                h1: ({ children }) => (
+                  <h1 className="text-2xl sm:text-3xl font-black text-[#1A314C] pt-8 pb-3 border-b-2 border-[#C9E5ED]">
+                    {children}
+                  </h1>
+                ),
+                h2: ({ children }) => (
+                  <h2 className="text-xl sm:text-2xl font-black text-[#1A314C] pt-7 pb-2.5 border-b border-[#C9E5ED]/80">
+                    {children}
+                  </h2>
+                ),
+                h3: ({ children }) => (
+                  <h3 className="text-lg sm:text-xl font-bold text-[#1A314C] pt-6 pb-2 border-b border-[#C9E5ED]/60 flex items-center gap-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#107C8E] shrink-0" />
+                    <span>{children}</span>
+                  </h3>
+                ),
+                p: ({ children }) => (
+                  <p className="text-sm sm:text-base leading-relaxed text-[#1A314C]/90 font-normal my-4">
+                    {children}
+                  </p>
+                ),
+                strong: ({ children }) => (
+                  <strong className="font-bold text-[#107C8E] bg-[#C9E5ED]/40 px-1.5 py-0.5 rounded-md">
+                    {children}
+                  </strong>
+                ),
+                ul: ({ children }) => (
+                  <ul className="space-y-3 my-4 list-none pl-0">
+                    {children}
+                  </ul>
+                ),
+                ol: ({ children }) => (
+                  <ol className="space-y-3 my-4 list-decimal pl-5 marker:text-[#107C8E] marker:font-bold">
+                    {children}
+                  </ol>
+                ),
+                li: ({ children }) => (
+                  <li className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-[#C9E5ED]/70 shadow-2xs text-sm sm:text-base text-[#1A314C] leading-relaxed">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-[#107C8E] shrink-0" />
+                    <div className="flex-1">{children}</div>
+                  </li>
+                ),
+                blockquote: ({ children }) => (
+                  <blockquote className="border-l-4 border-[#107C8E] pl-4 py-2 italic text-[#10566E] my-4 bg-[#C9E5ED]/15 rounded-r-xl">
+                    {children}
+                  </blockquote>
+                )
+              }}
+            >
+              {currentPost.content}
+            </Markdown>
           </div>
 
           {/* Author Bio Card */}

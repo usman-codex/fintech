@@ -1,6 +1,7 @@
 import React from 'react';
 import { BlogPost } from '../types';
 import { X, Clock, User, Calendar, ArrowLeft } from 'lucide-react';
+import Markdown from 'react-markdown';
 
 interface BlogModalProps {
   post: BlogPost | null;
@@ -78,11 +79,48 @@ export const BlogModal: React.FC<BlogModalProps> = ({ post, onClose }) => {
 
           {/* Body Article Content */}
           <div className="text-xs sm:text-sm text-[#1A314C] leading-relaxed space-y-4">
-            <p className="font-medium text-[#1A314C] text-base leading-relaxed">
+            <p className="font-medium text-[#1A314C] text-base leading-relaxed bg-[#C9E5ED]/20 p-4 rounded-xl border-l-4 border-[#107C8E]">
               {post.excerpt}
             </p>
-            <div className="whitespace-pre-line leading-relaxed text-[#1A314C]/80 space-y-4">
-              {post.content.replace(/^#+\s*/gm, '').replace(/\*\*(.*?)\*\*/g, '$1')}
+            <div className="prose prose-slate max-w-none text-[#1A314C] leading-relaxed">
+              <Markdown
+                components={{
+                  h3: ({ children }) => (
+                    <h3 className="text-base sm:text-lg font-bold text-[#1A314C] pt-4 pb-1 border-b border-[#C9E5ED]/60 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#107C8E] shrink-0" />
+                      <span>{children}</span>
+                    </h3>
+                  ),
+                  p: ({ children }) => (
+                    <p className="text-xs sm:text-sm leading-relaxed text-[#1A314C]/90 my-2.5">
+                      {children}
+                    </p>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-bold text-[#107C8E] bg-[#C9E5ED]/40 px-1 py-0.5 rounded">
+                      {children}
+                    </strong>
+                  ),
+                  ul: ({ children }) => (
+                    <ul className="space-y-2 my-3 list-none pl-0">
+                      {children}
+                    </ul>
+                  ),
+                  ol: ({ children }) => (
+                    <ol className="space-y-2 my-3 list-decimal pl-4 marker:text-[#107C8E] marker:font-bold">
+                      {children}
+                    </ol>
+                  ),
+                  li: ({ children }) => (
+                    <li className="flex items-start gap-2 p-2.5 rounded-lg bg-[#C9E5ED]/10 border border-[#C9E5ED]/60 text-xs sm:text-sm text-[#1A314C]">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#107C8E] shrink-0" />
+                      <div className="flex-1">{children}</div>
+                    </li>
+                  )
+                }}
+              >
+                {post.content}
+              </Markdown>
             </div>
           </div>
         </div>
