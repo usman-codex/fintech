@@ -3,16 +3,14 @@ import {
   Briefcase, 
   MapPin, 
   Clock, 
-  DollarSign, 
   ArrowRight, 
-  CheckCircle2, 
-  Building, 
-  Sparkles, 
-  GraduationCap, 
-  Send,
-  Users,
-  Target
+  Rocket, 
+  Network, 
+  Coins,
+  Sparkles,
+  ChevronRight
 } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface CareerPageProps {
   onContactUs: () => void;
@@ -90,50 +88,97 @@ export const CareerPage: React.FC<CareerPageProps> = ({
   ];
 
   return (
-    <div className="py-16 bg-[#C9E5ED]/10 min-h-screen text-[#1A314C] space-y-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div className="relative py-16 bg-[#C9E5ED]/10 min-h-screen text-[#1A314C] space-y-16 overflow-hidden">
+      
+      {/* Decorative Rotated Box Layers on Left Top */}
+      <div className="absolute -top-12 -left-12 sm:-top-8 sm:-left-8 pointer-events-none z-0">
+        <motion.div 
+          initial={{ opacity: 0, rotate: -25, scale: 0.8 }}
+          animate={{ opacity: 1, rotate: -12, scale: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="relative w-40 h-40 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-br from-[#107C8E]/20 via-[#1DA5B8]/10 to-transparent border-2 border-[#1DA5B8]/30 shadow-xl backdrop-blur-xs"
+        >
+          {/* Inner secondary rotated box */}
+          <motion.div 
+            animate={{ rotate: [18, 24, 18] }}
+            transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
+            className="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-[#10566E]/25 to-[#C9E5ED]/50 border border-[#107C8E]/40 shadow-md"
+          />
+          {/* Tiny accent box */}
+          <div className="absolute top-4 left-4 w-8 h-8 rounded-lg bg-white/60 border border-[#1DA5B8]/40 rotate-45 shadow-xs" />
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#1A314C]">
+        {/* Header with Color Gradient Text */}
+        <div className="text-center max-w-3xl mx-auto space-y-4 pt-2">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/80 border border-[#C9E5ED] shadow-2xs text-[#107C8E] text-xs font-bold"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Join Fintech Edge Team & Ecosystem</span>
+          </motion.div>
+
+          <motion.h1 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-[#10566E] via-[#107C8E] to-[#1DA5B8] bg-clip-text text-transparent pb-1"
+          >
             Careers & Graduate Placements
-          </h1>
+          </motion.h1>
           <p className="text-[#10566E] text-sm sm:text-base leading-relaxed">
             Build your career at the forefront of financial technology and decentralized networks. We hire top instructors, researchers, and directly place certified graduates with partner Web3 firms.
           </p>
         </div>
 
-        {/* Benefits Grid */}
+        {/* Benefits Grid with New Icons & Gradient Badges */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="bg-white rounded-3xl p-6 border border-[#C9E5ED] shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#107C8E] text-white flex items-center justify-center font-bold">
-              <Sparkles className="w-5 h-5" />
+          <motion.div 
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.2 }}
+            className="bg-white rounded-3xl p-6 border border-[#C9E5ED] shadow-sm hover:border-[#1DA5B8] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#107C8E] to-[#1DA5B8] text-white flex items-center justify-center font-bold shadow-md shadow-[#107C8E]/25 group-hover:scale-105 transition-transform">
+              <Rocket className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-[#1A314C]">High-Impact Work</h3>
+            <h3 className="text-lg font-bold text-[#1A314C]">High-Impact Work</h3>
             <p className="text-xs text-[#1A314C]/75 leading-relaxed">
               Shape the next generation of financial leaders and crypto analysts across Pakistan and international markets.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="bg-white rounded-3xl p-6 border border-[#C9E5ED] shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#10566E] text-white flex items-center justify-center font-bold">
-              <Users className="w-5 h-5" />
+          <motion.div 
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.2 }}
+            className="bg-white rounded-3xl p-6 border border-[#C9E5ED] shadow-sm hover:border-[#1DA5B8] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#10566E] to-[#107C8E] text-white flex items-center justify-center font-bold shadow-md shadow-[#10566E]/25 group-hover:scale-105 transition-transform">
+              <Network className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-[#1A314C]">Graduate Placement Pipeline</h3>
+            <h3 className="text-lg font-bold text-[#1A314C]">Graduate Placement Pipeline</h3>
             <p className="text-xs text-[#1A314C]/75 leading-relaxed">
               We connect top-performing course alumni directly with hiring Web3 startups, DeFi protocols, and VC funds.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="bg-white rounded-3xl p-6 border border-[#C9E5ED] shadow-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1DA5B8] text-[#1A314C] flex items-center justify-center font-bold">
-              <DollarSign className="w-5 h-5" />
+          <motion.div 
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.2 }}
+            className="bg-white rounded-3xl p-6 border border-[#C9E5ED] shadow-sm hover:border-[#1DA5B8] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1DA5B8] to-[#107C8E] text-white flex items-center justify-center font-bold shadow-md shadow-[#1DA5B8]/25 group-hover:scale-105 transition-transform">
+              <Coins className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-[#1A314C]">Competitive Compensation</h3>
+            <h3 className="text-lg font-bold text-[#1A314C]">Competitive Compensation</h3>
             <p className="text-xs text-[#1A314C]/75 leading-relaxed">
               Attractive USD & PKR remuneration packages, performance bonuses, and fully sponsored learning certifications.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Job Listings */}
@@ -207,3 +252,4 @@ export const CareerPage: React.FC<CareerPageProps> = ({
     </div>
   );
 };
+
