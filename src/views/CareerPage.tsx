@@ -28,19 +28,19 @@ export const CareerPage: React.FC<CareerPageProps> = ({
   return (
     <div className="relative py-16 bg-[#C9E5ED]/10 min-h-screen text-[#1A314C] space-y-16 overflow-hidden">
       
-      {/* Decorative Fixed Rotated Box Layers on Left Top */}
+      {}
       <div className="absolute -top-12 -left-12 sm:-top-8 sm:-left-8 pointer-events-none z-0">
         <div className="relative w-40 h-40 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-br from-[#107C8E]/20 via-[#1DA5B8]/10 to-transparent border-2 border-[#1DA5B8]/30 shadow-xl backdrop-blur-xs -rotate-12">
-          {/* Inner secondary rotated box */}
+          {}
           <div className="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-[#10566E]/25 to-[#C9E5ED]/50 border border-[#107C8E]/40 shadow-md rotate-24" />
-          {/* Tiny accent box */}
+          {}
           <div className="absolute top-4 left-4 w-8 h-8 rounded-lg bg-white/60 border border-[#1DA5B8]/40 rotate-45 shadow-xs" />
         </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Header with Animated Color Gradient Text */}
+        {}
         <div className="text-center max-w-3xl mx-auto space-y-4 pt-2">
           <motion.div 
             initial={{ opacity: 0, y: -10 }}
@@ -69,7 +69,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({
           </motion.p>
         </div>
 
-        {/* Benefits Grid with New Icons & Gradient Badges */}
+        {}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <motion.div 
             whileHover={{ y: -4 }}
@@ -114,7 +114,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({
           </motion.div>
         </div>
 
-        {/* Job Listings */}
+        {}
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#1A314C]">Open Positions & Internships</h2>
@@ -178,7 +178,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({
 
       </div>
 
-      {/* Detailed Job Position Modal */}
+      {}
       {selectedJob && (
         <JobModal 
           job={selectedJob} 

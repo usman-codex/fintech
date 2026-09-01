@@ -52,57 +52,57 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div className="space-y-0">
-      {/* 1. Hero Section */}
+      {}
       <HeroSection
         onExploreCourses={onExploreCourses}
         onSelectCourse={onSelectCourse}
         featuredCourse={featuredCourse}
       />
 
-      {/* 2. We Offer Everything That Your Business Needs (New Featured Services Section) */}
+      {}
       <BusinessNeedsSection
         onNavigateToServices={onNavigateToServices}
         onSelectService={onSelectService}
       />
 
-      {/* 3. Work With Top Notch Designers And Developers (New Interactive Section) */}
+      {}
       <DesignersDevelopersSection
         onNavigateToAbout={onNavigateToAbout}
       />
 
-      {/* 4. Our Top Projects (New Staggered Cards Section) */}
+      {}
       <TopProjectsSection
         onNavigateToProjects={onNavigateToProjects}
       />
 
-      {/* 5. FinTech Edge Institute Achievements (Hexagon Mosaic Gallery & Milestones) */}
+      {}
       <AchievementsSection
         onNavigateToAbout={onNavigateToAbout}
         onNavigateToContact={onNavigateToContact}
       />
 
-      {/* 6. Why FinTech (Radial Showcase with Live Running Counters) */}
+      {}
       <WhyFintechSection />
 
-      {/* 6. Grow Your Business (Establish Control 3 Zoom-In Feature Cards) */}
+      {}
       <GrowBusinessSection />
 
-      {/* 7. Our Founders (Our Expertise Will Help You) */}
+      {}
       <OurFoundersSection />
 
-      {/* 4. All Access VIP Bundle & Coaching Banner */}
+      {}
       <BundleSection
         bundleCourse={bundleCourse}
         onSelectCourse={onSelectCourse}
       />
 
-      {/* 5. Student Testimonials / Reviews */}
+      {}
       <TestimonialsSection testimonials={testimonials} />
 
-      {/* 7. FAQ Accordions */}
+      {}
       <FaqSection faqs={faqs} />
 
-      {/* 8. Conversion CTA Banner */}
+      {}
       <CtaSection
         onExploreCourses={onExploreCourses}
         onContactUs={onNavigateToContact}

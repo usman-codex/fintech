@@ -21,12 +21,12 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
   return (
     <div className="w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col font-sans">
       
-      {/* 1. Hero Banner with Brand Gradient & Rotated Layered Geometric Diamond Art */}
+      {}
       <section className="relative w-full py-14 sm:py-16 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden shadow-lg">
-        {/* Ambient Grid Pattern */}
+        {}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#C9E5ED_1px,transparent_1px)] [background-size:20px_20px]" />
         
-        {/* Rotated Box Art: Top-Right Layered Geometric Diamonds */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-14 w-60 h-60 sm:w-80 sm:h-80 z-0 opacity-80"
@@ -41,7 +41,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           </div>
         </div>
 
-        {/* Rotated Box Art: Bottom-Left Layered Geometric Diamonds */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -bottom-12 -left-10 w-52 h-52 sm:w-64 sm:h-64 z-0 opacity-40 hidden sm:block"
@@ -53,7 +53,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           </div>
         </div>
 
-        {/* Content Container */}
+        {}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-5">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-[#1DA5B8]/30 backdrop-blur-xs px-4 py-1.5 rounded-full text-xs text-[#C9E5ED] font-semibold">
             <GraduationCap className="w-4 h-4 text-[#1DA5B8]" />
@@ -70,10 +70,10 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
         </div>
       </section>
 
-      {/* 2. Simple & Stylish Course Cards Section */}
+      {}
       <section className="relative w-full py-16 sm:py-20 flex-1 overflow-hidden">
         
-        {/* 1. Rotated Box: Top-Right Layered Geometric Diamond Art (Pushed to corner behind content) */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-10 -right-12 sm:-right-6 md:right-4 lg:right-8 w-48 h-48 sm:w-64 sm:h-64 z-0 opacity-40 lg:opacity-60"
@@ -87,7 +87,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           </div>
         </div>
 
-        {/* 2. Rotated Box: Bottom-Left Layered Geometric Diamond Art */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -bottom-10 -left-12 sm:-left-6 md:left-4 w-52 h-52 sm:w-72 sm:h-72 z-0 opacity-40 lg:opacity-60"
@@ -100,7 +100,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           </div>
         </div>
 
-        {/* 3. Rotated Box: Section Middle / Center Layered Geometric Diamond Art */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 z-0 opacity-15"
@@ -112,7 +112,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           </div>
         </div>
 
-        {/* 4. Random Placement Accent: Mid-Right Floating Diamond Art */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute top-1/3 -right-10 w-36 h-36 z-0 opacity-30 hidden md:block"
@@ -121,7 +121,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           <div className="absolute top-4 left-4 w-16 h-16 rotate-45 rounded-xl bg-[#107C8E]/40" />
         </div>
 
-        {/* 5. Random Placement Accent: Mid-Left Floating Diamond Art */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute top-2/3 -left-10 w-40 h-40 z-0 opacity-25 hidden lg:block"
@@ -132,7 +132,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Section Header: Gradient Heading and Short Paragraph with ample spacing */}
+          {}
           <div className="text-center max-w-4xl mx-auto mb-14 sm:mb-16 space-y-4 px-2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black font-heading tracking-tight leading-[1.25] pb-1 bg-gradient-to-r from-[#10566E] via-[#107C8E] to-[#1DA5B8] bg-clip-text text-transparent">
               Our Professional Training Programs
@@ -142,7 +142,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
             </p>
           </div>
 
-          {/* Simple & Stylish Card Grid: ONLY Image, Heading, Paragraph, and Read More (with hover arrow + left-to-right underline) */}
+          {}
           <motion.div 
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -160,7 +160,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                   className="group relative bg-white rounded-2xl sm:rounded-3xl border border-[#C9E5ED] hover:border-[#107C8E] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div>
-                    {/* 1. Image */}
+                    {}
                     <div className="relative aspect-[16/10] overflow-hidden bg-[#EBF4F7]">
                       <img
                         src={course.image}
@@ -176,21 +176,21 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
                       <div className="absolute inset-0 bg-gradient-to-t from-[#1A314C]/60 via-transparent to-transparent opacity-60" />
                     </div>
 
-                    {/* 2. Heading & 3. Paragraph */}
+                    {}
                     <div className="p-6 space-y-3">
-                      {/* Heading */}
+                      {}
                       <h3 className="text-lg sm:text-xl font-black font-heading text-[#1A314C] group-hover:text-[#107C8E] transition-colors leading-snug line-clamp-2">
                         {course.title}
                       </h3>
 
-                      {/* Paragraph */}
+                      {}
                       <p className="text-sm text-[#1A314C]/75 line-clamp-3 leading-relaxed">
                         {course.tagline || course.description}
                       </p>
                     </div>
                   </div>
 
-                  {/* 4. Read More Link with Left-to-Right Hover Underline & Hover Arrow */}
+                  {}
                   <div className="px-6 pb-6 pt-0">
                     <div className="pt-3 border-t border-[#C9E5ED]/60 flex items-center justify-between">
                       <span className="relative inline-flex items-center gap-2 text-sm font-bold text-[#107C8E] group-hover:text-[#10566E] transition-colors py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#107C8E] group-hover:after:w-full after:transition-all after:duration-300">

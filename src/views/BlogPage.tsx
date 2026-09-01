@@ -29,12 +29,12 @@ export const BlogPage: React.FC<BlogPageProps> = ({
   onSelectBlogSlug,
   onSelectBlog
 }) => {
-  // Active post state (can be initialized from props)
+  
   const [activeSlug, setActiveSlug] = useState<string | null>(selectedBlogSlug);
   const [search, setSearch] = useState('');
   const [copied, setCopied] = useState(false);
 
-  // Sync with prop if it changes from external navigation
+  
   useEffect(() => {
     setActiveSlug(selectedBlogSlug);
   }, [selectedBlogSlug]);
@@ -64,16 +64,16 @@ export const BlogPage: React.FC<BlogPageProps> = ({
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      // Fallback
+      
     }
   };
 
-  // Find currently active post
+  
   const currentPost = activeSlug 
     ? blogs.find((b) => b.slug === activeSlug || b.id === activeSlug) || null 
     : null;
 
-  // Filtered posts for list view based on search query
+  
   const filtered = blogs.filter((b) => {
     if (!search.trim()) return true;
     const q = search.toLowerCase();
@@ -86,20 +86,20 @@ export const BlogPage: React.FC<BlogPageProps> = ({
     );
   });
 
-  // Other 4 posts when viewing a single post detail
+  
   const otherPosts = currentPost 
     ? blogs.filter((b) => b.id !== currentPost.id).slice(0, 4)
     : [];
 
-  // ==========================================
-  // VIEW 1: SINGLE POST FULL DETAILS VIEW
-  // ==========================================
+  
+  
+  
   if (currentPost) {
     return (
       <div className="py-10 sm:py-16 bg-[#FAFDFE] min-h-screen text-[#1A314C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
-          {/* Top Breadcrumb / Action Bar */}
+          {}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-[#C9E5ED]">
             <button
               onClick={handleBackToList}
@@ -109,7 +109,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
               <span>Back to All Articles</span>
             </button>
 
-            {/* Social Share & Copy Link */}
+            {}
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCopyLink}
@@ -131,7 +131,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </div>
           </div>
 
-          {/* Article Header */}
+          {}
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-xs text-[#5EA4AA]">
               <Calendar className="w-3.5 h-3.5 text-[#107C8E]" />
@@ -142,7 +142,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
               {currentPost.title}
             </h1>
 
-            {/* Author Profile Block */}
+            {}
             <div className="flex items-center gap-3 pt-2">
               <img
                 src={currentPost.authorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'}
@@ -166,7 +166,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </div>
           </div>
 
-          {/* Featured Hero Image */}
+          {}
           <div className="rounded-3xl overflow-hidden border border-[#C9E5ED] shadow-xl relative group">
             <img
               src={currentPost.image}
@@ -182,7 +182,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t from-[#1A314C]/40 via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
 
-          {/* Key Excerpt Highlight Box */}
+          {}
           <div className="p-6 rounded-2xl bg-gradient-to-r from-[#C9E5ED]/35 via-[#C9E5ED]/15 to-transparent border-l-4 border-[#107C8E] text-[#1A314C] shadow-xs space-y-2">
             <div className="text-xs font-bold uppercase tracking-wider text-[#107C8E]">
               Key Article Brief
@@ -192,7 +192,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </p>
           </div>
 
-          {/* Main Formatted Article Body with Rich Typography & Highlighted Text */}
+          {}
           <div className="prose prose-slate max-w-none text-[#1A314C] leading-relaxed text-sm sm:text-base">
             <Markdown
               components={{
@@ -249,7 +249,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </Markdown>
           </div>
 
-          {/* Author Bio Card */}
+          {}
           <div className="p-6 rounded-2xl bg-white border border-[#C9E5ED] shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-5">
             <img
               src={currentPost.authorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'}
@@ -270,9 +270,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </div>
           </div>
 
-          {/* ============================================================ */}
-          {/* BOTTOM ROW: OTHER 4 BLOG POSTS SECTION                       */}
-          {/* ============================================================ */}
+          {}
+          {}
+          {}
           <div className="pt-12 border-t-2 border-[#C9E5ED] space-y-6">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div>
@@ -293,7 +293,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
               </button>
             </div>
 
-            {/* Exactly 4 other posts in a clean responsive row */}
+            {}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {otherPosts.map((post) => (
                 <div
@@ -302,7 +302,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                   className="group bg-white rounded-2xl border border-[#C9E5ED] hover:border-[#1DA5B8] overflow-hidden shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#1A314C]"
                 >
                   <div>
-                    {/* Thumbnail Image */}
+                    {}
                     <div className="relative h-36 overflow-hidden">
                       <img
                         src={post.image}
@@ -317,7 +317,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                       />
                     </div>
 
-                    {/* Card Content */}
+                    {}
                     <div className="p-4 space-y-2">
                       <div className="flex items-center gap-1.5 text-[10px] text-[#5EA4AA]">
                         <Calendar className="w-3 h-3 text-[#107C8E]" />
@@ -349,36 +349,36 @@ export const BlogPage: React.FC<BlogPageProps> = ({
     );
   }
 
-  // ==========================================
-  // VIEW 2: MAIN BLOG LISTING & HERO VIEW
-  // ==========================================
+  
+  
+  
   return (
     <div className="min-h-screen bg-[#FAFDFE] text-[#1A314C]">
       
-      {/* 1. HERO SECTION (Deep Navy/Teal Palette with Layered Rotated Diamond Art & Smooth Bottom-to-Top Animation) */}
+      {}
       <section className="relative w-full bg-gradient-to-r from-[#1A314C] via-[#10566E] to-[#107C8E] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-lg">
         
-        {/* Signature Layered Rounded Diamond Graphic at Top Right */}
+        {}
         <div className="absolute right-[-30px] sm:right-2 lg:right-8 top-[-30px] sm:top-[-20px] lg:top-[-10px] pointer-events-none opacity-40 lg:opacity-60 overflow-hidden w-72 h-72 sm:w-96 sm:h-96">
-          {/* Outer Light Cyan & Teal diamond */}
+          {}
           <div className="absolute top-4 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/40 bg-gradient-to-br from-[#C9E5ED]/30 to-[#1DA5B8]/20 backdrop-blur-xs" />
-          {/* Middle Deep Teal diamond */}
+          {}
           <div className="absolute top-10 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#107C8E]/50 bg-gradient-to-br from-[#107C8E]/30 to-[#10566E]/30" />
-          {/* Inner solid Dark Navy & Bright Teal gradient diamond */}
+          {}
           <div className="absolute top-16 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#1DA5B8] opacity-90 shadow-xl shadow-[#107C8E]/30" />
-          {/* Floating cyan dots */}
+          {}
           <div className="absolute top-6 right-36 w-3 h-3 rounded-full bg-[#1DA5B8] animate-pulse" />
           <div className="absolute top-48 right-8 w-2.5 h-2.5 rounded-full bg-[#C9E5ED]" />
         </div>
 
-        {/* Subtle mirrored rotated accent on Left */}
+        {}
         <div className="absolute left-[-40px] sm:left-[-15px] top-1/2 -translate-y-1/2 pointer-events-none opacity-20 lg:opacity-30 overflow-hidden w-56 h-56">
           <div className="w-40 h-40 rotate-45 rounded-3xl border border-[#1DA5B8]/35 bg-[#1DA5B8]/10" />
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 z-10">
           
-          {/* Eyebrow Badge (Icon Removed, Smooth Entrance) */}
+          {}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -392,7 +392,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             <span>Fintech Edge Insights & Research</span>
           </motion.div>
 
-          {/* Main Hero Heading (Smooth Bottom-to-Top Animation) */}
+          {}
           <motion.h1
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -409,7 +409,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </span>
           </motion.h1>
 
-          {/* Main Hero Paragraph (Smooth Bottom-to-Top Animation) */}
+          {}
           <motion.p
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -423,7 +423,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             Explore curated analyses, airdrop strategies, smart contract engineering guides, and AI quantitative models written by industry practitioners and Fintech Edge mentors.
           </motion.p>
 
-          {/* Quick Stats Pill (Smooth Bottom-to-Top Animation) */}
+          {}
           <motion.div
             initial={{ y: 35, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -451,11 +451,11 @@ export const BlogPage: React.FC<BlogPageProps> = ({
         </div>
       </section>
 
-      {/* 2. NEXT SECTION: SEARCHBAR & BLOG POSTS GRID */}
+      {}
       <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
-          {/* Clean Search Input Bar */}
+          {}
           <div className="bg-white p-3 sm:p-4 rounded-2xl border border-[#C9E5ED] shadow-sm">
             <div className="relative w-full">
               <Search className="w-5 h-5 text-[#5EA4AA] absolute left-4 top-1/2 -translate-y-1/2" />
@@ -477,7 +477,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </div>
           </div>
 
-          {/* Blog Posts Grid */}
+          {}
           {filtered.length === 0 ? (
             <div className="text-center py-16 bg-white rounded-3xl border border-[#C9E5ED] p-8 space-y-3 shadow-xs">
               <BookOpen className="w-10 h-10 text-[#5EA4AA] mx-auto opacity-50" />
@@ -499,7 +499,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                   className="group bg-white rounded-3xl border border-[#C9E5ED] hover:border-[#1DA5B8] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#1A314C]"
                 >
                   <div>
-                    {/* Cover Image */}
+                    {}
                     <div className="relative h-52 overflow-hidden bg-slate-100">
                       <img
                         src={post.image}
@@ -514,7 +514,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                       />
                     </div>
 
-                    {/* Content Section */}
+                    {}
                     <div className="p-6 space-y-3">
                       <div className="flex items-center gap-2 text-xs text-[#5EA4AA]">
                         <span>{post.date}</span>
@@ -532,7 +532,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                     </div>
                   </div>
 
-                  {/* Card Footer */}
+                  {}
                   <div className="px-6 py-4 bg-[#C9E5ED]/10 border-t border-[#C9E5ED] flex items-center justify-between text-xs font-bold text-[#107C8E] group-hover:text-[#1DA5B8]">
                     <span>Read Full Article</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

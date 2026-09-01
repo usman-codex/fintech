@@ -15,7 +15,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ post, onClose }) => {
     <div className="fixed inset-0 z-50 bg-[#1A314C]/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-white border border-[#C9E5ED] text-[#1A314C] rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
         
-        {/* Sticky Header */}
+        {}
         <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-[#C9E5ED] flex items-center justify-between">
           <button
             onClick={onClose}
@@ -33,10 +33,10 @@ export const BlogModal: React.FC<BlogModalProps> = ({ post, onClose }) => {
           </button>
         </div>
 
-        {/* Content */}
+        {}
         <div className="p-6 sm:p-8 space-y-6">
           
-          {/* Header Metadata */}
+          {}
           <div className="space-y-3">
             <span className="bg-[#C9E5ED]/60 text-[#107C8E] border border-[#107C8E]/30 text-xs font-bold px-3 py-1 rounded-full inline-block">
               {post.category}
@@ -62,7 +62,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ post, onClose }) => {
             </div>
           </div>
 
-          {/* Hero Image */}
+          {}
           <div className="rounded-2xl overflow-hidden border border-[#C9E5ED] shadow-md">
             <img 
               src={post.image} 
@@ -77,7 +77,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ post, onClose }) => {
             />
           </div>
 
-          {/* Body Article Content */}
+          {}
           <div className="text-xs sm:text-sm text-[#1A314C] leading-relaxed space-y-4">
             <p className="font-medium text-[#1A314C] text-base leading-relaxed bg-[#C9E5ED]/20 p-4 rounded-xl border-l-4 border-[#107C8E]">
               {post.excerpt}

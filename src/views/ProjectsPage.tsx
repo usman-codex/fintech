@@ -36,24 +36,24 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
   return (
     <div className="w-full bg-[#F8FAFB] min-h-screen">
       
-      {/* 1. Hero Banner */}
+      {}
       <section className="relative w-full py-16 sm:py-24 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden">
-        {/* Ambient Grid pattern */}
+        {}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#C9E5ED_1px,transparent_1px)] [background-size:20px_20px]" />
         
-        {/* Top Right Signature Decorative Geometric Diamond Art in Official Brand Palette */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-70"
         >
           <div className="relative w-full h-full">
-            {/* Outer Light Cyan & Teal diamond */}
+            {}
             <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/30 bg-gradient-to-br from-[#C9E5ED]/40 to-[#1DA5B8]/10 backdrop-blur-[1px]" />
-            {/* Middle Deep Teal diamond */}
+            {}
             <div className="absolute top-5 right-9 w-36 h-36 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/20" />
-            {/* Inner solid Dark Navy & Bright Teal gradient diamond */}
+            {}
             <div className="absolute top-10 right-14 w-24 h-24 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-xl shadow-[#107C8E]/20" />
-            {/* Floating cyan dots */}
+            {}
             <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#1DA5B8]" />
             <div className="absolute top-36 right-6 w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
           </div>
@@ -69,7 +69,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
         </div>
       </section>
 
-      {/* 2. Projects Grid Listing */}
+      {}
       <section className="w-full py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -83,7 +83,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                 transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-[#C9E5ED]/80 shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden"
               >
-                {/* Top Image & Hover Overlay */}
+                {}
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#EBF4F7]">
                   <img
                     src={project.image}
@@ -94,7 +94,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                   
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
 
-                  {/* Hover Overlay with View Project Button */}
+                  {}
                   <div className="absolute inset-0 bg-black/55 backdrop-blur-[2.5px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
                     <button
                       onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
@@ -106,7 +106,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                   </div>
                 </div>
 
-                {/* Title Pill */}
+                {}
                 <div className="relative -mt-6 mx-auto z-10 px-4">
                   <div className="bg-white px-6 py-2.5 rounded-xl shadow-lg border border-[#C9E5ED]/90 text-center min-w-[200px]">
                     <h3 className="text-lg sm:text-xl font-extrabold text-[#1A314C] tracking-tight font-heading">
@@ -115,13 +115,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                   </div>
                 </div>
 
-                {/* Description & Details */}
+                {}
                 <div className="p-6 sm:p-8 pt-4 flex-1 flex flex-col justify-between space-y-4">
                   <p className="text-[#4A5D6E] text-sm sm:text-base leading-relaxed font-sans">
                     {project.description}
                   </p>
 
-                  {/* Tech Tags */}
+                  {}
                   <div className="flex flex-wrap gap-1.5 pt-2">
                     {project.tags.map((tag) => (
                       <span
@@ -140,40 +140,40 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
         </div>
       </section>
 
-      {/* 3. Have a Project in Mind CTA Section with Short Paragraphs for All Our Services */}
+      {}
       <section className="relative w-full py-16 sm:py-24 bg-white border-t border-[#C9E5ED] overflow-hidden">
         
-        {/* Top-Right Decorative Geometric Diamond Art in Official Brand Palette */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-8 -right-6 sm:right-4 md:right-10 w-60 h-60 sm:w-72 sm:h-72 z-0 opacity-80"
         >
           <div className="relative w-full h-full">
-            {/* Outer Diamond */}
+            {}
             <div className="absolute top-0 right-4 w-40 h-40 sm:w-52 sm:h-52 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/35 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/15 backdrop-blur-xs" />
-            {/* Middle Diamond */}
+            {}
             <div className="absolute top-5 right-9 w-32 h-32 sm:w-40 sm:h-40 rotate-45 rounded-2xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/15" />
-            {/* Inner Diamond */}
+            {}
             <div className="absolute top-10 right-14 w-20 h-20 sm:w-28 sm:h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-lg shadow-[#107C8E]/20" />
-            {/* Floating Cyan Accent Dots */}
+            {}
             <div className="absolute top-2 right-28 w-3 h-3 rounded-full bg-[#1DA5B8]" />
             <div className="absolute top-32 right-6 w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
           </div>
         </div>
 
-        {/* Bottom-Left Decorative Geometric Diamond Art in Official Brand Palette */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -bottom-10 -left-6 sm:left-4 md:left-8 w-56 h-56 sm:w-68 sm:h-68 z-0 opacity-75"
         >
           <div className="relative w-full h-full">
-            {/* Outer Diamond */}
+            {}
             <div className="absolute bottom-0 left-4 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/35 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/15 backdrop-blur-xs" />
-            {/* Middle Diamond */}
+            {}
             <div className="absolute bottom-5 left-9 w-28 h-28 sm:w-36 sm:h-36 rotate-45 rounded-2xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/15" />
-            {/* Inner Diamond */}
+            {}
             <div className="absolute bottom-10 left-14 w-18 h-18 sm:w-24 sm:h-24 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-lg shadow-[#107C8E]/20" />
-            {/* Floating Cyan Accent Dots */}
+            {}
             <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#1DA5B8]" />
             <div className="absolute bottom-28 left-6 w-2 h-2 rounded-full bg-[#107C8E]" />
           </div>

@@ -17,97 +17,97 @@ export interface GalleryHexagon {
 }
 
 export const HEXAGON_GALLERY: GalleryHexagon[] = [
-  // Left Wing (Top raised)
+  
   {
     id: 'hex-1',
     image: img1,
     alt: 'FinTech Edge Mentor',
   },
-  // Left Column (Office / Campus)
+  
   {
     id: 'hex-2',
     image: img2,
     alt: 'FinTech Edge Innovation Lab',
   },
-  // Left Middle
+  
   {
     id: 'hex-3',
     image: img3,
     alt: 'Lead Blockchain Engineer',
   },
-  // Left Building / Exterior
+  
   {
     id: 'hex-4',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     alt: 'FinTech Edge Headquarters',
   },
-  // Left Bottom
+  
   {
     id: 'hex-5',
     image: img5,
     alt: 'Executive Director',
   },
-  // Center-Left Upper
+  
   {
     id: 'hex-6',
     image: img6,
     alt: 'Full Stack Tech Lead',
   },
-  // Center-Left Lower
+  
   {
     id: 'hex-7',
     image: img7,
     alt: 'Smart Contract Developer',
   },
-  // Center Raised
+  
   {
     id: 'hex-8',
     image: img8,
     alt: 'AI Researcher & Faculty',
   },
-  // Center
+  
   {
     id: 'hex-9',
     image: img9,
     alt: 'Product Manager & Fellow',
   },
-  // Center Bottom
+  
   {
     id: 'hex-10',
     image: img10,
     alt: 'FinTech Founder & Strategist',
   },
-  // Center-Right Upper
+  
   {
     id: 'hex-11',
     image: img11,
     alt: 'UI/UX Design Director',
   },
-  // Center-Right Lower
+  
   {
     id: 'hex-12',
     image: img12,
     alt: 'DevOps & Cloud Architect',
   },
-  // Right Wing Upper
+  
   {
     id: 'hex-13',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80',
     alt: 'Senior Web3 Specialist',
   },
-  // Right Wing Middle
+  
   {
     id: 'hex-14',
     image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
     alt: 'Cybersecurity Analyst',
   },
-  // Right Wing Bottom
+  
   {
     id: 'hex-15',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
     alt: 'Corporate Partner',
   },
-  // Right Column (Office interior)
+  
   {
     id: 'hex-16',
     image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',

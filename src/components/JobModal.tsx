@@ -47,7 +47,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     ];
     
-    // Check file size (max 10MB)
+    
     if (file.size > 10 * 1024 * 1024) {
       setUploadError('File size exceeds 10MB limit. Please upload a smaller PDF or Word document.');
       return;
@@ -119,7 +119,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
         className="bg-white border border-[#C9E5ED] text-[#1A314C] rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative flex flex-col"
       >
         
-        {/* Sticky Header */}
+        {}
         <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-[#C9E5ED] flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold text-white bg-[#107C8E] px-3 py-1 rounded-full shadow-xs">
@@ -139,10 +139,10 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
           </button>
         </div>
 
-        {/* Modal Content */}
+        {}
         <div className="p-6 sm:p-8 space-y-6 flex-1">
           
-          {/* Header Banner info */}
+          {}
           <div className="space-y-3 pb-5 border-b border-[#C9E5ED]/80">
             <div className="flex flex-wrap items-center gap-3">
               <span className="text-xs font-bold text-[#107C8E] bg-[#C9E5ED]/30 px-3 py-1 rounded-lg border border-[#C9E5ED] flex items-center gap-1.5">
@@ -168,7 +168,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
               {job.description}
             </p>
 
-            {/* Navigation Tabs */}
+            {}
             <div className="flex items-center gap-2 pt-3">
               <button
                 onClick={() => setActiveTab('details')}
@@ -194,7 +194,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
             </div>
           </div>
 
-          {/* Tab 1: Details */}
+          {}
           {activeTab === 'details' && (
             <motion.div 
               initial={{ opacity: 0, y: 8 }}
@@ -202,7 +202,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
               transition={{ duration: 0.2 }}
               className="space-y-7 text-[#1A314C]"
             >
-              {/* Role Overview */}
+              {}
               <div className="space-y-2 bg-[#C9E5ED]/15 p-5 rounded-2xl border border-[#C9E5ED]/80">
                 <h3 className="text-sm sm:text-base font-bold text-[#1A314C] flex items-center gap-2">
                   <Building2 className="w-4 h-4 text-[#107C8E]" />
@@ -213,7 +213,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                 </p>
               </div>
 
-              {/* Responsibilities */}
+              {}
               <div className="space-y-3">
                 <h3 className="text-base font-bold text-[#1A314C] flex items-center gap-2 border-b border-[#C9E5ED]/60 pb-2">
                   <ListChecks className="w-4 h-4 text-[#107C8E]" />
@@ -229,7 +229,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                 </div>
               </div>
 
-              {/* Requirements */}
+              {}
               <div className="space-y-3">
                 <h3 className="text-base font-bold text-[#1A314C] flex items-center gap-2 border-b border-[#C9E5ED]/60 pb-2">
                   <GraduationCap className="w-4 h-4 text-[#107C8E]" />
@@ -245,7 +245,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                 </div>
               </div>
 
-              {/* Preferred Skills */}
+              {}
               {job.preferredSkills && job.preferredSkills.length > 0 && (
                 <div className="space-y-3">
                   <h3 className="text-sm font-bold text-[#10566E]">Preferred / Good to Have:</h3>
@@ -260,7 +260,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                 </div>
               )}
 
-              {/* Benefits & Perks */}
+              {}
               <div className="space-y-3 pt-2">
                 <h3 className="text-base font-bold text-[#1A314C] border-b border-[#C9E5ED]/60 pb-2">
                   Benefits & Perks
@@ -275,7 +275,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                 </div>
               </div>
 
-              {/* Action Banner */}
+              {}
               <div className="p-5 rounded-2xl bg-gradient-to-r from-[#10566E] to-[#107C8E] text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
                 <div className="space-y-1 text-center sm:text-left">
                   <h4 className="font-bold text-base">Ready to build your career with us?</h4>
@@ -292,7 +292,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
             </motion.div>
           )}
 
-          {/* Tab 2: Apply Form - Resume Upload Only */}
+          {}
           {activeTab === 'apply' && (
             <motion.div 
               initial={{ opacity: 0, y: 8 }}
@@ -327,7 +327,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                     <span className="font-semibold text-[#107C8E]">{job.location}</span>
                   </div>
 
-                  {/* Hidden File Input */}
+                  {}
                   <input
                     ref={fileInputRef}
                     type="file"
@@ -337,7 +337,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                     id="resume-upload-input"
                   />
 
-                  {/* Drag & Drop Upload Container */}
+                  {}
                   {!selectedFile ? (
                     <div
                       onDragOver={handleDragOver}
@@ -371,7 +371,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                       </button>
                     </div>
                   ) : (
-                    /* Selected File Card */
+                    
                     <div className="bg-[#C9E5ED]/20 border border-[#107C8E]/40 rounded-2xl p-5 sm:p-6 space-y-4">
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-3.5 min-w-0">
@@ -405,14 +405,14 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                     </div>
                   )}
 
-                  {/* Error Message */}
+                  {}
                   {uploadError && (
                     <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
                       {uploadError}
                     </div>
                   )}
 
-                  {/* Action Buttons */}
+                  {}
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
                     <button
                       type="submit"

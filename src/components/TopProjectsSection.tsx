@@ -13,7 +13,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
 }) => {
   const topProjects = projects.filter((p) => p.featured).slice(0, 6);
 
-  // Stagger Container Variants
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -25,7 +25,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
     },
   };
 
-  // Single Card Entry Variants (one by one from bottom to top)
+  
   const cardVariants = {
     hidden: { opacity: 0, y: 55 },
     visible: {
@@ -52,7 +52,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header: Title on Left + More Projects Action on Right */}
+        {}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-12 sm:mb-16">
           <div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A314C] tracking-tight font-heading">
@@ -60,7 +60,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
             </h2>
           </div>
 
-          {/* More Projects Button with Animated Arrow & Expanding Underline */}
+          {}
           <button
             id="more-projects-header-btn"
             onClick={onNavigateToProjects}
@@ -74,7 +74,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
           </button>
         </div>
 
-        {/* 6 Cards Grid (3 per row) with One-by-One Stagger Animation */}
+        {}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -89,7 +89,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
               onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
               className="group relative flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-[#C9E5ED]/80 shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer"
             >
-              {/* Card Image Area with Floating View Overlay on Hover */}
+              {}
               <div className="relative aspect-[16/11] sm:aspect-[16/10] overflow-hidden bg-[#EBF4F7]">
                 <img
                   src={project.image}
@@ -98,10 +98,10 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
                   referrerPolicy="no-referrer"
                 />
 
-                {/* Subtle dark ambient gradient */}
+                {}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
 
-                {/* Hover Overlay with View Live Project Button */}
+                {}
                 <div className="absolute inset-0 bg-black/55 backdrop-blur-[2.5px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
                   <button
                     id={`view-project-btn-${project.id}`}
@@ -114,7 +114,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
                 </div>
               </div>
 
-              {/* Elevated Center Title Pill */}
+              {}
               <div className="relative -mt-6 sm:-mt-7 mx-auto z-10 px-4">
                 <div className="bg-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl shadow-lg border border-[#C9E5ED]/90 text-center min-w-[200px]">
                   <h3 className="text-lg sm:text-xl font-extrabold text-[#1A314C] tracking-tight font-heading">
@@ -123,7 +123,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
                 </div>
               </div>
 
-              {/* Card Body: Description Text Only */}
+              {}
               <div className="p-6 sm:p-8 pt-4 sm:pt-5 flex-1 flex flex-col justify-start">
                 <p className="text-[#4A5D6E] text-sm sm:text-base leading-relaxed font-sans">
                   {project.description}

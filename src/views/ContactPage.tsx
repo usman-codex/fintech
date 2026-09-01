@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
-// Layered Geometric Diamond Art (Rotated Boxes)
+
 const LayeredDiamondArt: React.FC<{ size?: 'sm' | 'md' | 'lg'; className?: string }> = ({ 
   size = 'md', 
   className = '' 
@@ -15,24 +15,24 @@ const LayeredDiamondArt: React.FC<{ size?: 'sm' | 'md' | 'lg'; className?: strin
 
   return (
     <div className={`relative flex items-center justify-center pointer-events-none select-none ${className}`}>
-      {/* Ambient Glow */}
+      {}
       <div className="absolute inset-0 bg-[#1DA5B8]/15 blur-2xl rounded-full" />
 
-      {/* Outer Rotated Diamond Layer */}
+      {}
       <motion.div
         animate={{ rotate: [45, 52, 45], scale: [1, 1.02, 1] }}
         transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
         className={`absolute ${config.outer} rotate-45 ${config.outerRadius} border-2 border-[#1DA5B8]/35 bg-gradient-to-br from-[#C9E5ED]/40 via-[#1DA5B8]/10 to-transparent backdrop-blur-xs shadow-lg shadow-[#107C8E]/10`}
       />
 
-      {/* Middle Rotated Diamond Layer */}
+      {}
       <motion.div
         animate={{ rotate: [45, 38, 45], scale: [1, 0.98, 1] }}
         transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
         className={`absolute ${config.middle} rotate-45 ${config.midRadius} border-2 border-[#107C8E]/45 bg-gradient-to-br from-[#107C8E]/25 via-[#5EA4AA]/20 to-[#10566E]/15 backdrop-blur-sm shadow-md shadow-[#1A314C]/10`}
       />
 
-      {/* Inner Rotated Diamond Core */}
+      {}
       <motion.div
         animate={{ rotate: [45, 49, 45] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
@@ -41,7 +41,7 @@ const LayeredDiamondArt: React.FC<{ size?: 'sm' | 'md' | 'lg'; className?: strin
         <div className="w-3 h-3 sm:w-5 sm:h-5 rounded-md bg-[#1DA5B8]/50 border border-[#C9E5ED]/70" />
       </motion.div>
 
-      {/* Floating Accent Sparkle Dots */}
+      {}
       <div className="absolute -top-2 right-4 w-3 h-3 rounded-full bg-[#1DA5B8] shadow-sm shadow-[#1DA5B8] animate-pulse" />
       <div className="absolute -bottom-2 left-5 w-2.5 h-2.5 rounded-full bg-[#C9E5ED] border border-[#107C8E]/40" />
     </div>
@@ -70,29 +70,29 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="relative py-16 bg-[#C9E5ED]/10 min-h-screen text-[#1A314C] overflow-hidden">
-      {/* 1. Top Right Corner - Layered Geometric Diamond Art */}
+      {}
       <div className="absolute -top-10 -right-10 sm:right-6 lg:right-12 pointer-events-none opacity-60 lg:opacity-80 z-0">
         <LayeredDiamondArt size="lg" />
       </div>
 
-      {/* 2. Left Middle (Left Med) - Layered Geometric Diamond Art */}
+      {}
       <div className="absolute top-1/2 -translate-y-1/2 -left-12 sm:-left-6 lg:left-4 pointer-events-none opacity-50 lg:opacity-70 z-0">
         <LayeredDiamondArt size="md" />
       </div>
 
-      {/* 3. Bottom Left - Layered Geometric Diamond Art */}
+      {}
       <div className="absolute -bottom-10 -left-10 sm:left-4 lg:left-8 pointer-events-none opacity-55 lg:opacity-75 z-0">
         <LayeredDiamondArt size="md" />
       </div>
 
-      {/* 4. Bottom Right - Layered Geometric Diamond Art */}
+      {}
       <div className="absolute -bottom-10 -right-10 sm:right-4 lg:right-8 pointer-events-none opacity-55 lg:opacity-75 z-0">
         <LayeredDiamondArt size="md" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Header */}
+        {}
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
             Contact Fintech Edge Institute
@@ -104,7 +104,7 @@ export const ContactPage: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          {/* Direct Info Sidebar */}
+          {}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] space-y-6 shadow-sm">
               <h3 className="text-xl font-bold text-[#1A314C] border-b border-[#C9E5ED] pb-4">
@@ -151,7 +151,7 @@ export const ContactPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Form Area */}
+          {}
           <div className="lg:col-span-7">
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-6">
               <h3 className="text-xl font-bold text-[#1A314C]">Send Us A Message</h3>
@@ -230,7 +230,7 @@ export const ContactPage: React.FC = () => {
 
         </div>
 
-        {/* Google Map Section */}
+        {}
         <div className="bg-white rounded-3xl p-4 sm:p-6 border border-[#C9E5ED] shadow-sm space-y-4">
           <div className="flex items-center gap-2 text-[#1A314C]">
             <MapPin className="w-5 h-5 text-[#107C8E]" />

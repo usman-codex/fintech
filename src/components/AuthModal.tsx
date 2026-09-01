@@ -36,7 +36,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     <div className="fixed inset-0 z-50 bg-[#1A314C]/70 backdrop-blur-md flex items-center justify-center p-4">
       <div className="bg-white border border-[#C9E5ED] text-[#1A314C] rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
         
-        {/* Close Button */}
+        {}
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-xl bg-[#C9E5ED]/30 text-[#5EA4AA] hover:text-[#1A314C] border border-[#C9E5ED] cursor-pointer"
@@ -44,7 +44,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           <X className="w-4 h-4" />
         </button>
 
-        {/* Brand Badge */}
+        {}
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-xl bg-[#107C8E] text-white flex items-center justify-center font-bold shadow-md shadow-[#107C8E]/20">
             <GraduationCap className="w-6 h-6 text-white" />
@@ -55,7 +55,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </div>
         </div>
 
-        {/* Mode Switcher */}
+        {}
         <div className="flex rounded-xl bg-[#C9E5ED]/20 p-1 mb-6 border border-[#C9E5ED]">
           <button
             onClick={() => setMode('login')}
@@ -75,7 +75,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </button>
         </div>
 
-        {/* Form */}
+        {}
         <form onSubmit={handleSubmit} className="space-y-4">
           {mode === 'signup' && (
             <div className="space-y-1">

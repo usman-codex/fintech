@@ -28,7 +28,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   onExploreCourses,
   onContactUs,
 }) => {
-  // Find currently active single service if URL or state specifies one
+  
   const currentService = selectedServiceSlug
     ? SERVICES_DATA.find((s) => s.slug === selectedServiceSlug || s.id === selectedServiceSlug) || null
     : null;
@@ -37,15 +37,15 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [selectedServiceSlug]);
 
-  // If a single service is selected, render the detailed view
+  
   if (currentService) {
     return (
       <div className="min-h-screen bg-[#FAFDFE] text-[#1A314C] pb-24">
         
-        {/* Top Hero Banner with Geometric Diamond Background (Official Brand Colors) */}
+        {}
         <div className="relative bg-gradient-to-r from-[#1A314C] via-[#10566E] to-[#107C8E] text-white overflow-hidden py-16 sm:py-22 border-b border-[#107C8E]/30">
           
-          {/* Top Right Decorative Geometric Diamond Art in Brand Colors */}
+          {}
           <div aria-hidden="true" className="pointer-events-none absolute -top-10 right-0 sm:right-10 w-72 h-72 sm:w-96 sm:h-96 opacity-60">
             <div className="relative w-full h-full">
               <div className="absolute top-0 right-4 w-52 h-52 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/40 bg-[#1DA5B8]/10 backdrop-blur-xs" />
@@ -56,7 +56,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             
-            {/* Breadcrumb Navigation */}
+            {}
             <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#C9E5ED] font-heading">
               <button
                 onClick={() => onSelectService(null)}
@@ -69,7 +69,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               <span className="text-white font-bold">{currentService.shortTitle}</span>
             </div>
 
-            {/* Banner Main Titles */}
+            {}
             <div className="max-w-3xl space-y-4">
               <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-heading">
                 {currentService.bannerHeadline}
@@ -79,7 +79,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </p>
             </div>
 
-            {/* Quick Action Buttons */}
+            {}
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <button
                 onClick={onContactUs}
@@ -99,13 +99,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </div>
         </div>
 
-        {/* In-Depth Service Detail Content Section */}
+        {}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 space-y-14">
           
-          {/* Main Deliverables Block */}
+          {}
           <div className="bg-white rounded-3xl border border-[#C9E5ED] p-8 sm:p-12 shadow-sm space-y-8">
             <div className="flex items-start gap-6">
-              {/* Clean Icon without background box */}
+              {}
               <div className="shrink-0 flex items-center justify-center">
                 <ServiceIcon 
                   name={currentService.iconName} 
@@ -124,7 +124,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
             </div>
 
-            {/* Key Features List */}
+            {}
             <div className="pt-6 border-t border-[#C9E5ED]/60">
               <h3 className="text-base font-bold text-[#1A314C] mb-4 font-heading">Core Capabilities & Architecture</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -142,7 +142,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
             </div>
 
-            {/* Tools & Technologies Grid */}
+            {}
             <div className="pt-6 border-t border-[#C9E5ED]/60 space-y-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs sm:text-sm font-extrabold text-[#107C8E] uppercase tracking-wider font-heading">
@@ -166,7 +166,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </div>
           </div>
 
-          {/* 4-Step Engineering & Delivery Process */}
+          {}
           <div className="space-y-6">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#1A314C] font-heading">
@@ -198,7 +198,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </div>
           </div>
 
-          {/* Consultation CTA Banner */}
+          {}
           <div className="bg-gradient-to-r from-[#1A314C] via-[#10566E] to-[#107C8E] rounded-3xl p-8 sm:p-12 text-white border border-[#1DA5B8]/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div className="space-y-3 max-w-xl text-center md:text-left relative z-10">
               <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-heading">
@@ -226,7 +226,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </div>
           </div>
 
-          {/* Other Services Grid at Bottom of Page */}
+          {}
           <div className="bg-white rounded-3xl border border-[#C9E5ED] p-6 sm:p-8 shadow-xs space-y-6">
             <div className="flex items-center justify-between gap-4">
               <div>
@@ -277,14 +277,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
     );
   }
 
-  // DEFAULT ALL SERVICES LISTING VIEW (Official Brand Color Scheme)
+  
   return (
     <div className="min-h-screen bg-[#FAFDFE] text-[#1A314C] pb-24">
       
-      {/* Top Banner with Brand Gradient & Cyan Geometric Diamonds */}
+      {}
       <div className="relative bg-gradient-to-r from-[#1A314C] via-[#10566E] to-[#107C8E] text-white overflow-hidden py-16 sm:py-24 border-b border-[#107C8E]/30">
         
-        {/* Top Right Decorative Geometric Diamond Art in Brand Palette */}
+        {}
         <div aria-hidden="true" className="pointer-events-none absolute -top-12 right-0 sm:right-10 w-72 h-72 sm:w-96 sm:h-96 opacity-65">
           <div className="relative w-full h-full">
             <div className="absolute top-0 right-4 w-52 h-52 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/40 bg-[#1DA5B8]/10 backdrop-blur-xs" />
@@ -310,7 +310,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         </div>
       </div>
 
-      {/* ALL SERVICE BOXES GRID DIRECTLY UNDER HERO SECTION */}
+      {}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 sm:mt-12">
         <div className="bg-white rounded-3xl border border-[#C9E5ED] p-6 sm:p-8 shadow-xs">
           <div className="mb-6">
@@ -346,7 +346,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         </div>
       </div>
 
-      {/* Services List Cards (Matches exact row structure with brand colors) */}
+      {}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 space-y-8">
         {SERVICES_DATA.map((service, index) => {
           return (
@@ -360,7 +360,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               className="bg-white rounded-3xl border border-[#C9E5ED] hover:border-[#1DA5B8] p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-start md:items-center gap-6 sm:gap-8 group"
             >
               
-              {/* Left Box: Clean Transparent Icon + Title Underneath (No background box around icon) */}
+              {}
               <div className="w-full md:w-56 shrink-0 flex flex-col items-center justify-center text-center p-6 bg-[#FAFDFE] rounded-2xl border border-[#C9E5ED] group-hover:border-[#1DA5B8]/60 transition-colors">
                 <div className="flex items-center justify-center mb-3 text-[#1A314C] group-hover:scale-110 transition-transform">
                   <ServiceIcon 
@@ -375,16 +375,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 </span>
               </div>
 
-              {/* Right Content: Title, Description, Tools & Technologies, and View Details Button */}
+              {}
               <div className="flex-1 w-full space-y-4">
                 
-                {/* Header row with Title and Top-Right View Details Link */}
+                {}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <h3 className="text-xl sm:text-2xl font-extrabold text-[#1A314C] group-hover:text-[#107C8E] transition-colors font-heading">
                     {service.title}
                   </h3>
 
-                  {/* View Details Button with Underline & Arrow Hover Animation */}
+                  {}
                   <button
                     onClick={() => onSelectService(service)}
                     className="relative group/btn inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#1A314C] hover:text-[#107C8E] transition-colors cursor-pointer self-start sm:self-auto font-heading"
@@ -395,12 +395,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   </button>
                 </div>
 
-                {/* Description */}
+                {}
                 <p className="text-xs sm:text-sm text-[#10566E] leading-relaxed font-sans">
                   {service.fullDescription}
                 </p>
 
-                {/* Tools & Technologies Row */}
+                {}
                 <div className="pt-2">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-xs font-extrabold text-[#107C8E] uppercase tracking-wide mr-1 font-heading">
@@ -428,7 +428,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         })}
       </div>
 
-      {/* Bottom Assistance CTA in Brand Colors */}
+      {}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <div className="bg-gradient-to-r from-[#1A314C] via-[#10566E] to-[#107C8E] rounded-3xl p-8 sm:p-12 text-white border border-[#107C8E]/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-xl text-center md:text-left">

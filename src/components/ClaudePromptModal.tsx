@@ -44,7 +44,7 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
     <div className="fixed inset-0 z-50 bg-[#1A314C]/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-white border border-[#C9E5ED] text-[#1A314C] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative">
         
-        {/* Header Bar */}
+        {}
         <div className="bg-[#C9E5ED]/20 px-6 py-4 border-b border-[#C9E5ED] flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#C9E5ED]/60 text-[#107C8E] border border-[#107C8E]/30 flex items-center justify-center shadow-sm">
@@ -71,7 +71,7 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
           </button>
         </div>
 
-        {/* Action Toolbar */}
+        {}
         <div className="bg-[#C9E5ED]/10 p-4 px-6 border-b border-[#C9E5ED] flex flex-wrap items-center justify-between gap-4 shrink-0">
           <div className="flex items-center gap-2 overflow-x-auto">
             <button
@@ -141,7 +141,7 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
           </div>
         </div>
 
-        {/* Prompt Content View */}
+        {}
         <div className="p-6 overflow-y-auto flex-1 font-mono text-xs leading-relaxed bg-[#1A314C] text-white select-all">
           {activeTab === 'full' && (
             <pre className="whitespace-pre-wrap font-mono text-xs text-[#C9E5ED] selection:bg-[#1DA5B8] selection:text-[#1A314C]">
@@ -251,7 +251,7 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
 
         </div>
 
-        {/* Modal Footer */}
+        {}
         <div className="bg-[#C9E5ED]/20 p-4 px-6 border-t border-[#C9E5ED] flex items-center justify-between text-xs text-[#10566E] shrink-0">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-[#107C8E]" />

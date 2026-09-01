@@ -27,7 +27,7 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
   return (
     <section className="py-20 bg-[#C9E5ED]/20 text-[#1A314C] relative border-b border-[#C9E5ED]">
       
-      {/* Decorative Rotated Box in Section Background */}
+      {}
       <div 
         aria-hidden="true" 
         className="pointer-events-none absolute top-10 right-4 w-44 h-44 z-0 opacity-15 hidden lg:block"
@@ -37,7 +37,7 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
@@ -57,7 +57,7 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
           </button>
         </div>
 
-        {/* Category Filter Tabs */}
+        {}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
           {categories.map((cat) => (
             <button
@@ -74,7 +74,7 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
           ))}
         </div>
 
-        {/* Simple & Stylish Courses Grid */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCourses.slice(0, 6).map((course) => (
             <div
@@ -83,7 +83,7 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
               className="group relative bg-white rounded-2xl sm:rounded-3xl border border-[#C9E5ED] hover:border-[#107C8E] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between text-[#1A314C] cursor-pointer"
             >
               <div>
-                {/* 1. Image */}
+                {}
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#EBF4F7]">
                   <img
                     src={course.image}
@@ -99,21 +99,21 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A314C]/60 via-transparent to-transparent opacity-60" />
                 </div>
 
-                {/* 2. Heading & 3. Paragraph */}
+                {}
                 <div className="p-6 space-y-3">
-                  {/* Heading */}
+                  {}
                   <h3 className="text-lg sm:text-xl font-black font-heading text-[#1A314C] group-hover:text-[#107C8E] transition-colors leading-snug line-clamp-2">
                     {course.title}
                   </h3>
 
-                  {/* Paragraph */}
+                  {}
                   <p className="text-sm text-[#1A314C]/75 line-clamp-3 leading-relaxed">
                     {course.tagline || course.description}
                   </p>
                 </div>
               </div>
 
-              {/* 4. Read More Link with Left-to-Right Hover Underline & Hover Arrow */}
+              {}
               <div className="px-6 pb-6 pt-0">
                 <div className="pt-3 border-t border-[#C9E5ED]/60 flex items-center justify-between">
                   <span className="relative inline-flex items-center gap-2 text-sm font-bold text-[#107C8E] group-hover:text-[#10566E] transition-colors py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#107C8E] group-hover:after:w-full after:transition-all after:duration-300">

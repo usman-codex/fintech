@@ -1,7 +1,7 @@
 import { Course } from '../types';
 
 export const COURSES_DATA: Course[] = [
-  // 1. Facebook Monetization
+  
   {
     id: 'facebook-monetization',
     title: 'Facebook Page Monetization & In-Stream Ads Blueprint',
@@ -77,7 +77,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 2. SEO (Search Engine Optimization)
+  
   {
     id: 'seo-mastery',
     title: 'Advanced SEO Mastery: Technical, On-Page & AI Search Optimization',
@@ -140,7 +140,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 3. WordPress Development
+  
   {
     id: 'wordpress-development',
     title: 'Complete WordPress & WooCommerce Development Bootcamp',
@@ -203,7 +203,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 4. Digital Marketing
+  
   {
     id: 'digital-marketing',
     title: 'Complete Digital Marketing & Performance Growth Masterclass',
@@ -264,7 +264,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 5. Full Stack Web Development
+  
   {
     id: 'fullstack-web-dev',
     title: 'Full-Stack Web Development Bootcamp (React, Next.js & Node)',
@@ -327,7 +327,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 6. Blockchain & Web3
+  
   {
     id: 'blockchain-web3',
     title: 'Full-Stack Blockchain & Smart Contract Engineering',
@@ -388,7 +388,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 7. Meta Ads (Facebook & Instagram Ads)
+  
   {
     id: 'meta-ads-mastery',
     title: 'Meta Ads & Direct-Response Media Buying Masterclass',
@@ -449,7 +449,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 8. Frontend & Backend Web Development
+  
   {
     id: 'frontend-backend-web-dev',
     title: 'Frontend & Backend Web Architecture & Engineering',
@@ -510,7 +510,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 9. DevOps & Cloud
+  
   {
     id: 'devops-cloud',
     title: 'DevOps, Docker, Kubernetes & Multi-Cloud Infrastructure',
@@ -571,7 +571,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 10. E-Commerce Development
+  
   {
     id: 'ecommerce-development',
     title: 'E-Commerce Store Development & Shopify Mastery',
@@ -632,7 +632,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 11. B2B Business & Lead Generation
+  
   {
     id: 'b2b-business-lead-gen',
     title: 'B2B Business Acquisition & Cold Outreach Lead Generation',
@@ -693,7 +693,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 12. AI Creation & Automation
+  
   {
     id: 'ai-creation-automation',
     title: 'AI Automation & No-Code Workflow Engineering',
@@ -754,7 +754,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 13. Content Creation & Video Editing
+  
   {
     id: 'content-creation-video-editing',
     title: 'Content Creation & Pro Video Editing (Premiere Pro & CapCut)',
@@ -815,7 +815,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 14. Graphic Designing
+  
   {
     id: 'graphic-design-mastery',
     title: 'Professional Graphic Design & Brand Identity Mastery',
@@ -876,7 +876,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 15. AI & Large Language Models (LLMs)
+  
   {
     id: 'ai-llm-agents',
     title: 'AI Engineering, LLMs & Autonomous Agents Bootcamp',
@@ -938,7 +938,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 16. Mobile App Development
+  
   {
     id: 'mobile-app-dev',
     title: 'Cross-Platform Mobile App Development (React Native & Flutter)',
@@ -999,7 +999,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 17. Paid Ads (Facebook Ads, TikTok Ads & Google Ads)
+  
   {
     id: 'paid-ads-fb-tiktok',
     title: 'Paid Advertising Omnichannel Mastery (Meta, TikTok & Google Ads)',
@@ -1060,7 +1060,7 @@ export const COURSES_DATA: Course[] = [
     ]
   },
 
-  // 18. Web Development
+  
   {
     id: 'web-development-architecture',
     title: 'Modern Web Development & Software Architecture',

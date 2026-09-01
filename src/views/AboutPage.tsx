@@ -22,43 +22,43 @@ import {
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
-  // Ref for Mission & Who We Are Section
+  
   const missionRef = useRef<HTMLDivElement>(null);
   const isMissionInView = useInView(missionRef, { once: false, amount: 0.2 });
 
-  // Ref for Team Interpersonal Skills Section
+  
   const teamSkillsRef = useRef<HTMLDivElement>(null);
   const isTeamSkillsInView = useInView(teamSkillsRef, { once: false, amount: 0.15 });
 
   return (
     <div className="min-h-screen bg-white text-[#1A314C] font-poppins overflow-x-hidden">
       
-      {/* ========================================================================= */}
-      {/* 1. TOP "OUR VISION" HERO BANNER WITH BRAND DEEP NAVY/TEAL PALETTE        */}
-      {/* ========================================================================= */}
+      {}
+      {}
+      {}
       <section className="relative w-full bg-gradient-to-r from-[#1A314C] via-[#10566E] to-[#107C8E] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-lg">
         
-        {/* Signature Layered Rounded Diamond Graphic on the Right (Same as Home) */}
+        {}
         <div className="absolute right-[-40px] sm:right-10 top-1/2 -translate-y-1/2 pointer-events-none opacity-40 lg:opacity-60 overflow-hidden w-72 h-72 sm:w-96 sm:h-96">
-          {/* Outer Light Cyan & Teal diamond */}
+          {}
           <div className="absolute top-0 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/40 bg-gradient-to-br from-[#C9E5ED]/30 to-[#1DA5B8]/20 backdrop-blur-xs" />
-          {/* Middle Deep Teal diamond */}
+          {}
           <div className="absolute top-6 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#107C8E]/50 bg-gradient-to-br from-[#107C8E]/30 to-[#10566E]/30" />
-          {/* Inner solid Dark Navy & Bright Teal gradient diamond */}
+          {}
           <div className="absolute top-12 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#1DA5B8] opacity-90 shadow-xl shadow-[#107C8E]/30" />
-          {/* Floating cyan dots */}
+          {}
           <div className="absolute top-4 right-36 w-3 h-3 rounded-full bg-[#1DA5B8] animate-pulse" />
           <div className="absolute top-44 right-8 w-2.5 h-2.5 rounded-full bg-[#C9E5ED]" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl space-y-5">
-            {/* Fixed / Static "Our Vision" Heading */}
+            {}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-poppins drop-shadow-sm">
               Our Vision
             </h1>
 
-            {/* Paragraph animated from RIGHT to LEFT onto screen */}
+            {}
             <motion.p
               initial={{ x: '80vw', opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -75,9 +75,9 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 2. "WHO WE ARE" & "OUR MISSION" (IMAGE FROM LEFT, TEXT FROM RIGHT)        */}
-      {/* ========================================================================= */}
+      {}
+      {}
+      {}
       <section 
         ref={missionRef}
         className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden border-b border-[#F1F5F9]"
@@ -85,7 +85,7 @@ export const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* LEFT COLUMN: Image with Signature Concentric Layered Diamonds (Same as Home) */}
+            {}
             <motion.div
               initial={{ x: '-60vw', opacity: 0 }}
               animate={isMissionInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
@@ -94,31 +94,31 @@ export const AboutPage: React.FC = () => {
             >
               <div className="relative w-full max-w-lg">
                 
-                {/* 1. TOP-RIGHT LAYERED CONCENTRIC DIAMOND (Home Section Style in Brand Teal/Cyan) */}
+                {}
                 <div className="absolute -top-12 -right-8 w-44 h-44 pointer-events-none z-0">
-                  {/* Outer Diamond */}
+                  {}
                   <div className="absolute top-0 right-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#1DA5B8]/30 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/20 backdrop-blur-xs" />
-                  {/* Middle Diamond */}
+                  {}
                   <div className="absolute top-4 right-4 w-28 h-28 rotate-45 rounded-xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/25 to-[#10566E]/20" />
-                  {/* Inner Diamond */}
+                  {}
                   <div className="absolute top-8 right-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-md shadow-[#107C8E]/20" />
-                  {/* Floating Cyan Accent Dot */}
+                  {}
                   <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#1DA5B8]" />
                 </div>
 
-                {/* 2. BOTTOM-LEFT LAYERED CONCENTRIC DIAMOND (Home Section Style in Brand Teal/Cyan) */}
+                {}
                 <div className="absolute -bottom-10 -left-10 w-44 h-44 pointer-events-none z-0">
-                  {/* Outer Diamond */}
+                  {}
                   <div className="absolute bottom-0 left-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#1DA5B8]/30 bg-gradient-to-br from-[#C9E5ED]/50 to-[#1DA5B8]/20 backdrop-blur-xs" />
-                  {/* Middle Diamond */}
+                  {}
                   <div className="absolute bottom-4 left-4 w-28 h-28 rotate-45 rounded-xl border border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/25 to-[#10566E]/20" />
-                  {/* Inner Diamond */}
+                  {}
                   <div className="absolute bottom-8 left-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-md shadow-[#107C8E]/20" />
-                  {/* Floating Cyan Accent Dot */}
+                  {}
                   <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
                 </div>
 
-                {/* Main Team Image Container with Custom Stylized Asymmetric Rounded Corners */}
+                {}
                 <div className="relative z-10 overflow-hidden rounded-tr-[56px] rounded-bl-[56px] rounded-tl-2xl rounded-br-2xl shadow-xl border-4 border-white bg-[#F8FAFC]">
                   <img
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=80"
@@ -127,11 +127,11 @@ export const AboutPage: React.FC = () => {
                     loading="lazy"
                   />
                   
-                  {/* Subtle glass reflection overlay */}
+                  {}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
                 </div>
 
-                {/* Floating decorative badge */}
+                {}
                 <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border border-[#C9E5ED] z-20 flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-[#107C8E] animate-ping" />
                   <span className="text-xs sm:text-sm font-bold text-[#1A314C] font-poppins">
@@ -142,36 +142,36 @@ export const AboutPage: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* RIGHT COLUMN: Mission Content (Animates from RIGHT of screen) */}
+            {}
             <motion.div
               initial={{ x: '60vw', opacity: 0 }}
               animate={isMissionInView ? { x: 0, opacity: 1 } : { x: '60vw', opacity: 0 }}
               transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
               className="lg:col-span-6 space-y-6"
             >
-              {/* Category Badge */}
+              {}
               <div className="space-y-1">
                 <span className="text-base sm:text-lg font-bold text-[#107C8E] font-poppins">
                   Who We Are
                 </span>
                 
-                {/* Main Heading */}
+                {}
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A314C] tracking-tight font-poppins">
                   Our Mission
                 </h2>
               </div>
 
-              {/* Paragraph 1 */}
+              {}
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
                 <strong className="font-bold text-[#107C8E] bg-[#107C8E]/10 px-1.5 py-0.5 rounded-md">FinTech Edge Institute</strong> stands as a premier specialized education institute and technology hub dedicated to decentralized finance (DeFi), algorithmic trading, blockchain engineering, and modern full-stack financial software. Our commitment to rigorous practical training, live testnet simulations, and verified industry mentorship defines our core essence.
               </p>
 
-              {/* Paragraph 2 */}
+              {}
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
                 At <strong className="font-bold text-[#107C8E] bg-[#107C8E]/10 px-1.5 py-0.5 rounded-md">FinTech Edge Institute</strong>, we go beyond conventional theory. We immerse our students in real-world smart contract development, quantitative market modeling, automated bot algorithms, and institutional financial security protocols. Our dedicated faculty and industry practitioners take immense pride in engineering career-ready skills that empower learners to secure top global remote roles and build groundbreaking fintech solutions.
               </p>
 
-              {/* Feature Highlights Grid */}
+              {}
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#F1F5F9]">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#107C8E]/10 text-[#107C8E] flex items-center justify-center font-bold">
@@ -198,18 +198,18 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 3. TEAM WITH STRONG INTERPERSONAL SKILLS (ALTERNATING LEFT/RIGHT ANIMATIONS) */}
-      {/* ========================================================================= */}
+      {}
+      {}
+      {}
       <section
         ref={teamSkillsRef}
         className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden border-b border-[#F1F5F9]"
       >
         <div className="max-w-6xl mx-auto space-y-12">
           
-          {/* Section Header */}
+          {}
           <div className="space-y-4">
-            {/* Top Category Badge */}
+            {}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={isTeamSkillsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
@@ -222,7 +222,7 @@ export const AboutPage: React.FC = () => {
               <span className="text-[#1DA5B8] font-bold tracking-widest text-lg">——</span>
             </motion.div>
 
-            {/* Main Headline */}
+            {}
             <motion.h2
               initial={{ opacity: 0, y: 15 }}
               animate={isTeamSkillsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
@@ -232,7 +232,7 @@ export const AboutPage: React.FC = () => {
               Team With Strong Interpersonal Skills
             </motion.h2>
 
-            {/* Lead Intro Paragraph */}
+            {}
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={isTeamSkillsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
@@ -243,10 +243,10 @@ export const AboutPage: React.FC = () => {
             </motion.p>
           </div>
 
-          {/* Interactive Feature Paragraphs with Alternating Left/Right Animations */}
+          {}
           <div className="space-y-10 pt-4">
 
-            {/* 1. DEDICATION & FOCUS — SLIDES IN FROM LEFT (Screen Left side se nikal k ai) */}
+            {}
             <motion.div
               initial={{ x: '-60vw', opacity: 0 }}
               animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
@@ -266,7 +266,7 @@ export const AboutPage: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* 2. BUDGET FRIENDLY — SLIDES IN FROM RIGHT (Screen Right side se nikal k ai) */}
+            {}
             <motion.div
               initial={{ x: '60vw', opacity: 0 }}
               animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '60vw', opacity: 0 }}
@@ -286,7 +286,7 @@ export const AboutPage: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* 3. 24/7 SUPPORT TEAM — SLIDES IN FROM LEFT (Screen Left side se nikal k ai) */}
+            {}
             <motion.div
               initial={{ x: '-60vw', opacity: 0 }}
               animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
@@ -311,34 +311,34 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 4. ACHIEVEMENTS SINCE 2020 (RADIAL ARCH & STATS)                          */}
-      {/* ========================================================================= */}
+      {}
+      {}
+      {}
       <AchievementsSection />
 
-      {/* ========================================================================= */}
-      {/* 5. "OUR FOUNDERS" SECTION                                                 */}
-      {/* ========================================================================= */}
+      {}
+      {}
+      {}
       <OurFoundersSection />
 
-      {/* ========================================================================= */}
-      {/* 5. COMPANY CORE VALUES & GUIDING PRINCIPLES                               */}
-      {/* ========================================================================= */}
+      {}
+      {}
+      {}
       <section className="relative py-16 sm:py-24 bg-[#FAFAFA] border-t border-[#E2E8F0] overflow-hidden">
         
-        {/* Top Right Signature Decorative Geometric Diamond Art in Official Brand Palette */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-70"
         >
           <div className="relative w-full h-full">
-            {/* Outer Light Cyan & Teal diamond */}
+            {}
             <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#1DA5B8]/30 bg-gradient-to-br from-[#C9E5ED]/40 to-[#1DA5B8]/10 backdrop-blur-[1px]" />
-            {/* Middle Deep Teal diamond */}
+            {}
             <div className="absolute top-5 right-9 w-36 h-36 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#107C8E]/40 bg-gradient-to-br from-[#107C8E]/20 to-[#10566E]/20" />
-            {/* Inner solid Dark Navy & Bright Teal gradient diamond */}
+            {}
             <div className="absolute top-10 right-14 w-24 h-24 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#1A314C] to-[#107C8E] opacity-90 shadow-xl shadow-[#107C8E]/20" />
-            {/* Floating cyan dots */}
+            {}
             <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#1DA5B8]" />
             <div className="absolute top-36 right-6 w-2.5 h-2.5 rounded-full bg-[#107C8E]" />
           </div>

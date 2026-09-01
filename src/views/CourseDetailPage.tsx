@@ -34,13 +34,13 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
   return (
     <div className="w-full max-w-full bg-[#FAFDFE] min-h-screen text-[#1A314C] flex flex-col font-sans overflow-x-clip">
       
-      {/* 1. Hero Section with Clean Heading, Tagline & Layered Geometric Diamond Art */}
+      {}
       <section className="relative w-full py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#10566E] via-[#107C8E] to-[#1A314C] text-white overflow-hidden shadow-lg border-b border-[#107C8E]/30">
         
-        {/* Ambient Grid Pattern */}
+        {}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#C9E5ED_1px,transparent_1px)] [background-size:20px_20px]" />
 
-        {/* Rotated Box Art: Top-Right Layered Geometric Diamonds */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-12 right-0 sm:right-6 md:right-16 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-80"
@@ -55,7 +55,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           </div>
         </div>
 
-        {/* Rotated Box Art: Bottom-Left Layered Geometric Diamonds */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -bottom-16 -left-12 w-60 h-60 sm:w-72 sm:h-72 z-0 opacity-40 hidden sm:block"
@@ -69,7 +69,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Breadcrumbs & Back Button */}
+          {}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6 sm:mb-8 text-xs sm:text-sm">
             <button
               onClick={onBack}
@@ -90,20 +90,20 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Content Area: Course Title, Short Description & Quick Meta */}
+            {}
             <div className="lg:col-span-8 space-y-4 sm:space-y-6">
               
-              {/* Main Course Heading */}
+              {}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-heading leading-tight tracking-tight bg-gradient-to-r from-white via-[#D8F0F5] to-[#1DA5B8] bg-clip-text text-transparent drop-shadow-sm">
                 {course.title}
               </h1>
 
-              {/* Short Course Paragraph */}
+              {}
               <p className="text-[#C9E5ED] text-base sm:text-lg leading-relaxed max-w-3xl font-sans">
                 {course.tagline}
               </p>
 
-              {/* Quick Info Grid */}
+              {}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                 <div className="bg-white/10 backdrop-blur-xs border border-[#1DA5B8]/30 rounded-xl p-3 text-center">
                   <Clock className="w-4 h-4 text-[#1DA5B8] mx-auto mb-1" />
@@ -132,7 +132,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
             </div>
 
-            {/* Right Featured Image Frame (Clean, without badges or price overlays) */}
+            {}
             <div className="lg:col-span-4">
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#1DA5B8]/50 shadow-2xl bg-[#1A314C] group">
                 <img
@@ -154,10 +154,10 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
         </div>
       </section>
 
-      {/* 2. Main Course Detail Cards Section */}
+      {}
       <section className="relative w-full py-12 sm:py-16">
         
-        {/* Rotated Box Art: Middle Section Accent */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute top-40 right-4 w-44 h-44 z-0 opacity-20 hidden lg:block overflow-hidden"
@@ -172,10 +172,10 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
-            {/* Left Column: Heading & Paragraph Detail Cards (8 cols) */}
+            {}
             <div className="lg:col-span-8 space-y-8">
               
-              {/* Detail Card 1: Course Overview & Learning Scope */}
+              {}
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
@@ -193,7 +193,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   {course.description}
                 </p>
 
-                {/* Tools & Technologies */}
+                {}
                 {course.tools && course.tools.length > 0 && (
                   <div className="pt-4 border-t border-[#C9E5ED]/60 space-y-2.5">
                     <h3 className="text-xs font-bold uppercase tracking-wider text-[#107C8E]">
@@ -213,7 +213,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 )}
               </div>
 
-              {/* Detail Card 2: Core Learning Pillars */}
+              {}
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-5">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
@@ -248,7 +248,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 </div>
               </div>
 
-              {/* Detail Cards 3+: Structured Module Detail Cards (Heading & Paragraph format replacing accordion) */}
+              {}
               <div className="space-y-5">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
@@ -300,7 +300,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 ))}
               </div>
 
-              {/* Detail Card: Prerequisites & Who Should Enroll */}
+              {}
               {course.requirements && course.requirements.length > 0 && (
                 <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-4">
                   <div className="flex items-center gap-3">
@@ -333,7 +333,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 </div>
               )}
 
-              {/* Detail Card: Career Pathways & Industry Application */}
+              {}
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#C9E5ED] shadow-sm space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#EBF4F7] text-[#107C8E] flex items-center justify-center font-bold">
@@ -354,11 +354,11 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
             </div>
 
-            {/* Right Sticky Enrollment Sidebar (4 cols - Clean & Without Price) */}
+            {}
             <div className="lg:col-span-4 lg:sticky lg:top-24 z-20 self-start">
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-7 border-2 border-[#107C8E]/30 shadow-xl space-y-6">
                 
-                {/* Program Access Header */}
+                {}
                 <div className="space-y-2 pb-4 border-b border-[#C9E5ED]">
                   <h3 className="text-xl font-black font-heading text-[#1A314C]">
                     Program Enrollment
@@ -368,7 +368,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   </p>
                 </div>
 
-                {/* Action Buttons */}
+                {}
                 <div className="space-y-3">
                   <button
                     onClick={() => onEnroll(course)}
@@ -386,7 +386,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   </button>
                 </div>
 
-                {/* Program Inclusions */}
+                {}
                 <div className="space-y-3 pt-2">
                   <p className="text-xs font-extrabold uppercase tracking-wider text-[#1A314C]">
                     This Program Includes:
@@ -416,7 +416,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   </div>
                 </div>
 
-                {/* Consultation Note */}
+                {}
                 <div className="p-3.5 rounded-xl bg-[#FAFDFE] border border-[#C9E5ED] text-center text-xs text-[#5EA4AA]">
                   <p className="font-semibold text-[#10566E]">Need corporate or group cohorts?</p>
                   <p className="text-[11px] mt-0.5">Contact our counselor team for custom training batches.</p>
@@ -430,10 +430,10 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
         </div>
       </section>
 
-      {/* 3. Bottom Call To Action Card */}
+      {}
       <section className="relative w-full py-12 bg-gradient-to-r from-[#10566E] to-[#1A314C] text-white overflow-hidden shadow-inner mt-8">
         
-        {/* Rotated Box Art: Bottom Right Layered Diamonds */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -bottom-10 right-0 sm:right-10 w-52 h-52 sm:w-64 sm:h-64 z-0 opacity-60"
@@ -445,7 +445,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           </div>
         </div>
 
-        {/* Rotated Box Art: Bottom Left Diamond Accent */}
+        {}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-8 -left-8 w-40 h-40 z-0 opacity-40"

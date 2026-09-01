@@ -24,7 +24,7 @@ export const OurFoundersSection: React.FC = () => {
       id: 'abdul-rehman',
       name: 'Abdul Rehman Sarohy',
       role: 'Co Founder',
-      // High-quality modern professional avatar
+      
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
       initials: 'AR',
       socials: {
@@ -37,7 +37,7 @@ export const OurFoundersSection: React.FC = () => {
       id: 'ali-zain',
       name: 'Ali Zain',
       role: 'Co Founder',
-      // High-quality portrait matching the screenshot
+      
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
       initials: 'AZ',
       socials: {
@@ -56,11 +56,11 @@ export const OurFoundersSection: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* ========================================================================= */}
-        {/* 1. SECTION HEADER WITH SMOOTH ANIMATION                                  */}
-        {/* ========================================================================= */}
+        {}
+        {}
+        {}
         <div className="max-w-4xl mb-14 sm:mb-16">
-          {/* Top Badge: Our Founders —— in signature brand Teal */}
+          {}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -73,7 +73,7 @@ export const OurFoundersSection: React.FC = () => {
             <span className="text-[#107C8E] font-bold tracking-widest text-lg">——</span>
           </motion.div>
 
-          {/* Main Headline */}
+          {}
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
@@ -83,7 +83,7 @@ export const OurFoundersSection: React.FC = () => {
             Our Expertise Will Help You
           </motion.h2>
 
-          {/* Description Paragraph */}
+          {}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
@@ -94,9 +94,9 @@ export const OurFoundersSection: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* ========================================================================= */}
-        {/* 2. FOUNDER CARDS WITH BRAND CYAN BORDERS & DYNAMIC HOVER EFFECTS          */}
-        {/* ========================================================================= */}
+        {}
+        {}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {founders.map((founder, index) => (
             <motion.div
@@ -111,7 +111,7 @@ export const OurFoundersSection: React.FC = () => {
               whileHover={{ y: -7 }}
               className="group relative bg-white hover:bg-[#F0F8FA] rounded-3xl p-8 sm:p-10 border border-[#C9E5ED] hover:border-[#1DA5B8] shadow-sm hover:shadow-[0_20px_35px_-10px_rgba(16,124,142,0.16)] transition-all duration-300 flex flex-col items-center text-center cursor-pointer"
             >
-              {/* Circular Avatar Frame with Brand Border */}
+              {}
               <div className="relative mb-6">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-[#C9E5ED] group-hover:border-[#1DA5B8] shadow-md bg-gradient-to-br from-[#107C8E]/10 to-[#1DA5B8]/20 flex items-center justify-center transition-colors duration-300">
                   <img
@@ -120,7 +120,7 @@ export const OurFoundersSection: React.FC = () => {
                     className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
                     loading="lazy"
                     onError={(e) => {
-                      // Fallback initials avatar if image fails
+                      
                       const target = e.currentTarget;
                       target.style.display = 'none';
                       if (target.parentElement) {
@@ -131,20 +131,20 @@ export const OurFoundersSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Founder Name */}
+              {}
               <h3 className="text-xl sm:text-2xl font-bold text-[#1A314C] group-hover:text-[#107C8E] transition-colors duration-300 font-poppins mb-1">
                 {founder.name}
               </h3>
 
-              {/* Founder Role */}
+              {}
               <p className="text-sm sm:text-base font-semibold text-[#107C8E] font-poppins mb-6">
                 {founder.role}
               </p>
 
-              {/* Social Media Links with Unique Distinct Hover Colors & Shadows */}
+              {}
               <div className="flex items-center justify-center gap-3.5">
                 
-                {/* 1. Instagram: Distinct Pink/Purple Gradient Hover */}
+                {}
                 {founder.socials.instagram && (
                   <a
                     href={founder.socials.instagram}
@@ -157,7 +157,7 @@ export const OurFoundersSection: React.FC = () => {
                   </a>
                 )}
 
-                {/* 2. Facebook: Distinct Facebook Blue Hover */}
+                {}
                 {founder.socials.facebook && (
                   <a
                     href={founder.socials.facebook}
@@ -170,7 +170,7 @@ export const OurFoundersSection: React.FC = () => {
                   </a>
                 )}
 
-                {/* 3. LinkedIn: Distinct LinkedIn Blue Hover */}
+                {}
                 {founder.socials.linkedin && (
                   <a
                     href={founder.socials.linkedin}

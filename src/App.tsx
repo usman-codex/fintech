@@ -23,7 +23,7 @@ import { TESTIMONIALS_DATA, FAQS_DATA } from './data/faqs';
 import { SERVICES_DATA } from './data/services';
 import { Course, BlogPost, ServiceItem } from './types';
 
-// Helper to parse current path/hash into active tab and sub-item slug
+
 function parseCurrentRoute(): { tab: string; slug: string | null } {
   const hash = window.location.hash.replace(/^#\/?/, '');
   const pathname = window.location.pathname.replace(/^\//, '');
@@ -74,7 +74,7 @@ export default function App() {
   const [user, setUser] = useState<{ name: string; email: string } | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Synchronize URL when tab or slug changes
+  
   const navigateTo = useCallback((tab: string, slug: string | null = null) => {
     setActiveTabState(tab);
     setSelectedSlug(slug);
@@ -96,12 +96,12 @@ export default function App() {
     try {
       window.history.pushState({ tab, slug }, '', newUrl);
     } catch {
-      // Fallback if pushState restricted in certain iframe contexts
+      
       window.location.hash = newHash;
     }
   }, []);
 
-  // Listen to browser navigation (Back / Forward buttons)
+  
   useEffect(() => {
     const handlePopState = () => {
       const { tab, slug } = parseCurrentRoute();
@@ -117,7 +117,7 @@ export default function App() {
     };
   }, []);
 
-  // Scroll to top on route switch
+  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeTab, selectedSlug]);
@@ -136,7 +136,7 @@ export default function App() {
     }
   };
 
-  // Check if a specific course detail page is requested
+  
   const matchedCourse = (activeTab === 'courses' && selectedSlug)
     ? COURSES_DATA.find((c) => c.slug === selectedSlug || c.id === selectedSlug) || null
     : null;
@@ -144,7 +144,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FAFDFE] text-[#1A314C] flex flex-col font-sans antialiased selection:bg-[#107C8E] selection:text-white overflow-x-clip w-full max-w-full">
       
-      {/* Global Header */}
+      {}
       <Header
         activeTab={activeTab}
         setActiveTab={(tab) => navigateTo(tab, null)}
@@ -159,7 +159,7 @@ export default function App() {
         setSearchQuery={setSearchQuery}
       />
 
-      {/* Main View Router */}
+      {}
       <main className="flex-1">
         {activeTab === 'home' && (
           <HomePage
@@ -234,13 +234,13 @@ export default function App() {
         {activeTab === 'contact' && <ContactPage />}
       </main>
 
-      {/* Global Footer */}
+      {}
       <Footer
         setActiveTab={(tab) => navigateTo(tab, null)}
         onOpenPromptModal={() => setPromptModalOpen(true)}
       />
 
-      {/* Quick Modals */}
+      {}
       <CourseModal
         course={selectedCourseModal}
         onClose={() => setSelectedCourseModal(null)}

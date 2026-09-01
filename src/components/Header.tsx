@@ -13,7 +13,7 @@ import {
   LayoutGrid
 } from 'lucide-react';
 
-// 💡 LOGO IMAGE LINK: Imported PNG logo from assets
+
 export const LOGO_IMAGE_URL = logoAsset;
 
 interface HeaderProps {
@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
-  // Detect window scroll to toggle white vs dark transparent background
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'blog', label: 'Blog', icon: BookOpen },
   ];
 
-  // The displayed tab indicator targets hovered tab if mouse is over, otherwise falls back to activeTab
+  
   const currentPillTarget = hoveredTab || activeTab;
 
   return (
@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         
-        {/* Left Side: Logo Image + FinTech Edge / Institute Typography */}
+        {}
         <div 
           onClick={() => setActiveTab('home')} 
           className="flex items-center gap-3 cursor-pointer group shrink-0 select-none"
@@ -121,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Middle Navigation with Smooth Floating / Sliding Hover and Active Indicator */}
+        {}
         <nav 
           onMouseLeave={() => setHoveredTab(null)}
           className={`hidden lg:flex items-center p-1 rounded-full border transition-all duration-300 relative ${
@@ -153,7 +153,7 @@ export const Header: React.FC<HeaderProps> = ({
                     : 'text-[#1A314C] hover:text-[#107C8E]'
                 }`}
               >
-                {/* Smooth Animated Sliding Indicator Pill */}
+                {}
                 {isHighlighted && (
                   <motion.div
                     layoutId="navAnimatedPill"
@@ -175,7 +175,7 @@ export const Header: React.FC<HeaderProps> = ({
           })}
         </nav>
 
-        {/* Right Side: Contact Us Button */}
+        {}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
           <button
             onClick={() => setActiveTab('contact')}
@@ -192,7 +192,7 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
         </div>
 
-        {/* Mobile Menu Trigger */}
+        {}
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -208,7 +208,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       </div>
 
-      {/* Mobile Drawer */}
+      {}
       {mobileMenuOpen && (
         <div 
           className={`lg:hidden border-b px-4 pt-3 pb-6 space-y-3 mt-2 transition-all ${

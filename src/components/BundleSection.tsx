@@ -22,15 +22,15 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
   return (
     <section className="py-20 bg-[#C9E5ED]/15 text-[#1A314C] relative overflow-hidden border-b border-[#C9E5ED]">
       
-      {/* Background Decorative Glows */}
+      {}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-[#107C8E]/15 via-[#1DA5B8]/15 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Main Card Container */}
+        {}
         <div className="bg-white rounded-3xl border-2 border-[#107C8E]/40 p-8 sm:p-12 shadow-xl relative overflow-hidden text-[#1A314C]">
           
-          {/* Top Banner Ribbon */}
+          {}
           <div className="absolute top-0 right-0 bg-[#107C8E] text-white font-extrabold text-xs px-6 py-1.5 rounded-bl-2xl uppercase tracking-wider flex items-center gap-1.5 shadow-md">
             <Crown className="w-4 h-4 fill-white text-white" />
             <span>VIP Unlimited Access</span>
@@ -38,7 +38,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Content */}
+            {}
             <div className="lg:col-span-7 space-y-6">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1A314C] leading-tight">
                 Get <span className="text-[#107C8E]">Unlimited Access</span> to Every Course + 1-on-1 Mentorship
@@ -48,7 +48,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
                 Why buy individual courses when you can unlock our complete educational vault? Gain lifetime access to every existing and future course, plus weekly live mentorship calls, private wallet audits, and exclusive VIP community membership.
               </p>
 
-              {/* Included Perks Checklist */}
+              {}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-medium text-[#1A314C] pt-2">
                 <div className="flex items-center gap-2.5 bg-[#C9E5ED]/20 p-2.5 rounded-xl border border-[#C9E5ED]">
                   <CheckCircle className="w-4 h-4 text-[#107C8E] shrink-0" />
@@ -70,7 +70,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
 
             </div>
 
-            {/* Right Card Visual */}
+            {}
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden border border-[#107C8E]/30 shadow-xl">
                 <img

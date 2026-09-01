@@ -11,7 +11,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
     <section className="py-20 bg-[#C9E5ED]/15 text-[#1A314C] relative border-b border-[#C9E5ED]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
+        {}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
             Hear From Our Grads
@@ -21,7 +21,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
           </p>
         </div>
 
-        {/* Testimonials Grid */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t) => (
             <div
@@ -29,20 +29,20 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
               className="bg-white rounded-2xl p-6 border border-[#C9E5ED] hover:border-[#1DA5B8] transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between text-[#1A314C]"
             >
               <div className="space-y-4">
-                {/* Rating Stars */}
+                {}
                 <div className="flex items-center gap-1">
                   {[...Array(t.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-[#1DA5B8] text-[#1DA5B8]" />
                   ))}
                 </div>
 
-                {/* Content Quote */}
+                {}
                 <p className="text-xs sm:text-sm text-[#1A314C]/80 italic leading-relaxed">
                   "{t.content}"
                 </p>
               </div>
 
-              {/* Author Footer */}
+              {}
               <div className="pt-6 mt-6 border-t border-[#C9E5ED] flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <img

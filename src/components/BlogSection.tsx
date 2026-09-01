@@ -17,7 +17,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
     <section className="py-20 bg-[#C9E5ED]/20 text-[#1A314C] relative border-b border-[#C9E5ED]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
+        {}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
@@ -37,7 +37,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
           </button>
         </div>
 
-        {/* Blog Grid */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {blogs.map((post) => (
             <div

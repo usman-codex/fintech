@@ -7,8 +7,8 @@ import { motion } from 'motion/react';
 import { Course } from '../types';
 import aiHeroBgImage from '../assets/images/home-hero.jpg';
 
-// 💡 HERO BACKGROUND IMAGE LINK: Apni background image ka import link / URL yahan paste ya change kar sakte hain:
-export const HERO_BG_IMAGE_URL = aiHeroBgImage; // Or use: 'https://images.unsplash.com/...' or custom image path
+
+export const HERO_BG_IMAGE_URL = aiHeroBgImage; 
 
 interface CounterStatProps {
   end: number;
@@ -62,7 +62,7 @@ const CounterStat: React.FC<CounterStatProps> = ({
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      // Smooth ease-out cubic curve
+      
       const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
       const currentVal = Math.floor(easeOutCubic(progress) * end);
       setCount(currentVal);
@@ -96,7 +96,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <section className="relative bg-[#1A314C] text-white pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-[#C9E5ED]/20 overflow-hidden">
-      {/* Background Image & Clean Subtle Vignette */}
+      {}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
           src={HERO_BG_IMAGE_URL}
@@ -112,12 +112,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           }}
           className="w-full h-full object-cover opacity-90 transition-opacity duration-300"
         />
-        {/* Clean soft overlay for image contrast */}
+        {}
         <div className="absolute inset-0 bg-[#1A314C]/45" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Transparent Matte Frosted Card with bottom-to-top smooth entry */}
+        {}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-4xl mx-auto text-center space-y-6 bg-black/35 backdrop-blur-md p-6 sm:p-10 md:p-12 rounded-3xl border border-white/20 shadow-xl relative overflow-hidden"
         >
-          {/* Main Headline with Stylish Typography & Smooth Slide-up */}
+          {}
           <motion.h1 
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             Empowering <span className="bg-gradient-to-r from-[#C9E5ED] via-[#1DA5B8] to-[#107C8E] bg-clip-text text-transparent">FinTech</span>, Blockchain & <span className="text-[#1DA5B8]">AI Leaders</span>
           </motion.h1>
 
-          {/* Upgraded Content Copy with Smooth Slide-up */}
+          {}
           <motion.p 
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             Bridge institutional finance with cutting-edge decentralized protocols. Master smart contract engineering, quantitative DeFi trading, airdrop strategies, and autonomous AI systems through immersive hands-on mentorship.
           </motion.p>
 
-          {/* CTA Buttons with Smooth Slide-up */}
+          {}
           <motion.div 
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </button>
           </motion.div>
 
-          {/* Trust Badges with Smooth Slide-up */}
+          {}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -188,7 +188,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         </motion.div>
 
-        {/* Live Metrics Impact Strip with Scroll / Open In-View Animation */}
+        {}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

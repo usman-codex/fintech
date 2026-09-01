@@ -46,7 +46,7 @@ export const KeyPillarsSection: React.FC = () => {
     <section className="py-20 bg-[#C9E5ED]/15 text-[#1A314C] relative border-b border-[#C9E5ED]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A314C]">
             Built for Real-World Industry Success
@@ -56,7 +56,7 @@ export const KeyPillarsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Pillars Grid */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
@@ -65,12 +65,12 @@ export const KeyPillarsSection: React.FC = () => {
                 key={idx}
                 className="group relative bg-white rounded-2xl p-6 border border-[#C9E5ED] hover:border-[#1DA5B8] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 text-[#1A314C]"
               >
-                {/* Number Watermark */}
+                {}
                 <span className="absolute top-4 right-6 text-4xl font-extrabold text-[#C9E5ED] group-hover:text-[#1DA5B8]/30 transition-colors pointer-events-none">
                   0{idx + 1}
                 </span>
 
-                {/* Icon Circle */}
+                {}
                 <div className="w-12 h-12 rounded-xl bg-[#107C8E] group-hover:bg-[#10566E] flex items-center justify-center text-white font-bold mb-5 shadow-md group-hover:scale-110 transition-all">
                   <Icon className="w-6 h-6 text-white" />
                 </div>

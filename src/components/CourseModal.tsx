@@ -33,7 +33,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
     <div className="fixed inset-0 z-50 bg-[#1A314C]/70 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-white border border-[#C9E5ED] text-[#1A314C] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
         
-        {/* Sticky Header Close */}
+        {}
         <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-[#C9E5ED] flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold text-white bg-[#107C8E] px-2.5 py-0.5 rounded-full">
@@ -50,10 +50,10 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
           </button>
         </div>
 
-        {/* Modal Body */}
+        {}
         <div className="p-6 sm:p-8 space-y-8">
           
-          {/* Hero Banner Area */}
+          {}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             
             <div className="md:col-span-7 space-y-3">
@@ -81,7 +81,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
               </div>
             </div>
 
-            {/* Media Image Frame */}
+            {}
             <div className="md:col-span-5 relative rounded-2xl overflow-hidden border border-[#C9E5ED] shadow-md">
               <img
                 src={course.image}
@@ -103,7 +103,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
 
           </div>
 
-          {/* Navigation Tabs */}
+          {}
           <div className="flex items-center gap-2 border-b border-[#C9E5ED] pb-2">
             {[
               { id: 'overview', label: 'Overview & Benefits' },
@@ -124,7 +124,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
             ))}
           </div>
 
-          {/* Tab Content: Overview */}
+          {}
           {activeTab === 'overview' && (
             <div className="space-y-6">
               {course.tools && course.tools.length > 0 && (
@@ -172,7 +172,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
             </div>
           )}
 
-          {/* Tab Content: Syllabus */}
+          {}
           {activeTab === 'syllabus' && (
             <div className="space-y-4">
               <h3 className="text-base font-bold text-[#1A314C] mb-1">Detailed Course Curriculum</h3>
@@ -227,7 +227,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
             </div>
           )}
 
-          {/* Tab Content: Instructor */}
+          {}
           {activeTab === 'instructor' && (
             <div className="flex items-start gap-4 bg-[#C9E5ED]/15 p-5 rounded-2xl border border-[#C9E5ED]">
               <img
@@ -253,7 +253,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
 
         </div>
 
-        {/* Footer Action Bar */}
+        {}
         <div className="sticky bottom-0 bg-white border-t border-[#C9E5ED] p-6 rounded-b-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-xs text-[#10566E] flex items-center gap-1.5 font-medium">
             <ShieldCheck className="w-4 h-4 text-[#107C8E]" />

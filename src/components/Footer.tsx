@@ -69,16 +69,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
   return (
     <footer className="relative w-full bg-gradient-to-r from-[#0F1E2E] via-[#162A40] to-[#10566E] text-[#C9E5ED] border-t border-[#1DA5B8]/30 py-8 sm:py-10 overflow-hidden shadow-2xl">
-      {/* Decorative ambient glowing accents */}
+      {}
       <div className="absolute top-0 right-10 w-72 h-72 bg-[#1DA5B8]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-72 h-72 bg-[#107C8E]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Compact 3-Column Content */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-center pb-8 border-b border-[#1DA5B8]/20">
           
-          {/* Column 1: Brand Info */}
+          {}
           <div className="space-y-3 text-center md:text-left">
             <div 
               onClick={() => setActiveTab && setActiveTab('home')} 
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </div>
           </div>
 
-          {/* Column 2: Exact Physical Address, Phone & Email */}
+          {}
           <div className="space-y-3 text-center md:text-left">
             <h4 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-center md:justify-start gap-2">
               <span className="w-2 h-2 rounded-full bg-[#1DA5B8]" />
@@ -159,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </div>
           </div>
 
-          {/* Column 3: Social Media Icons with Smooth Hover Animations */}
+          {}
           <div className="space-y-3 text-center md:text-right flex flex-col items-center md:items-end justify-center">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
               Connect With Us
@@ -189,7 +189,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
         </div>
 
-        {/* Bottom Bar: Copyright & Interactive Popups for Privacy, Terms, Help */}
+        {}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#C9E5ED]/70">
           <p>© 2026 FinTech Edge Institute. All rights reserved.</p>
 
@@ -224,7 +224,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
       </div>
 
-      {/* Interactive Popups / Modals */}
+      {}
       <AnimatePresence>
         {activeModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm">
@@ -236,7 +236,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               className="relative w-full max-w-xl bg-[#1A314C] text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#1DA5B8]/40 overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close Button */}
+              {}
               <button
                 onClick={() => setActiveModal(null)}
                 className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
@@ -244,7 +244,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 <X className="w-4 h-4" />
               </button>
 
-              {/* Modal Header */}
+              {}
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-xl bg-[#107C8E] text-[#1DA5B8] flex items-center justify-center shadow-md">
                   {activeModal === 'privacy' && <Lock className="w-5 h-5 text-white" />}
@@ -263,7 +263,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 </div>
               </div>
 
-              {/* Modal Body Content */}
+              {}
               <div className="space-y-3 text-xs sm:text-sm text-[#C9E5ED]/90 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
                 {activeModal === 'privacy' && (
                   <>
@@ -340,7 +340,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 )}
               </div>
 
-              {/* Modal Footer */}
+              {}
               <div className="mt-6 pt-4 border-t border-white/10 flex justify-end">
                 <button
                   onClick={() => setActiveModal(null)}
