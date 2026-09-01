@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
-  Briefcase, 
   MapPin, 
   Clock, 
   ArrowRight, 
   Rocket, 
   Network, 
-  Coins,
-  ChevronRight
+  Coins
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -20,69 +18,34 @@ export const CareerPage: React.FC<CareerPageProps> = ({
   onContactUs,
   onExploreCourses,
 }) => {
-  const [selectedJob, setSelectedJob] = useState<string | null>(null);
-
   const jobs = [
     {
-      id: 'job-1',
-      title: 'Web3 Community & Growth Strategist',
-      department: 'Marketing & Community',
+      id: 'job-ai',
+      title: 'AI & Automation Specialist',
       type: 'Full-time / Remote',
       location: 'Remote (Pakistan / Global)',
-      salary: '$1,200 - $2,500 / mo',
-      tags: ['Discord Management', 'Zealy/Galxe Campaigns', 'Tokenomics', 'KOL Outreach'],
-      description: 'Lead engagement and airdrop campaign management for partner decentralized protocols. Coordinate ambassador incentives and moderate active Web3 communities.',
-      requirements: [
-        'Demonstrated track record running Web3 Discord/Telegram communities',
-        'Familiarity with Galxe, Layer3, and Zealy quest infrastructures',
-        'Strong English writing and voice-chat communication skills',
-        'Completion of Fintech Edge Web3 Marketing / Airdrop course is a plus'
-      ]
+      description: 'Design and deploy generative AI workflows, intelligent chatbots, and custom LLM integrations for enterprise clients and fintech platforms.'
     },
     {
-      id: 'job-2',
-      title: 'Junior DeFi Research Analyst',
-      department: 'Analytics & Research',
+      id: 'job-fb-monetization',
+      title: 'Facebook Monetization & Video Content Expert',
       type: 'Full-time / Hybrid',
-      location: 'Lahore, Pakistan / Hybrid',
-      salary: 'Rs 120,000 - 220,000 / mo',
-      tags: ['Dune Analytics', 'DeFi Llama', 'Yield Farming', 'Risk Analysis'],
-      description: 'Perform quantitative on-chain data research, analyze emerging liquidity pools, and author detailed weekly token alpha reports for student members.',
-      requirements: [
-        'Proficiency in Dune Analytics SQL queries and DeFi protocol mechanisms',
-        'Strong analytical mindset and deep understanding of Impermanent Loss & APY math',
-        'Ability to present clear findings in weekly live webinars'
-      ]
+      location: 'Lahore, Pakistan / Remote',
+      description: 'Manage high-traffic Facebook Pages, oversee in-stream video editing workflows, optimize Reel retention, and scale payout-eligible digital assets.'
     },
     {
-      id: 'job-3',
-      title: 'Solidity & Smart Contract Teaching Assistant',
-      department: 'Academic & Mentorship',
-      type: 'Part-time / Remote',
-      location: 'Remote',
-      salary: 'Hourly / $25 - $40 per hr',
-      tags: ['Solidity', 'Hardhat', 'Foundry', 'Code Review'],
-      description: 'Assist senior instructors in conducting student code reviews, debugging testnet deployments, and answering technical questions in the student portal.',
-      requirements: [
-        'Experience building & testing ERC-20 / ERC-721 smart contracts',
-        'Familiarity with Foundry / Hardhat unit testing workflows',
-        'Passion for teaching and helping junior developers grow'
-      ]
+      id: 'job-web-dev',
+      title: 'Full Stack Web Developer (React / Next.js)',
+      type: 'Full-time / Remote',
+      location: 'Remote / Hybrid',
+      description: 'Build fast, responsive modern web applications, interactive student portals, and robust API endpoints with clean UI/UX and seamless integrations.'
     },
     {
-      id: 'job-4',
-      title: 'Fintech Edge Student Placement Intern',
-      department: 'Graduates Incubator',
-      type: 'Paid Internship (3 Months)',
-      location: 'Lahore / Remote',
-      salary: 'Stipend + Fast-track Full-time Offer',
-      tags: ['Mentorship', 'Portfolio Building', 'Live Projects'],
-      description: 'Exclusive placement internship for Fintech Edge graduates to work on real commercial partner projects, earning hands-on experience and verifiable references.',
-      requirements: [
-        'Must have completed at least one course at Fintech Edge Institute',
-        'Commitment of 20 hours/week towards live client deliverables',
-        'High motivation to transition into remote Web3 tech jobs'
-      ]
+      id: 'job-digital-marketing',
+      title: 'Digital Marketing & Performance Strategist',
+      type: 'Full-time / Remote',
+      location: 'Remote (Pakistan / Global)',
+      description: 'Execute high-ROI Meta & Google ad campaigns, optimize multi-channel conversion funnels, and drive targeted growth across digital platforms.'
     }
   ];
 
@@ -178,64 +141,47 @@ export const CareerPage: React.FC<CareerPageProps> = ({
         {/* Job Listings */}
         <div className="space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-[#1A314C]">Open Positions & Internships</h2>
-            <span className="text-xs font-semibold text-[#107C8E]">{jobs.length} Active Openings</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1A314C]">Open Positions & Internships</h2>
           </div>
 
           <div className="space-y-4">
             {jobs.map((job) => (
               <div 
                 key={job.id}
-                className="bg-white rounded-2xl p-6 border border-[#C9E5ED] hover:border-[#1DA5B8] shadow-sm hover:shadow-lg transition-all space-y-4"
+                className="bg-white rounded-2xl p-6 sm:p-7 border border-[#C9E5ED] hover:border-[#1DA5B8] shadow-sm hover:shadow-lg transition-all space-y-4"
               >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                      <span className="bg-[#C9E5ED]/50 text-[#107C8E] text-[10px] font-extrabold px-2.5 py-0.5 rounded-md uppercase">
-                        {job.department}
-                      </span>
-                      <span className="text-xs text-[#5EA4AA]">•</span>
-                      <span className="text-xs font-medium text-[#10566E] flex items-center gap-1">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+                  <div className="space-y-2 flex-1">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="text-xs font-semibold text-[#107C8E] flex items-center gap-1.5 bg-[#C9E5ED]/20 px-2.5 py-1 rounded-lg border border-[#C9E5ED]/60">
                         <Clock className="w-3.5 h-3.5" />
                         {job.type}
                       </span>
                       <span className="text-xs text-[#5EA4AA]">•</span>
-                      <span className="text-xs font-medium text-[#10566E] flex items-center gap-1">
+                      <span className="text-xs font-medium text-[#10566E] flex items-center gap-1.5">
                         <MapPin className="w-3.5 h-3.5" />
                         {job.location}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-[#1A314C]">{job.title}</h3>
-                    <p className="text-xs text-[#1A314C]/75 mt-1">{job.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#1A314C] pt-0.5">{job.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#1A314C]/75 leading-relaxed max-w-3xl">{job.description}</p>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row md:flex-col items-start md:items-end justify-between gap-2 shrink-0">
-                    <div className="text-xs font-extrabold text-[#107C8E] bg-[#C9E5ED]/30 px-3 py-1 rounded-xl border border-[#C9E5ED]">
-                      {job.salary}
-                    </div>
+                  <div className="shrink-0 flex items-center">
                     <button
                       onClick={onContactUs}
-                      className="px-5 py-2 rounded-xl bg-[#107C8E] hover:bg-[#10566E] text-white text-xs font-bold transition-all shadow-md shadow-[#107C8E]/20 flex items-center gap-1.5 cursor-pointer"
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#107C8E] hover:bg-[#10566E] text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-[#107C8E]/20 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <span>Apply Now</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#C9E5ED] flex flex-wrap items-center justify-between gap-3 text-xs">
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    {job.tags.map((t, idx) => (
-                      <span key={idx} className="bg-[#C9E5ED]/20 text-[#10566E] px-2.5 py-1 rounded-lg text-[11px] font-medium border border-[#C9E5ED]">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="text-[11px] text-[#5EA4AA]">
-                    Send resume to <a href="mailto:careers@fintechedgeinstitute.com" className="font-bold text-[#107C8E] hover:underline">careers@fintechedgeinstitute.com</a>
-                  </div>
+                <div className="pt-3.5 border-t border-[#C9E5ED]/70 flex items-center justify-between text-xs text-[#5EA4AA]">
+                  <span>Submit application via form or email</span>
+                  <span>Send resume to <a href="mailto:careers@fintechedgeinstitute.com" className="font-bold text-[#107C8E] hover:underline">careers@fintechedgeinstitute.com</a></span>
                 </div>
               </div>
             ))}
