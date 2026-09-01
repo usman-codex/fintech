@@ -101,18 +101,33 @@ export const CareerPage: React.FC<CareerPageProps> = ({
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Header with Color Gradient Text */}
+        {/* Header with Animated Color Gradient Text */}
         <div className="text-center max-w-3xl mx-auto space-y-4 pt-2">
-          <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/80 border border-[#C9E5ED] shadow-2xs text-[#107C8E] text-xs font-bold">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/80 border border-[#C9E5ED] shadow-2xs text-[#107C8E] text-xs font-bold"
+          >
             <span>Join Fintech Edge Team & Ecosystem</span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-[#10566E] via-[#107C8E] to-[#1DA5B8] bg-clip-text text-transparent pb-1">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-[#10566E] via-[#107C8E] to-[#1DA5B8] bg-clip-text text-transparent pb-1"
+          >
             Careers & Graduate Placements
-          </h1>
-          <p className="text-[#10566E] text-sm sm:text-base leading-relaxed">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+            className="text-[#10566E] text-sm sm:text-base leading-relaxed"
+          >
             Build your career at the forefront of financial technology and decentralized networks. We hire top instructors, researchers, and directly place certified graduates with partner Web3 firms.
-          </p>
+          </motion.p>
         </div>
 
         {/* Benefits Grid with New Icons & Gradient Badges */}
