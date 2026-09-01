@@ -7,7 +7,6 @@ import {
   Rocket, 
   Network, 
   Coins,
-  Sparkles,
   ChevronRight
 } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -90,47 +89,27 @@ export const CareerPage: React.FC<CareerPageProps> = ({
   return (
     <div className="relative py-16 bg-[#C9E5ED]/10 min-h-screen text-[#1A314C] space-y-16 overflow-hidden">
       
-      {/* Decorative Rotated Box Layers on Left Top */}
+      {/* Decorative Fixed Rotated Box Layers on Left Top */}
       <div className="absolute -top-12 -left-12 sm:-top-8 sm:-left-8 pointer-events-none z-0">
-        <motion.div 
-          initial={{ opacity: 0, rotate: -25, scale: 0.8 }}
-          animate={{ opacity: 1, rotate: -12, scale: 1 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          className="relative w-40 h-40 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-br from-[#107C8E]/20 via-[#1DA5B8]/10 to-transparent border-2 border-[#1DA5B8]/30 shadow-xl backdrop-blur-xs"
-        >
+        <div className="relative w-40 h-40 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-br from-[#107C8E]/20 via-[#1DA5B8]/10 to-transparent border-2 border-[#1DA5B8]/30 shadow-xl backdrop-blur-xs -rotate-12">
           {/* Inner secondary rotated box */}
-          <motion.div 
-            animate={{ rotate: [18, 24, 18] }}
-            transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-            className="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-[#10566E]/25 to-[#C9E5ED]/50 border border-[#107C8E]/40 shadow-md"
-          />
+          <div className="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-[#10566E]/25 to-[#C9E5ED]/50 border border-[#107C8E]/40 shadow-md rotate-24" />
           {/* Tiny accent box */}
           <div className="absolute top-4 left-4 w-8 h-8 rounded-lg bg-white/60 border border-[#1DA5B8]/40 rotate-45 shadow-xs" />
-        </motion.div>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Header with Color Gradient Text */}
         <div className="text-center max-w-3xl mx-auto space-y-4 pt-2">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/80 border border-[#C9E5ED] shadow-2xs text-[#107C8E] text-xs font-bold"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/80 border border-[#C9E5ED] shadow-2xs text-[#107C8E] text-xs font-bold">
             <span>Join Fintech Edge Team & Ecosystem</span>
-          </motion.div>
+          </div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-[#10566E] via-[#107C8E] to-[#1DA5B8] bg-clip-text text-transparent pb-1"
-          >
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-[#10566E] via-[#107C8E] to-[#1DA5B8] bg-clip-text text-transparent pb-1">
             Careers & Graduate Placements
-          </motion.h1>
+          </h1>
           <p className="text-[#10566E] text-sm sm:text-base leading-relaxed">
             Build your career at the forefront of financial technology and decentralized networks. We hire top instructors, researchers, and directly place certified graduates with partner Web3 firms.
           </p>
